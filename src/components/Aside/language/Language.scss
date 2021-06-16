@@ -10,18 +10,16 @@
   &:hover {
     border: 1px solid #eee;
     transition: .2s all;
-    .language__button {
-      background-color: transparent;
-      color: #0ec261;
-    }
   }
   &__button {
     background-color: transparent;
     color: #fff;
     transition: .2s all;
-    &:hover {
+  }
+  &:active{
+    .language__button {
+      background-color: transparent;
       color: #0ec261;
-      transition: .2s all;
     }
   }
 }

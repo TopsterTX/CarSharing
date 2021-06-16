@@ -1,4 +1,12 @@
-.slider{
+.slider {
+  @media (min-width: 1024px) {
     grid-area: s;
-    background-color: #000;
+    background-image: url("../../images/slider-1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  &__container{
+      display: flex;
+  }
 }

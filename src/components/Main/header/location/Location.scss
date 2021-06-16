@@ -3,6 +3,7 @@
     display: flex;
     justify-content: flex-end;
     &__place{
+        background-image: url('../../../../icons/location.svg');
         color: #999;
         font-size: 14px;
     }

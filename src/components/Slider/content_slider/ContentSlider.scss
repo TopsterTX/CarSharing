@@ -1,0 +1,24 @@
+.slider-content {
+  &__title {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 500;
+  }
+  &__text {
+    font-size: 22px;
+    color: #eeeeee;
+    font-weight: 300;
+  }
+  &__button {
+    color: #fff;
+    background: linear-gradient(to right, #13493f, #0c7b1b);
+    font-size: 18px;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: fit-content;
+    height: 48px;
+    margin-left: 32px;
+    margin-right: 32px;
+    border-radius: 10px;
+  }
+}
