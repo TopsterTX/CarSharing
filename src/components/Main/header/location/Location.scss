@@ -1,0 +1,9 @@
+.location{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    &__place{
+        color: #999;
+        font-size: 14px;
+    }
+}

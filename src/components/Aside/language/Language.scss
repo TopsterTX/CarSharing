@@ -1,0 +1,27 @@
+.language {
+  width: 47px;
+  height: 47px;
+  background-color: transparent;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .2s all;
+  &:hover {
+    border: 1px solid #eee;
+    transition: .2s all;
+    .language__button {
+      background-color: transparent;
+      color: #0ec261;
+    }
+  }
+  &__button {
+    background-color: transparent;
+    color: #fff;
+    transition: .2s all;
+    &:hover {
+      color: #0ec261;
+      transition: .2s all;
+    }
+  }
+}

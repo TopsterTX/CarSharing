@@ -1,0 +1,32 @@
+.content{
+    margin-bottom: 100px;
+    &__container{
+        padding-left: 16px;
+        padding-right: 16px;
+        // max-width: 190px;
+    }
+    &__title{
+        display: flex;
+        flex-direction: column;
+        span{
+            font-size: 32px;
+        }
+        margin-bottom: 16px;
+    }
+    &__name{
+        color: #0EC261;
+    }
+    &__text{
+        font-size: 18px;
+        color: #999;
+        margin-bottom: 32px;
+    }
+    &__button{
+        width: 100%;
+        height: 50px;
+        background: linear-gradient(to right, #0EC261, #039F67);
+        color: #fff;
+        font-size: 18px;
+        
+    }
+}

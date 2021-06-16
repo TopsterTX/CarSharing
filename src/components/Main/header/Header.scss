@@ -1,0 +1,24 @@
+.header{
+    &__container{
+        display: flex;
+        flex-direction: column;
+        padding-left: 16px;
+        padding-right: 16px;
+        height: fit-content;
+        @media(min-width: 768px){
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+    &__block{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__title{
+        font-size: 30px;
+        color: #0EC261;
+        font-weight: 700;
+    }
+}
