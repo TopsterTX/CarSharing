@@ -6,11 +6,9 @@ import "./Slider.scss";
 export const Slider = () => {
   return (
     <section className="slider">
-      <div className="slider__container">
-        <Arrow className='arrow arrow--left'/>
-        <ContentSlider />
-        <Arrow className='arrow arrow--right'/>
-      </div>
+      <Arrow className='arrow__left'/>
+      <ContentSlider />
+      <Arrow className='arrow__right'/>
     </section>
   );
 };

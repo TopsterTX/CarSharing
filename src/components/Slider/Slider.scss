@@ -1,14 +1,18 @@
 .slider {
   display: none;
   @media (min-width: 1024px) {
-    display: block;
+    position: relative;
+    display: flex;
     grid-area: s;
     background-image: url("../../images/slider-1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+
   }
-  &__container{
-      display: flex;
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

@@ -7,6 +7,10 @@
         padding-right: 32px;
         padding-left: 32px;
     }
+    @media(min-width:1440px){
+      padding-right: 64px;
+      padding-left: 64px;
+    }
   }
   &__title {
     display: flex;
@@ -44,6 +48,10 @@
       margin-left: 32px;
       margin-right: 32px;
       border-radius: 10px;
+    }
+    @media(min-width:1440px){
+      margin-right: 64px;
+      margin-left: 64px;
     }
   }
   &__subtitle {

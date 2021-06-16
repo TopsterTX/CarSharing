@@ -1,8 +1,10 @@
 .slider-content {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  &__container{
+  justify-content: center;
+  &__container {
+    
     padding-right: 32px;
     padding-left: 32px;
   }
@@ -11,7 +13,7 @@
     font-size: 32px;
     font-weight: 500;
     margin-bottom: 8px;
-    @media(min-width: 1440px){
+    @media (min-width: 1440px) {
       font-size: 40px;
     }
   }
@@ -21,12 +23,13 @@
     font-weight: 300;
     margin-bottom: 32px;
     line-height: 22px;
-    @media(min-width: 1440px){
-      font-size: 24px; 
+    @media (min-width: 1440px) {
+      font-size: 24px;
       line-height: 21.6px;
     }
   }
   &__button {
+    flex: 1 1 100%;
     color: #fff;
     background: linear-gradient(to right, #13493f, #0c7b1b);
     font-size: 18px;
