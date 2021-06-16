@@ -1,6 +1,10 @@
 .aside{
+    display: none;
     grid-area: a;
     background-color:#151B1F;
+    @media(min-width: 768px){
+        display: block;
+    }
 }
 .aside__container{
     display: flex;

@@ -7,7 +7,6 @@ import "./App.scss";
 function App() {
   return (
     <div className="page">
-      
       <Main />
       <Aside />
       <Slider />
