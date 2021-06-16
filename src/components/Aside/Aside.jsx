@@ -3,7 +3,7 @@ import { Menu } from './menu/Menu'
 import {Language} from './language/Language'
 import './Aside.scss'
 
-export const Aside = () => {
+export const Aside = (props) => {
     return(
         <aside className='aside'>
             <div className="aside__container">

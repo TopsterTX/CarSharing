@@ -20,6 +20,9 @@
     @media(min-width:768px){
         display: block;
     }
+    @media(min-width: 1024px){
+        width: 24px;
+    }
 }
 
 .burger__menu{
