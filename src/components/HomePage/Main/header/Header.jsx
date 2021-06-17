@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu } from "../../Aside/menu/Menu";
+import { Menu } from '../../Aside/menu/Menu';
 import {Location} from './location/Location'
 import "./Header.scss";
 

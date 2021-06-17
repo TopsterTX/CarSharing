@@ -1,0 +1,23 @@
+.dots{
+    display: flex;
+    min-width: 45px;
+    min-height: fit-content;
+    position: absolute;
+    bottom: -105%;
+    left: 40%;
+    @media(min-width:1440px){
+        bottom: -165%;
+        left: 45%;
+    }
+    span{
+        margin: 0 4px;
+        display: block;
+        background-color: #fff;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+    }
+    span:nth-child(2){
+        background-color: #0EC261;
+    }
+}

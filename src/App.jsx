@@ -1,7 +1,7 @@
 import React from "react";
-import { Main } from "./components/Main/Main";
-import { Aside } from "./components/Aside/Aside";
-import { Slider } from "./components/Slider/Slider";
+import { Main } from "./components/HomePage/Main/Main";
+import { Aside } from "./components/HomePage/Aside/Aside";
+import { Slider } from "./components/HomePage/Slider/Slider";
 import "./App.scss";
 
 function App() {

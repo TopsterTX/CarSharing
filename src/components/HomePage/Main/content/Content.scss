@@ -43,6 +43,15 @@
     background: linear-gradient(to right, #0ec261, #039f67);
     color: #fff;
     font-size: 18px;
+    &:hover{
+      background: linear-gradient(to right, #0B934A, #026E47);
+    }
+    &:active{
+      background: linear-gradient(to right, #076432, #013C27);
+    }
+    &:disabled{
+      background: #eee;
+    }
     @media (min-width: 768px) {
       width: 250px;
       height: 48px;
