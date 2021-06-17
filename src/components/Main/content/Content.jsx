@@ -1,5 +1,6 @@
 import React from 'react'
 import './Content.scss'
+import { Navigation } from '../navigation/Navigation'
 
 export const Content = () => {
     return(
@@ -12,6 +13,7 @@ export const Content = () => {
                 <p className='content__text'>Поминутная аренда авто твоего города</p>
             </div>
             <button className='content__button'>Забронировать</button>
+            <Navigation />
         </section>
     )
 }

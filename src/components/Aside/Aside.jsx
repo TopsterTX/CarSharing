@@ -7,7 +7,7 @@ export const Aside = (props) => {
     return(
         <aside className='aside'>
             <div className="aside__container">
-                <Menu className='burger__menu burger__menu--aside'/>
+                <Menu className='burger__menu burger__menu--aside' id='menu-aside'/>
                 <Language />
             </div>
         </aside>       
