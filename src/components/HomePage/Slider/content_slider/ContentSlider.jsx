@@ -2,7 +2,7 @@ import React from "react";
 import "./ContentSlider.scss";
 import { Dots } from "./dots/Dots";
 
-export const ContentSlider = ({value, title, text}) => {
+export const ContentSlider = ({value, title, text, setValue , data}) => {
   return (
     <section className="slider-content">
       <div className="slider-content__container">
@@ -14,7 +14,7 @@ export const ContentSlider = ({value, title, text}) => {
           <button className={`slider-content__button slider-content__button--${value}`}>Подробнее</button>
         </div>
       </div>
-      <Dots />
+      <Dots setValue={setValue} value={value} className={`dots__container dots__container--${value}`} data={data}/>
     </section>
   );
 };

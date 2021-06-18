@@ -1,14 +1,13 @@
 import React from 'react'
 import './Dots.scss'
 
-export const Dots = () => {
+export const Dots = ({setValue, value, className, data}) => {
     return (
         <div className="dots">
-            <div className="dots__container">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
+            <div className={className}>
+                {data.map((el, index) => {
+                    return <span id={`slide-${el.id}`} key={index}></span>
+                })}
             </div>
         </div>
     )

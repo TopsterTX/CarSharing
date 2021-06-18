@@ -4,6 +4,7 @@
     background-color: #151B1F;
     @media(min-width:768px){
         background-color: transparent;
+        height: fit-content;
     }
     &__container{
         display: flex;
@@ -11,7 +12,7 @@
         align-items: flex-end;
         justify-content: space-around;
         height: inherit;
-        padding: 16px;
+        margin-bottom: 32px;
         @media(min-width:768px){
             background-color: transparent;
             padding-left: 32px;
@@ -25,6 +26,7 @@
         font-size: 13px;
         margin-bottom: 8px;
         color: #0EC261;
+        line-height: 15px;
         @media(min-width:768px){
             order: 1;
             color: #121212;
@@ -34,6 +36,7 @@
     &__copyright{
         font-size: 13px;
         color:#eee;
+        line-height: 15px;
         @media(min-width:768px){
             color: #999;
         }

@@ -1,7 +1,7 @@
 .dots {
     position: relative;
     z-index: 4;
-    padding-bottom: 37px;
+    margin-bottom: 92px;
   &__container {
     display: flex;
     min-width: 45px;
@@ -20,8 +20,8 @@
       height: 8px;
       border-radius: 50%;
     }
-    span:nth-child(1) {
-      background-color: #0ec261;
+    &--0{
+      
     }
   }
 }
