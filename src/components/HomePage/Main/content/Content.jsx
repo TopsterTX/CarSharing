@@ -1,4 +1,5 @@
 import React from 'react'
+import {NavLink} from 'react-router-dom'
 import './Content.scss'
 import { Navigation } from '../navigation/Navigation'
 
@@ -12,7 +13,9 @@ export const Content = () => {
                 </h1>
                 <p className='content__text'>Поминутная аренда авто твоего города</p>
             </div>
-            <button className='content__button'>Забронировать</button>
+            <NavLink to='/order' className='content__button'>
+                <span> Забронировать</span>
+            </NavLink>
             <Navigation />
         </section>
     )

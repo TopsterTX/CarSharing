@@ -1,16 +1,18 @@
 import React from "react";
-import { Main } from "./components/HomePage/Main/Main";
-import { Aside } from "./components/HomePage/Aside/Aside";
-import { Slider } from "./components/HomePage/Slider/Slider";
+import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom'
+import {HomePage} from'./components/HomePage/HomePage'
+import {OrderPage} from './components/OrderPage/OrderPage'
 import "./App.scss";
 
 function App() {
   return (
-    <div className="page">
-      <Main />
-      <Aside />
-      <Slider />
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route path='/home' component={HomePage} exact={true}/>
+        <Route path='/order' component={OrderPage}></Route>
+        <Redirect to='/home'/>
+      </Switch>
+    </BrowserRouter>
   );
 }
 

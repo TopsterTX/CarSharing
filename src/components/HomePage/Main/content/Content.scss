@@ -43,6 +43,10 @@
     background: linear-gradient(to right, #0ec261, #039f67);
     color: #fff;
     font-size: 18px;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
     &:hover{
       background: linear-gradient(to right, #0B934A, #026E47);
     }

@@ -2,19 +2,25 @@
 .page{
   overflow: hidden;
   display: grid;
-  grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-  grid-template-areas: 'm';
   min-height: 100vh;
-  @media(min-width: 768px){
-    grid-template-columns: 85px 1fr;
-    grid-template-areas: 'a m';
+  &--home{
+    grid-template-columns: 1fr;
+    grid-template-areas: 'main';
+    @media(min-width: 768px){
+      grid-template-columns: 85px 1fr;
+      grid-template-areas: 'aside main';
+    }
+    @media(min-width: 1024px){
+      grid-template-columns: 65px 1fr 410px;
+      grid-template-areas: 'aside main slider';
+    }
+    @media(min-width: 1440px){
+      grid-template-columns: 65px 1fr 688px;
+    }
   }
-  @media(min-width: 1024px){
-    grid-template-columns: 65px 1fr 410px;
-    grid-template-areas: 'a m s';
-  }
-  @media(min-width: 1440px){
-    grid-template-columns: 65px 1fr 688px;
+  &--order{
+    grid-template-columns: 1fr;
+    grid-template-areas: 'order';
   }
 }
