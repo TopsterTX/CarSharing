@@ -2,19 +2,30 @@
   grid-area: slider;
   display: none;
   @media (min-width: 1024px) {
+    
+    display: flex;
+    min-width: 100%;
+    min-height: 100%;
+    
+  }
+  &__wrapper{
     position: relative;
     z-index: 20;
     display: flex;
     min-width: 100%;
     min-height: 100%;
-    background-image: url("../../../images/slider-1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    &--0{
+      background-image: url("../../../images/slider-1.jpg");
+    }
+    &--1{
+      background-image: url('../../../images/slider-2.jpg');
+    }
   }
   &__container {
     position: relative;
-    
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
     display: flex;
     min-width: 100%;

@@ -13,7 +13,7 @@ export const Content = () => {
                 </h1>
                 <p className='content__text'>Поминутная аренда авто твоего города</p>
             </div>
-            <NavLink to='/order' className='content__button'>
+            <NavLink to='/' className='content__button'>
                 <span> Забронировать</span>
             </NavLink>
             <Navigation />

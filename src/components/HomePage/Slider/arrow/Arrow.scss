@@ -16,13 +16,13 @@
     transition: 0.2s all;
     background-color: rgba(14, 194, 97, .2);
   }
-  &__left{
+  &__next{
       width: 10px;
       height: 20px;
       background-image: url('../../../../icons/leftArrow.svg');
       background-repeat: no-repeat;
   }
-  &__right{
+  &__prev{
       width: 10px;
       height: 20px;
       background-image: url('../../../../icons/rightArrow.svg');
