@@ -1,23 +1,27 @@
-.dots{
+.dots {
+    position: relative;
+    z-index: 4;
+    padding-bottom: 37px;
+  &__container {
     display: flex;
     min-width: 45px;
-    min-height: fit-content;
-    position: absolute;
-    bottom: -80%;
-    left: 40%;
-    @media(min-width:1440px){
-        bottom: -100%;
-        left: 45%;
+    min-height: 100%;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    @media (min-width: 1440px) {
+    
     }
-    span{
-        margin: 0 4px;
-        display: block;
-        background-color: #fff;
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
+    span {
+      margin: 0 4px;
+      display: block;
+      background-color: #fff;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
     }
-    span:nth-child(1){
-        background-color: #0EC261;
+    span:nth-child(1) {
+      background-color: #0ec261;
     }
+  }
 }

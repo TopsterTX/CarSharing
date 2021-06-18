@@ -1,14 +1,12 @@
 
 
 .arrow {
+  display: block;
   position: relative;
   min-height: 100vh;
   background-color: transparent;
   transition: 0.2s all;
   min-width: 32px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   @media (min-width: 1440px) {
     min-width: 64px;
   }
@@ -16,16 +14,18 @@
     transition: 0.2s all;
     background-color: rgba(14, 194, 97, .2);
   }
-  &__left{
+  &__next{
       width: 10px;
       height: 20px;
       background-image: url('../../../../icons/leftArrow.svg');
       background-repeat: no-repeat;
+      background-position: center;
   }
-  &__right{
+  &__prev{
       width: 10px;
       height: 20px;
       background-image: url('../../../../icons/rightArrow.svg');
       background-repeat: no-repeat;
+      background-position: center;
   }
 }

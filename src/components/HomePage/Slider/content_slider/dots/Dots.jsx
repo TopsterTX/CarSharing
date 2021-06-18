@@ -2,12 +2,14 @@ import React from 'react'
 import './Dots.scss'
 
 export const Dots = () => {
-    return(
+    return (
         <div className="dots">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+            <div className="dots__container">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     )
 }
