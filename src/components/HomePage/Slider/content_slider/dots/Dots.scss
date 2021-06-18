@@ -3,10 +3,10 @@
     min-width: 45px;
     min-height: fit-content;
     position: absolute;
-    bottom: -105%;
+    bottom: -80%;
     left: 40%;
     @media(min-width:1440px){
-        bottom: -165%;
+        bottom: -100%;
         left: 45%;
     }
     span{
@@ -17,7 +17,7 @@
         height: 8px;
         border-radius: 50%;
     }
-    span:nth-child(2){
+    span:nth-child(1){
         background-color: #0EC261;
     }
 }
