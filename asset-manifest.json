@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/CarSharing/static/css/main.1531f974.chunk.css",
-    "main.js": "/CarSharing/static/js/main.a5b5da93.chunk.js",
-    "main.js.map": "/CarSharing/static/js/main.a5b5da93.chunk.js.map",
-    "runtime-main.js": "/CarSharing/static/js/runtime-main.a2733d51.js",
-    "runtime-main.js.map": "/CarSharing/static/js/runtime-main.a2733d51.js.map",
-    "static/js/2.6c1237c5.chunk.js": "/CarSharing/static/js/2.6c1237c5.chunk.js",
-    "static/js/2.6c1237c5.chunk.js.map": "/CarSharing/static/js/2.6c1237c5.chunk.js.map",
-    "static/js/3.cce8978f.chunk.js": "/CarSharing/static/js/3.cce8978f.chunk.js",
-    "static/js/3.cce8978f.chunk.js.map": "/CarSharing/static/js/3.cce8978f.chunk.js.map",
+    "main.css": "/CarSharing/static/css/main.fa6d1cf3.chunk.css",
+    "main.js": "/CarSharing/static/js/main.d03c657e.chunk.js",
+    "main.js.map": "/CarSharing/static/js/main.d03c657e.chunk.js.map",
+    "runtime-main.js": "/CarSharing/static/js/runtime-main.849cedeb.js",
+    "runtime-main.js.map": "/CarSharing/static/js/runtime-main.849cedeb.js.map",
+    "static/js/2.bdb18d25.chunk.js": "/CarSharing/static/js/2.bdb18d25.chunk.js",
+    "static/js/2.bdb18d25.chunk.js.map": "/CarSharing/static/js/2.bdb18d25.chunk.js.map",
+    "static/js/3.83130176.chunk.js": "/CarSharing/static/js/3.83130176.chunk.js",
+    "static/js/3.83130176.chunk.js.map": "/CarSharing/static/js/3.83130176.chunk.js.map",
     "index.html": "/CarSharing/index.html",
-    "static/css/main.1531f974.chunk.css.map": "/CarSharing/static/css/main.1531f974.chunk.css.map",
-    "static/js/2.6c1237c5.chunk.js.LICENSE.txt": "/CarSharing/static/js/2.6c1237c5.chunk.js.LICENSE.txt",
-    "static/media/Navigation.scss": "/CarSharing/static/media/Telegram_white.09f73cfe.svg",
+    "static/css/main.fa6d1cf3.chunk.css.map": "/CarSharing/static/css/main.fa6d1cf3.chunk.css.map",
+    "static/js/2.bdb18d25.chunk.js.LICENSE.txt": "/CarSharing/static/js/2.bdb18d25.chunk.js.LICENSE.txt",
+    "static/media/Social.scss": "/CarSharing/static/media/Telegram_white.09f73cfe.svg",
     "static/media/Arrow.scss": "/CarSharing/static/media/rightArrow.9d87137d.svg",
     "static/media/Location.scss": "/CarSharing/static/media/location.6d4a93c7.svg",
     "static/media/Slider.scss": "/CarSharing/static/media/slider-4.e361a376.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.a2733d51.js",
-    "static/js/2.6c1237c5.chunk.js",
-    "static/css/main.1531f974.chunk.css",
-    "static/js/main.a5b5da93.chunk.js"
+    "static/js/runtime-main.849cedeb.js",
+    "static/js/2.bdb18d25.chunk.js",
+    "static/css/main.fa6d1cf3.chunk.css",
+    "static/js/main.d03c657e.chunk.js"
   ]
 }
