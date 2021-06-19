@@ -1,19 +1,19 @@
-.aside{
-    display: none;
-    grid-area: aside;
-    background-color:#151B1F;
-    @media(min-width: 768px){
-        display: block;
-    }
+.aside {
+  display: none;
+  grid-area: aside;
+  background-color: #151b1f;
+  @media (min-width: 768px) {
+    display: block;
+  }
 }
-.aside__container{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-    padding-right: 27px;
-    padding-left: 27px;
-    padding-top: 35px;
-    padding-bottom: 27px;
+.aside__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding-right: 27px;
+  padding-left: 27px;
+  padding-top: 35px;
+  padding-bottom: 27px;
 }

@@ -1,45 +1,50 @@
-.footer{
-    width: 100%;
-    height: 72px;
-    background-color: #151B1F;
-    @media(min-width:768px){
-        background-color: transparent;
-        height: fit-content;
+.footer {
+  width: 100%;
+  height: 72px;
+  background-color: #151b1f;
+  @media (min-width: 768px) {
+    background-color: transparent;
+    height: fit-content;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    height: inherit;
+    margin-bottom: 32px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    @media (min-width: 768px) {
+      background-color: transparent;
+      padding-left: 32px;
+      padding-right: 32px;
+      padding-top: 0;
+      padding-bottom: 0;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
     }
-    &__container{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        justify-content: space-around;
-        height: inherit;
-        margin-bottom: 32px;
-        @media(min-width:768px){
-            background-color: transparent;
-            padding-left: 32px;
-            padding-right: 32px;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-        }
+  }
+  &__tel {
+    font-size: 13px;
+    margin-bottom: 8px;
+    color: #0ec261;
+    line-height: 15px;
+    @media (min-width: 768px) {
+      order: 1;
+      color: #121212;
+      text-decoration: none;
     }
-    &__tel{
-        font-size: 13px;
-        margin-bottom: 8px;
-        color: #0EC261;
-        line-height: 15px;
-        @media(min-width:768px){
-            order: 1;
-            color: #121212;
-            text-decoration: none;
-        }
+  }
+  &__copyright {
+    font-size: 13px;
+    color: #eee;
+    line-height: 15px;
+    @media (min-width: 768px) {
+      color: #999;
     }
-    &__copyright{
-        font-size: 13px;
-        color:#eee;
-        line-height: 15px;
-        @media(min-width:768px){
-            color: #999;
-        }
-    }
-
+  }
 }

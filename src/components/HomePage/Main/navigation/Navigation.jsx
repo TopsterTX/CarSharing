@@ -1,5 +1,6 @@
 import React from "react";
 import { Language } from "../../Aside/language/Language";
+import { Social } from "./social/Social";
 import "./Navigation.scss";
 
 export const Navigation = () => {
@@ -27,13 +28,9 @@ export const Navigation = () => {
               ОБСЛУЖИВАНИЕ
             </a>
           </li>
-          <section className="navigation__social">
-            <span className="navigation__icon navigation__icon--telegram"></span>
-            <span className="navigation__icon navigation__icon--facebook"></span>
-            <span className="navigation__icon navigation__icon--instagram"></span>
-          </section>
+          <Social />
         </ul>
-        <Language className='language language--navigation'/>
+        <Language className="language language--navigation" />
       </div>
     </nav>
   );

@@ -1,14 +1,13 @@
 .content {
-  
   margin-bottom: 100px;
   &__container {
     padding-left: 16px;
     padding-right: 16px;
-    @media(min-width: 768px){
-        padding-right: 32px;
-        padding-left: 32px;
+    @media (min-width: 768px) {
+      padding-right: 32px;
+      padding-left: 32px;
     }
-    @media(min-width:1440px){
+    @media (min-width: 1440px) {
       padding-right: 64px;
       padding-left: 64px;
     }
@@ -19,10 +18,10 @@
     span {
       font-size: 32px;
     }
-    @media(min-width:768px){
-        span{
-            font-size: 70px;
-        }
+    @media (min-width: 768px) {
+      span {
+        font-size: 70px;
+      }
     }
     margin-bottom: 16px;
   }
@@ -33,8 +32,8 @@
     font-size: 18px;
     color: #999;
     margin-bottom: 32px;
-    @media(min-width: 768px){
-        font-size: 26px;
+    @media (min-width: 768px) {
+      font-size: 26px;
     }
   }
   &__button {
@@ -48,17 +47,17 @@
     text-decoration: none;
     align-items: center;
     justify-content: center;
-    transition: .2s all;
-    &:hover{
-      transition: .2s all;
-      background: linear-gradient(to right, #0B934A, #026E47);
+    transition: 0.2s all;
+    &:hover {
+      transition: 0.2s all;
+      background: linear-gradient(to right, #0b934a, #026e47);
     }
-    &:active{
-      transition: .2s all;
-      background: linear-gradient(to right, #076432, #013C27);
+    &:active {
+      transition: 0.2s all;
+      background: linear-gradient(to right, #076432, #013c27);
     }
-    &:disabled{
-      transition: .2s all;
+    &:disabled {
+      transition: 0.2s all;
       background: #eee;
     }
     @media (min-width: 768px) {
@@ -68,7 +67,7 @@
       margin-right: 32px;
       border-radius: 10px;
     }
-    @media(min-width:1440px){
+    @media (min-width: 1440px) {
       margin-right: 64px;
       margin-left: 64px;
     }
@@ -84,4 +83,3 @@
     }
   }
 }
-

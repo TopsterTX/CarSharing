@@ -6,25 +6,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: .2s all;
+  transition: 0.2s all;
   &:hover {
     border: 1px solid #eee;
-    transition: .2s all;
+    transition: 0.2s all;
   }
   &__button {
     background-color: transparent;
     color: #fff;
-    transition: .2s all;
+    transition: 0.2s all;
   }
-  &:active{
+  &:active {
     .language__button {
       background-color: transparent;
       color: #0ec261;
     }
   }
-  &--navigation{
+  &--navigation {
     margin: 28px;
-    @media(min-width: 768px){
+    @media (min-width: 768px) {
       display: none;
     }
   }

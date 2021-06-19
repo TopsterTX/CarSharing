@@ -10,7 +10,7 @@ export const Menu = ({ className, id }) => {
         document.getElementById("nav").classList.toggle("active");
         document.body.classList.toggle("--lock");
         document.getElementById(id).classList.toggle("active");
-        document.getElementById('slider-hidden').classList.toggle('hidden')
+        document.getElementById("slider-hidden").classList.toggle("hidden");
       }}
     >
       <span></span>

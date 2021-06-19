@@ -1,18 +1,18 @@
-.location{
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    &__icon{
-        width: 17px;
-        height: 21px;
-        background-image: url('../../../../../icons/location.svg');
-        background-repeat: no-repeat;
-        background-size: contain;
-        margin-right: 8px;
-    }
-    &__place{
-        color: #999;
-        font-size: 14px;
-    }
+.location {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  &__icon {
+    width: 17px;
+    height: 21px;
+    background-image: url("../../../../../icons/location.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 8px;
+  }
+  &__place {
+    color: #999;
+    font-size: 14px;
+  }
 }

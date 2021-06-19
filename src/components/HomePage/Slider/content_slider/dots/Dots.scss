@@ -1,7 +1,7 @@
 .dots {
-    position: relative;
-    z-index: 4;
-    margin-bottom: 92px;
+  position: relative;
+  z-index: 4;
+  margin-bottom: 92px;
   &__container {
     display: flex;
     min-width: 45px;
@@ -10,7 +10,6 @@
     align-items: center;
     justify-content: center;
     @media (min-width: 1440px) {
-    
     }
     span {
       margin: 0 4px;
@@ -20,8 +19,8 @@
       height: 8px;
       border-radius: 50%;
     }
-    &--0{
-      
+    span.active {
+      background-color: rgba(14, 194, 97, 1);
     }
   }
 }
