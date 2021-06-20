@@ -18,6 +18,12 @@
       width: 8px;
       height: 8px;
       border-radius: 50%;
+      transition: .2s all;
+      cursor: pointer;
+    }
+    span:hover{
+      transition: .2s all;
+      transform: scale(1.5);
     }
     span.active {
       background-color: rgba(14, 194, 97, 1);

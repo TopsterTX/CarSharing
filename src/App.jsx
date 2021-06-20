@@ -6,8 +6,6 @@ import "./App.scss";
 
 function App() {
   return (
-
-    
     <BrowserRouter>
       <HomePage />
     </BrowserRouter>

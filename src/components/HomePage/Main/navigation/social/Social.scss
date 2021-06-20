@@ -17,4 +17,7 @@
   &__icon--facebook {
     background-image: url("../../../../../icons//Facebook_white.svg");
   }
+  &__icon:hover{
+    transform: scale();
+  }
 }

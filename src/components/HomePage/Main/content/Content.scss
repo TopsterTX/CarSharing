@@ -1,5 +1,8 @@
 .content {
   margin-bottom: 100px;
+  @media(min-width: 768px){
+    margin-bottom: 0;
+  }
   &__container {
     padding-left: 16px;
     padding-right: 16px;
@@ -34,6 +37,7 @@
     margin-bottom: 32px;
     @media (min-width: 768px) {
       font-size: 26px;
+      margin-bottom: 64px;
     }
   }
   &__button {
