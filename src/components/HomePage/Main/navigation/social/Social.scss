@@ -7,6 +7,7 @@
     min-height: 32px;
     background-repeat: no-repeat;
     margin-right: 24px;
+    transition: 0.2s all;
   }
   &__icon--telegram {
     background-image: url("../../../../../icons/Telegram_white.svg");
@@ -17,7 +18,8 @@
   &__icon--facebook {
     background-image: url("../../../../../icons//Facebook_white.svg");
   }
-  &__icon:hover{
-    transform: scale();
+  &__icon:hover {
+    transform: scale(1.3);
+    transition: 0.2s all;
   }
 }
