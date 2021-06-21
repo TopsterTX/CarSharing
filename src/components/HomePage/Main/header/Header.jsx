@@ -3,7 +3,7 @@ import { Menu } from "../../Aside/menu/Menu";
 import { Location } from "./location/Location";
 import "./Header.scss";
 
-export const Header = () => {
+export const Header = ({type}) => {
   return (
     <header className="header">
       <div className="header__container">
@@ -11,6 +11,7 @@ export const Header = () => {
           <Menu
             className="burger__menu burger__menu--header"
             id="menu-header"
+            type={type}
           />
           <h2 className="header__title">Need for drive</h2>
         </div>

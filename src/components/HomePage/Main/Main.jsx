@@ -7,7 +7,7 @@ import './Main.scss'
 export const Main = () => {
     return(
         <main className="main">
-            <Header/>
+            <Header type='slider'/>
             <Content/>
             <Footer/>
         </main>       
