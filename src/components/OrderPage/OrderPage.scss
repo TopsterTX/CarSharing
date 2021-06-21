@@ -1,0 +1,11 @@
+.page--order {
+  grid-template-columns: 1fr;
+  grid-template-areas: "order";
+  @media(min-width: 768px){
+      grid-template-columns: 85px 1fr;
+      grid-template-areas: 'aside order';
+  }
+  @media(min-width: 1440px){
+      grid-template-columns: 65px 1fr;
+  }
+}
