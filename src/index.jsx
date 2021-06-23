@@ -2,13 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { Context } from "./context";
 import "./index.scss";
 
-
+const state = []
 
 ReactDOM.render(
   <React.StrictMode>
-    <Context.Provider value={}>
+    <Context.Provider value={state}>
       <App />
     </Context.Provider>
   </React.StrictMode>,
