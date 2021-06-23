@@ -9,8 +9,8 @@ export const Form = () => {
           <span className='city'>Город</span>
           <input type="text" className="order__form-input" />
         </div>
-        <div className="order__form-out">
-          <span className='out'>Пункт выдачи</span>
+        <div className="order__form-point">
+          <span className='point'>Пункт выдачи</span>
           <input
             type="text"
             className="order__form-input"

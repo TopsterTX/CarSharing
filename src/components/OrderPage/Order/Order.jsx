@@ -11,12 +11,11 @@ export const Order = () => {
   return (
     <section className="order">
       <Header />
-          <Steps />
+      <Steps />
       <div className="order__container">
-      
         <div className="order__order-block">
           <Form />
-          <Maps/>
+          <Maps />
           <Navigation />
         </div>
         <div className="order__total-block">
