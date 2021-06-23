@@ -1,28 +1,40 @@
 .order__form{
     display: flex;
     align-items: flex-start;
-    margin-top: 32px;
+    justify-content: flex-start;
+    
+    margin-bottom: 25px;
     &-container{
+       
         padding-left: 16px;
         padding-right: 16px;
         display: flex;
         flex-direction: column;
-        align-items: flex-end;
+        align-items: center;
+        justify-content: flex-start;
     }
     &-city{
-        display: block;
+        display: flex;
         font-size: 12px;
         margin-bottom: 10px;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
     }
     &-out{
-        display: block;
+        width: 100%;
+        display: flex;
         font-size: 12px;
+        align-items: center;
+        justify-content: flex-end;
     }
     &-input{
         outline: none;
+        min-width: 180px;
+        width: 60%;
         border: 0;
         border-bottom: 1px solid #999999;
         margin-left: 8px;
-        padding-right: 30px;
+        padding-right: 0px;
     }
 }

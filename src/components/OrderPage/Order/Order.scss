@@ -1,3 +1,15 @@
 .order{
     max-width: inherit;
+    max-height: fit-content;
+    border-bottom: 1px solid rgba(238, 238, 238, 1);
+    &__container{
+        display: flex;
+        flex-direction: column;
+        @media(min-width: 768px){
+            flex-direction: row;
+        }
+    }
+    &__order-block{
+        border-bottom: 1px solid rgba(238,238,238,1);
+    }
 }
