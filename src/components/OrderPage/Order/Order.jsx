@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Header } from "../../HomePage/Main/header/Header";
 import { Steps } from "./steps/Steps";
 import { Navigation } from "../../HomePage/Main/navigation/Navigation";
@@ -8,13 +8,18 @@ import { Total } from "./total/Total";
 import "./Order.scss";
 
 export const Order = () => {
+
+  const [city, setCity] = useState('Ульяновск')
+  const [point, setPoint] = useState('Нариманова 42')
+
+  
   return (
     <section className="order">
       <Header />
       <Steps />
       <div className="order__container">
         <div className="order__order-block">
-          <Form />
+          <Form city={city} setCity={setCity} point={point} setPoint={setPoint}/>
           <Maps />
           <Navigation />
         </div>

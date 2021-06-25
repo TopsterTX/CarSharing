@@ -7,7 +7,7 @@ export const Total = () => {
       <div className="order__total-wrapper">
         <div className="order__total-title">Ваш заказ:</div>
         <div className="order__total-point">
-          <span>Путнкт выдачи</span>
+          <span>Пункт выдачи</span>
           <span></span>
           <span>Ульяновск, Нариманова 42</span>
         </div>
