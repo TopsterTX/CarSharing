@@ -10,6 +10,7 @@
   }
 }
 
-.order__block{
+.order__block {
   grid-area: order;
+  max-height: fit-content;
 }

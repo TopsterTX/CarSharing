@@ -12,6 +12,9 @@
       padding-left: 32px;
       padding-right: 32px;
     }
+    @media(min-width: 768px){
+      margin: 8px 0;
+    }
   }
   &__item {
     position: relative;
@@ -38,6 +41,9 @@
     font-weight: 700;
     &.active{
         color: rgba(14, 194, 97, 1);
+    }
+    @media(min-width:1024px){
+      font-size: 12px;
     }
   }
 }

@@ -8,15 +8,13 @@
     margin-bottom: 45px;
   }
   &-container {
-    padding-left: 16px;
-    padding-right: 16px;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     @media (min-width: 768px) {
-        padding-left: 32px;
-        padding-right: 32px;
+  
     }
   }
   &-city {

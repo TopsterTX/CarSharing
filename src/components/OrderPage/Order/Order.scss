@@ -2,9 +2,12 @@
   min-height: fit-content;
 
   &__container {
+    padding-left: 16px;
+    padding-right: 16px;
+  
     @media (min-width: 1024px) {
       display: grid;
-      grid-template-columns: 1fr 250px;
+      grid-template-columns: 2fr 1fr;
     }
   }
   &__order-block {
@@ -13,6 +16,8 @@
     border-bottom: 1px solid rgba(238, 238, 238, 1);
     @media (min-width: 1024px) {
       border-right: 1px solid rgba(238, 238, 238, 1);
+      border-bottom: 0;
+      padding-bottom: 20px;
     }
   }
 }
