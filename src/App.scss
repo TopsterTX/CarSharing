@@ -1,6 +1,8 @@
 .page {
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-rows: 1fr;
+  }
   overflow: hidden;
-  display: grid;
-  grid-template-rows: 1fr;
   min-height: 100vh;
 }

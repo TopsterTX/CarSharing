@@ -2,12 +2,16 @@
     margin-top: 25px;
     border-top: 1px solid rgba(238, 238, 238, 1);
     border-bottom: 1px solid rgba(238, 238, 238, 1);
-    margin-bottom: 25px;
+    
   &__wrapper {
       margin: 4px 0px;
     display: flex;
     padding-left: 16px;
     padding-right: 16px;
+    @media(min-width: 768px){
+      padding-left: 32px;
+      padding-right: 32px;
+    }
   }
   &__item {
     position: relative;

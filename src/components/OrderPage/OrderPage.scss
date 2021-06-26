@@ -3,8 +3,13 @@
     display: grid;
     grid-template-columns: 85px 1fr;
     grid-template-areas: "aside order";
+    grid-template-rows: 1fr;
   }
   @media (min-width: 1024px) {
     grid-template-columns: 65px 1fr;
   }
+}
+
+.order__block{
+  grid-area: order;
 }

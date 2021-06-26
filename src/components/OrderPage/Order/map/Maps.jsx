@@ -11,7 +11,7 @@ export const Maps = () => {
       <YMaps className="order__map" style={{ width: "100%", height: "100%" }}>
         <Map
           defaultState={mapSettings}
-          style={{ width: "100%", height: "100%" }}
+          style={{ width: "100%", height: "100%", maxWidth:'736px' }}
         >
           {/* <Placemark
           geometry={{

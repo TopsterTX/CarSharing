@@ -9,7 +9,7 @@ export const Main = () => {
         <main className="main">
             <Header type='slider'/>
             <Content/>
-            <Footer/>
+            <Footer className='footer'/>
         </main>       
     )
 }

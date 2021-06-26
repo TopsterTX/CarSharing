@@ -1,7 +1,7 @@
 import React from "react";
 import "./Form.scss";
 
-export const Form = ({ city, point, setCity, setPoint }) => {
+export const Form = ({ city, point, setCity, setPoint, disabled }) => {
   return (
     <form action="" className="order__form">
       <div className="order__form-container">
@@ -26,6 +26,7 @@ export const Form = ({ city, point, setCity, setPoint }) => {
             onChange={(e) => {
               setPoint(e.target.value);
             }}
+            disabled={disabled}
           />
         </div>
       </div>
