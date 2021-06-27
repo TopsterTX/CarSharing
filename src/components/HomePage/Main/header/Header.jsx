@@ -1,6 +1,6 @@
 import React from "react";
-import { Menu } from "../../Aside/menu/Menu";
-import { Location } from "./location/Location";
+import { BurgerMenu } from "../../../Aside/BurgerMenu/BurgerMenu";
+import { Location } from "./Location/Location";
 import "./Header.scss";
 
 export const Header = ({type}) => {
@@ -8,8 +8,8 @@ export const Header = ({type}) => {
     <header className="header">
       <div className="header__container">
         <div className="header__block">
-          <Menu
-            className="burger__menu burger__menu--header"
+          <BurgerMenu
+            className="burger-menu burger-menu--header"
             id="menu-header"
             type={type}
           />

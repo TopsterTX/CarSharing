@@ -1,0 +1,25 @@
+.social {
+  min-height: 40px;
+  display: flex;
+  &__icon {
+    display: block;
+    min-width: 32px;
+    min-height: 32px;
+    background-repeat: no-repeat;
+    margin-right: 24px;
+    transition: 0.2s all;
+  }
+  // &__icon--telegram {
+  //   background-image: url("../../../../../icons/Telegram_white.svg");
+  // }
+  // &__icon--instagram {
+  //   background-image: url("../../../../../icons//Instagram_white.svg");
+  // }
+  // &__icon--facebook {
+  //   background-image: url("../../../../../icons//Facebook_white.svg");
+  // }
+  &__icon:hover {
+    transform: scale(1.25);
+    transition: 0.2s all;
+  }
+}

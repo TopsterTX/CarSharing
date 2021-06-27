@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { ContentSlider } from "./content_slider/ContentSlider";
-import { Arrow } from "./arrow/Arrow";
+import { ContentSlider } from "./ContentSlider/ContentSlider";
+import { Arrow } from "./Arrow/Arrow";
+import { Carousel } from "react-responsive-carousel";
 import "./Slider.scss";
 
 export const Slider = () => {
-  // Счётчик слайдера (какой именно слайд сейчас отображается)
-  const [value, setValue] = useState(0);
-  // Массив с информацией для слайда
   let sliderData = [
     {
       text: "Оставляйте машину на платных городских парковках и разрешенных местах, не нарушая ПДД, а также в аэропортах.",
@@ -28,40 +26,29 @@ export const Slider = () => {
       title: "Обслуживание",
       id: 3,
     },
+    {
+      text: "LOREM",
+      title: "LOREM",
+      id: 4,
+    },
   ];
-
 
   return (
     <section className="slider">
-      {/* Меняем className контейнера слайдера, добавляя модификатор чтобы отобразить нужную картинку */}
-      <div
-        className={`slider__wrapper slider__wrapper--${sliderData[value].id}`}
-      >
-        <div className="slider__container" id="slider-hidden">
-          {/* В props стрелки передаю все необходимые параметры. 
-              Логика переключения слайдера зависит от присвоенного класса*/}
-          <Arrow
-            className="arrow arrow__prev"
-            setValue={setValue}
-            value={value}
-            data={sliderData}
-          />
-          {/* Отрисовываем содержимое слайдера в зависимости от value*/}
-          <ContentSlider
-            value={value}
-            title={sliderData[value].title}
-            text={sliderData[value].text}
-            setValue={setValue}
-            data={sliderData}
-          />
-          <Arrow
-            className="arrow arrow__next"
-            setValue={setValue}
-            value={value}
-            data={sliderData}
-          />
+      <Carousel>
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
+          necessitatibus molestias sapiente sit. Ex atque sed eum molestias
+          magnam tempora molestiae necessitatibus aperiam. Reiciendis
+          temporibus, aperiam cumque corrupti adipisci tempore.
         </div>
-      </div>
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit aliquam
+          id non sed nam deleniti, earum rerum officia molestias quae error
+          illum laboriosam eligendi perspiciatis soluta iusto doloremque
+          incidunt officiis!
+        </div>
+      </Carousel>
     </section>
   );
 };

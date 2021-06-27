@@ -1,3 +1,5 @@
+@import "../../../vars.scss";
+
 .navigation {
   top: 0;
   left: -100%;
@@ -6,11 +8,9 @@
   min-width: 100%;
   min-height: 100%;
   transition: 0.5s all ease-out;
-  background-color: #111518;
+  background-color: $mainBlack;
   &__list {
-    margin-top: 80px;
-    margin-left: 28px;
-    margin-bottom: 15px;
+    margin: 80px 28px 15px 28px;
   }
   &__item {
     margin-bottom: 15px;
@@ -26,7 +26,7 @@
     line-height: 26px;
     transition: 0.2s all;
     &:hover {
-      color: #0ec261;
+      color: $mainAccentColor;
       transition: 0.2s all;
     }
   }
@@ -43,11 +43,12 @@
   }
 }
 
+//*------------------------------------
+
 @media (min-width: 768px) {
   .navigation {
     &__list {
-      margin-left: 97px;
-      margin-right: 97px;
+      margin: 0 97px 0 97px;
     }
     &__wrapper {
       display: flex;
@@ -67,8 +68,10 @@
   }
 }
 
+//*------------------------------------
+
 @media (min-width: 1024px) {
   .navigation {
-    background-color: rgba(17, 21, 24, 1);
+    background-color: $mainBlack;
   }
 }

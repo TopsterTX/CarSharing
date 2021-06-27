@@ -9,7 +9,6 @@ export const Dots = ({ setValue, value, data }) => {
         {data.map((el, index) => {
           return (
             <span
-              // Делаю точку active в том случае если value совпадает с index точки.
               className={index === value ? "active" : ""}
               key={index}
               // При клике меняем value на значение index того элемента по которому кликнули,

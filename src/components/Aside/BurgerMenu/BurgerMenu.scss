@@ -1,31 +1,6 @@
-.burger__menu--header {
-  width: 21px;
-  height: 16px;
-  span {
-    border-radius: 1px;
-    background-color: #121212;
-  }
-  @media (min-width: 768px) {
-    display: none;
-  }
-}
+@import "../../../vars.scss";
 
-.burger__menu--aside {
-  width: 33px;
-  height: 18px;
-  display: none;
-  span {
-    background-color: #fff;
-  }
-  @media (min-width: 768px) {
-    display: block;
-  }
-  @media (min-width: 1024px) {
-    width: 24px;
-  }
-}
-
-.burger__menu {
+.burger-menu {
   margin-left: 5px;
   z-index: 5;
   position: relative;
@@ -65,8 +40,30 @@
       width: 50%;
       transform: rotate(45deg);
     }
+  }
+  &--header {
+    width: 21px;
+    height: 16px;
+    span {
+      border-radius: 1px;
+      background-color: $mainBlack;
+    }
+  }
+  &--aside {
+    width: 33px;
+    height: 18px;
+    display: none;
+    span {
+      background-color: #fff;
+    }
+  }
+}
 
-    @media (min-width: 768px) {
+//*------------------------------------
+
+@media (min-width: 768px) {
+  .burger-menu {
+    &.active {
       span:nth-child(1) {
         top: 15%;
         left: -1%;
@@ -81,7 +78,20 @@
       }
     }
 
-    @media (min-width: 1024px) {
+    &--header {
+      display: none;
+    }
+    &--aside {
+      display: block;
+    }
+  }
+}
+
+//*------------------------------------
+
+@media (min-width: 1024px) {
+  .burder-menu {
+    &.active {
       span:nth-child(1) {
         top: 18%;
         left: -1%;
@@ -95,5 +105,14 @@
         transform: rotate(45deg);
       }
     }
+
+    &--aside {
+      width: 24px;
+    }
   }
+}
+
+//*------------------------------------
+
+@media (min-width: 1440px) {
 }

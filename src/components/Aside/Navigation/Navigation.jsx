@@ -1,11 +1,11 @@
 import React from "react";
-import { Language } from "../../Aside/language/Language";
-import { Social } from "./social/Social";
+import { Language } from "../../Aside/Language/Language";
+import { Social } from "./Social/Social";
 import "./Navigation.scss";
 
-export const Navigation = () => {
+export const Navigation = ({ isOpenNav }) => {
   return (
-    <nav className="navigation" id="nav">
+    <nav className={isOpenNav ? "navigation active" : "navigation"} id="nav">
       <div className="navigation__wrapper">
         <ul className="navigation__list">
           <li className="navigation__item">

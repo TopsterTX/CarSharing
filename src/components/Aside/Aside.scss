@@ -1,0 +1,23 @@
+@import '../../vars.scss';
+
+.aside {
+  display: block;
+  grid-area: aside;
+  background-color: $mainBlack;
+}
+.aside__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 35px 27px 27px 27px;
+}
+
+//*--------------------------------------
+
+// @media(min-width:768px){
+//   .aside{
+//     display: block;
+//   }
+// }

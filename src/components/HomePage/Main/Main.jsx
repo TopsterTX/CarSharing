@@ -1,15 +1,15 @@
-import React from 'react'
-import { Header } from './header/Header'
-import { Content } from './content/Content'
-import { Footer } from './footer/Footer'
-import './Main.scss'
+import React from "react";
+import { Header } from "./Header/Header";
+import { Content } from "./Content/Content";
+import { Footer } from "./Footer/Footer";
+import "./Main.scss";
 
 export const Main = () => {
-    return(
-        <main className="main">
-            <Header type='slider'/>
-            <Content/>
-            <Footer className='footer'/>
-        </main>       
-    )
-}
+  return (
+    <main className="main">
+      <Header />
+      <Content />
+      <Footer />
+    </main>
+  );
+};

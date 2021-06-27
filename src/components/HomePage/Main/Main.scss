@@ -1,7 +1,27 @@
 .main {
-  grid-area: main;
+  min-width: fit-content;
   min-height: 100vh;
   display: flex;
+  flex: 1 1;
+  grid-area: main;
   flex-direction: column;
   justify-content: space-between;
+  // padding-left: 16px;
+  // padding-right: 16px;
+  position: relative;
+  z-index: auto;
+}
+
+@media(min-width:768px){
+  .main{
+    // padding-left: 32px;
+    // padding-right: 32px;
+  }
+}
+
+@media(min-width: 1440px){
+  .main{
+    // padding-left: 32px;
+    // padding-right: 32px;
+  }
 }

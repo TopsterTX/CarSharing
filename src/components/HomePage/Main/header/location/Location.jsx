@@ -4,7 +4,7 @@ import "./Location.scss";
 export const Location = () => {
   return (
     <section className="location">
-      <span className="location__icon"></span>
+      <img src='../../../../../icons/location.svg' className="location__icon"/>
       <span className="location__place">Ульяновск</span>
     </section>
   );

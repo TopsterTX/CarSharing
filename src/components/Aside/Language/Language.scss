@@ -1,3 +1,5 @@
+@import '../../../vars.scss';
+
 .language {
   width: 47px;
   height: 47px;
@@ -8,7 +10,7 @@
   align-items: center;
   transition: 0.2s all;
   &:hover {
-    border: 1px solid #eee;
+    border: 1px solid $mainGrayBright;
     transition: 0.2s all;
   }
   &__button {
@@ -19,13 +21,20 @@
   &:active {
     .language__button {
       background-color: transparent;
-      color: #0ec261;
-      transition: .2s all;
+      color: $mainAccentColor;
+      transition: 0.2s all;
     }
   }
   &--navigation {
     margin: 28px;
-    @media (min-width: 768px) {
+  }
+}
+
+//*------------------------------------
+
+@media (min-width: 768px) {
+  .language {
+    &--navigation {
       display: none;
     }
   }

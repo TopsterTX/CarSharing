@@ -1,6 +1,6 @@
 import React from "react";
 import "./ContentSlider.scss";
-import { Dots } from "./dots/Dots";
+import { Dots } from "./Dots/Dots";
 
 export const ContentSlider = ({ value, title, text, setValue, data }) => {
   return (

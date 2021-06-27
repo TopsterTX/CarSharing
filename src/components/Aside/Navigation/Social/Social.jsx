@@ -8,17 +8,23 @@ export const Social = () => {
         href="#"
         target="_blank"
         className="social__icon social__icon--telegram"
-      ></a>
+      >
+        <img src="../../../../../icons/Telegram_white.svg" alt="" />
+      </a>
       <a
         href="#"
         target="_blank"
         className="social__icon social__icon--facebook"
-      ></a>
+      >
+        <img src="../../../../../icons/Facebook_white.svg" alt="" />
+      </a>
       <a
         href="#"
         target="_blank"
         className="social__icon social__icon--instagram"
-      ></a>
+      >
+        <img src="../../../../../icons/Instagram_white.svg" alt="" />
+      </a>
     </section>
   );
 };

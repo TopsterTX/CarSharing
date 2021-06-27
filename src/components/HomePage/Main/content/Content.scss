@@ -1,19 +1,9 @@
+@import "../../../../vars.scss";
+
 .content {
   margin-bottom: 100px;
-  @media(min-width: 768px){
-    margin-bottom: 0;
-  }
   &__container {
-    padding-left: 16px;
-    padding-right: 16px;
-    @media (min-width: 768px) {
-      padding-right: 32px;
-      padding-left: 32px;
-    }
-    @media (min-width: 1440px) {
-      padding-right: 64px;
-      padding-left: 64px;
-    }
+    padding: 0 16px 0 16px;
   }
   &__title {
     display: flex;
@@ -21,30 +11,22 @@
     span {
       font-size: 32px;
     }
-    @media (min-width: 768px) {
-      span {
-        font-size: 70px;
-      }
-    }
+
     margin-bottom: 16px;
   }
   &__name {
-    color: #0ec261;
+    color: $mainAccentColor;
   }
   &__text {
     font-size: 18px;
-    color: #999;
+    color: $mainGrayDark;
     margin-bottom: 32px;
-    @media (min-width: 768px) {
-      font-size: 26px;
-      margin-bottom: 64px;
-    }
   }
   &__button {
     width: 100%;
     height: 50px;
-    background: linear-gradient(to right, #0ec261, #039f67);
-    color: #fff;
+    background: linear-gradient(to right, $mainAccentColor, #039f67);
+    color: $mainGrayBright;
     font-size: 18px;
     position: relative;
     display: flex;
@@ -62,28 +44,52 @@
     }
     &:disabled {
       transition: 0.2s all;
-      background: #eee;
+      background: $mainGrayBright;
     }
-    @media (min-width: 768px) {
+  }
+}
+
+//* ---------------------------------------
+
+@media (min-width: 768px) {
+  .content {
+    margin-bottom: 0;
+    &__container {
+      padding: 0 32px 0 32px;
+    }
+    &__title {
+      span {
+        font-size: 70px;
+      }
+    }
+    &__text {
+      font-size: 26px;
+      margin-bottom: 64px;
+    }
+    &__button {
       width: 250px;
       height: 48px;
-      margin-left: 32px;
-      margin-right: 32px;
+      margin: 0px 32px 0px 32px;
       border-radius: 10px;
     }
-    @media (min-width: 1440px) {
-      margin-right: 64px;
-      margin-left: 64px;
+    &__subtitle {
+      font-size: 70px;
     }
-  }
-  &__subtitle {
-    @media (min-width: 768px) {
+    &__name {
       font-size: 70px;
     }
   }
-  &__name {
-    @media (min-width: 768px) {
-      font-size: 70px;
+}
+
+//* ---------------------------------------
+
+@media (min-width: 1440px) {
+  .content {
+    &__container{
+      padding: 0 64px 0 64px;
+    }
+    &__button {
+      margin: 0 64px 0 64px;
     }
   }
 }
