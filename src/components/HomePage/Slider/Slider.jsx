@@ -38,19 +38,9 @@ export const Slider = () => {
       id: 3,
     },
   ];
-  
+
   const [value, setValue] = useState(0);
-  
-  // useEffect(() => {
-  //   setInterval(() => {
-  //     if(value < (sliderData.length - 1)){
-  //       setValue(value + 1)
-  //     } else if(value === (sliderData.length - 1)){
-  //       setValue(0)
-  //     }
-  //   }, 3000 )
-  // }, [value])
-  
+
   return (
     <section className="slider">
       {sliderData.map((el, index) => {
