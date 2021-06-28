@@ -1,7 +1,11 @@
 .slide{
     position: relative;
     height: 100%;
+    display: none;
     width: 100%;
+    &.active{
+        display: block;
+    }
     &__image{
         position: absolute;
         top: 0;
@@ -14,5 +18,17 @@
         display: flex;
         position: relative;
         z-index: 2;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        color: #fff;
+    }
+    &__content{
+        flex: 1 1;
+    }
+    &__arrow{
+        width: 70px;
+        height: 100%;
+        background-color: rgba(288,288,288, 0.2);
     }
 }
