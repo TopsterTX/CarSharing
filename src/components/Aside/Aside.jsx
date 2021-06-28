@@ -4,9 +4,9 @@ import { Language } from "./Language/Language";
 import { Navigation } from "./Navigation/Navigation";
 import "./Aside.scss";
 
-export const Aside = () => {
+export const Aside = ({isOpenNav, setIsOpenNav}) => {
 
-  const [isOpenNav, setIsOpenNav] = useState(false)
+  
 
   return (
     <aside className="aside">

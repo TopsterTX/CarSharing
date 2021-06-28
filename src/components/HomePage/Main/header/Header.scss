@@ -20,7 +20,6 @@
     font-size: 30px;
     color: #0ec261;
     font-weight: 700;
-    
   }
 }
 
@@ -36,7 +35,7 @@
       padding-right: 32px;
       padding-left: 32px;
     }
-    &__title{
+    &__title {
       margin-bottom: 0;
     }
   }
@@ -45,8 +44,8 @@
 //*--------------------------------------
 
 @media (min-width: 1440px) {
-  .header{
-    &__container{
+  .header {
+    &__container {
       padding-right: 64px;
       padding-left: 64px;
     }

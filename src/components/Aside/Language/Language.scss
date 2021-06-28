@@ -1,4 +1,4 @@
-@import '../../../vars.scss';
+@import "../../../vars.scss";
 
 .language {
   width: 47px;
@@ -13,17 +13,18 @@
     border: 1px solid $mainGrayBright;
     transition: 0.2s all;
   }
-  &__button {
-    background-color: transparent;
-    color: #fff;
-    transition: 0.2s all;
-  }
+
   &:active {
     .language__button {
       background-color: transparent;
       color: $mainAccentColor;
       transition: 0.2s all;
     }
+  }
+  &__button {
+    background-color: transparent;
+    color: #fff;
+    transition: 0.2s all;
   }
   &--navigation {
     margin: 28px;

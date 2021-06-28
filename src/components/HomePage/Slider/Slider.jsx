@@ -1,54 +1,76 @@
-import React, { useState, useEffect } from "react";
-import { ContentSlider } from "./ContentSlider/ContentSlider";
-import { Arrow } from "./Arrow/Arrow";
-import { Carousel } from "react-responsive-carousel";
+import React, { useState, useEffect, useRef } from "react";
+import { Slide } from "./Slide/Slide";
+import slide1 from "../../../images/slider-1.jpg";
+import slide2 from "../../../images/slider-2.jpg";
+import slide3 from "../../../images/slider-3.jpg";
+import slide4 from "../../../images/slider-4.jpg";
 import "./Slider.scss";
+import { Dots } from "./Dots/Dots";
 
 export const Slider = () => {
-  let sliderData = [
+  const sliderData = [
     {
+      img: slide1,
       text: "Оставляйте машину на платных городских парковках и разрешенных местах, не нарушая ПДД, а также в аэропортах.",
       title: "Бесплатная парковка",
+      bgButton: "linear-gradient(to right, #13493F, #0C7B1B)",
       id: 0,
     },
     {
+      img: slide2,
       text: "Полная страховка страховка автомобиля",
       title: "Страховка",
+      bgButton: "linear-gradient(to right, #132949, #0C7B67)",
       id: 1,
     },
     {
+      img: slide3,
       text: "Полный бак на любой заправке города за наш счёт",
       title: "Бензин",
+      bgButton: "linear-gradient(to right, #493013, #7B0C3B)",
       id: 2,
     },
     {
+      img: slide4,
       text: "Автомобиль проходит еженедельное TO",
       title: "Обслуживание",
+      bgButton: "linear-gradient(to right, #281349, #720C7B)",
       id: 3,
     },
-    {
-      text: "LOREM",
-      title: "LOREM",
-      id: 4,
-    },
   ];
-
+  
+  const [value, setValue] = useState(0);
+  
+  // useEffect(() => {
+  //   setInterval(() => {
+  //     if(value < (sliderData.length - 1)){
+  //       setValue(value + 1)
+  //     } else if(value === (sliderData.length - 1)){
+  //       setValue(0)
+  //     }
+  //   }, 3000 )
+  // }, [value])
+  
   return (
     <section className="slider">
-      <Carousel>
-        <div>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
-          necessitatibus molestias sapiente sit. Ex atque sed eum molestias
-          magnam tempora molestiae necessitatibus aperiam. Reiciendis
-          temporibus, aperiam cumque corrupti adipisci tempore.
-        </div>
-        <div>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit aliquam
-          id non sed nam deleniti, earum rerum officia molestias quae error
-          illum laboriosam eligendi perspiciatis soluta iusto doloremque
-          incidunt officiis!
-        </div>
-      </Carousel>
+      {sliderData.map((el, index) => {
+        return (
+          <Slide
+            img={el.img}
+            text={el.text}
+            title={el.title}
+            id={el.id}
+            active={value === el.id ? true : false}
+            setValue={setValue}
+            value={value}
+            dataLenght={sliderData.length - 1}
+            sliderData={sliderData}
+            key={index}
+            bgButton={el.bgButton}
+          />
+        );
+      })}
+      <Dots sliderData={sliderData} value={value} setValue={setValue} />
     </section>
   );
 };

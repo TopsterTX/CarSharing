@@ -35,15 +35,12 @@
     justify-content: center;
     transition: 0.2s all;
     &:hover {
-      transition: 0.2s all;
-      background: linear-gradient(to right, #0b934a, #026e47);
+      background: $homeButtonHover;
     }
     &:active {
-      transition: 0.2s all;
-      background: linear-gradient(to right, #076432, #013c27);
+      background: $homeButtonActive;
     }
     &:disabled {
-      transition: 0.2s all;
       background: $mainGrayBright;
     }
   }
@@ -85,7 +82,7 @@
 
 @media (min-width: 1440px) {
   .content {
-    &__container{
+    &__container {
       padding: 0 64px 0 64px;
     }
     &__button {

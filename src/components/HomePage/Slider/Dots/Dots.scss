@@ -1,0 +1,28 @@
+.dots {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  min-width: 45px;
+  bottom: 40px;
+  align-items: center;
+  justify-content: center;
+  left: 45%;
+
+  span {
+    margin: 0 4px;
+    display: block;
+    background-color: #fff;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    transition: 0.2s all;
+    cursor: pointer;
+  }
+  span:hover {
+    transition: 0.2s all;
+    transform: scale(1.5);
+  }
+  span.active {
+    background-color: rgba(14, 194, 97, 1);
+  }
+}
