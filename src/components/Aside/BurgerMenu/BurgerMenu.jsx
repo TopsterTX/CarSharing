@@ -4,7 +4,7 @@ import "./BurgerMenu.scss";
 export const BurgerMenu = ({ className, setIsOpenNav, isOpenNav }) => {
   const burgerMenu = useRef();
 
-  const menuBurgerHandler = (e) => {
+  const menuBurgerHandler = () => {
     setIsOpenNav(!isOpenNav);
     burgerMenu.current.classList.toggle("active");
   };

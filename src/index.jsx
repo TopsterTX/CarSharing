@@ -4,20 +4,21 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Context } from "./context";
 import "./index.scss";
-import { configureStore } from "./redux/configureStore";
+// import { configureStore } from "./redux/configureStore";
 import { Provider } from "react-redux";
 
-const store = configureStore();
-console.log(store.getState());
+// const store = configureStore();
+// console.log(store.getState());
 
 ReactDOM.render(
-  <Provider store={store}>
+  // <Provider store={store}>
     <React.StrictMode>
       {/* <Context.Provider> */}
         <App />
       {/* </Context.Provider> */}
     </React.StrictMode>
-  </Provider>,
+  // </Provider>
+  ,
   document.getElementById("root")
 );
 
