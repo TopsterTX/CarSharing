@@ -4,10 +4,10 @@ import { Content } from "./Content/Content";
 import { Footer } from "./Footer/Footer";
 import "./Main.scss";
 
-export const Main = ({isOpenNav, setIsOpenNav}) => {
+export const Main = () => {
   return (
     <main className="main">
-      <Header isOpenNav={isOpenNav} setIsOpenNav={setIsOpenNav}/>
+      <Header />
       <Content />
       <Footer />
     </main>

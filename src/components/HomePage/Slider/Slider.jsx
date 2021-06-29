@@ -1,66 +1,42 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Slide } from "./Slide/Slide";
-import slide1 from "../../../images/slider-1.jpg";
-import slide2 from "../../../images/slider-2.jpg";
-import slide3 from "../../../images/slider-3.jpg";
-import slide4 from "../../../images/slider-4.jpg";
+import { toggleSlide as actionToggleSlide } from "../../../redux/Reducers/Slider/slider";
 import "./Slider.scss";
 import { Dots } from "./Dots/Dots";
+import { connect } from "react-redux";
 
-export const Slider = () => {
-  const sliderData = [
-    {
-      img: slide1,
-      text: "Оставляйте машину на платных городских парковках и разрешенных местах, не нарушая ПДД, а также в аэропортах.",
-      title: "Бесплатная парковка",
-      bgButton: "linear-gradient(to right, #13493F, #0C7B1B)",
-      id: 0,
-    },
-    {
-      img: slide2,
-      text: "Полная страховка страховка автомобиля",
-      title: "Страховка",
-      bgButton: "linear-gradient(to right, #132949, #0C7B67)",
-      id: 1,
-    },
-    {
-      img: slide3,
-      text: "Полный бак на любой заправке города за наш счёт",
-      title: "Бензин",
-      bgButton: "linear-gradient(to right, #493013, #7B0C3B)",
-      id: 2,
-    },
-    {
-      img: slide4,
-      text: "Автомобиль проходит еженедельное TO",
-      title: "Обслуживание",
-      bgButton: "linear-gradient(to right, #281349, #720C7B)",
-      id: 3,
-    },
-  ];
-
-  const [value, setValue] = useState(0);
+const Slider = ({toggleSlide, slider}) => {
+  
 
   return (
-    <section className="slider">
-      {sliderData.map((el, index) => {
+    <section className={`slider ${slider.isHide ? 'hide': ''}`}>
+      {slider.sliderData.map((el, index) => {
         return (
           <Slide
             img={el.img}
             text={el.text}
             title={el.title}
             id={el.id}
-            active={value === el.id ? true : false}
-            setValue={setValue}
-            value={value}
-            dataLenght={sliderData.length - 1}
-            sliderData={sliderData}
+            active={slider.slideNum === el.id ? true : false}
+            setValue={toggleSlide}
+            value={slider.slideNum}
+            dataLenght={slider.sliderData.length - 1}
+            sliderData={slider.sliderData}
             key={index}
             bgButton={el.bgButton}
           />
         );
       })}
-      <Dots sliderData={sliderData} value={value} setValue={setValue} />
+      <Dots sliderData={slider.sliderData} value={slider.slideNum} setValue={toggleSlide} />
     </section>
   );
 };
+
+
+//* Переменные из redux называются иначе потому что до redux пользоватлся useState
+export default connect(
+  ({slider}) => ({slider}),
+  {
+    toggleSlide: actionToggleSlide,
+  }
+)(Slider)

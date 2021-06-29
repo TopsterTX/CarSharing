@@ -25,6 +25,7 @@
   &__button {
     width: 100%;
     height: 50px;
+    background: green;
     background: linear-gradient(to right, $mainAccentColor, #039f67);
     color: $mainGrayBright;
     font-size: 18px;
@@ -33,7 +34,7 @@
     text-decoration: none;
     align-items: center;
     justify-content: center;
-    transition: 0.2s all;
+    transition: 1s all;
     &:hover {
       background: $homeButtonHover;
     }

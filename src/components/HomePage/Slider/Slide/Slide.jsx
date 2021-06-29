@@ -1,6 +1,9 @@
 import React from "react";
 import "./Slide.scss";
-import '../../../../vars.scss'
+import "../../../../vars.scss";
+import leftArrow from "../../../../icons/leftArrow.svg";
+import rightArrow from "../../../../icons/rightArrow.svg"
+
 
 export const Slide = ({
   img,
@@ -18,7 +21,6 @@ export const Slide = ({
     } else if (value <= 0) {
       return setValue(dataLenght);
     }
-    console.log("left", value);
   };
 
   const arrowRightHandler = () => {
@@ -27,7 +29,6 @@ export const Slide = ({
     } else if (value >= dataLenght) {
       return setValue(0);
     }
-    console.log("right", value);
   };
 
   return (
@@ -42,7 +43,7 @@ export const Slide = ({
             arrowLeftHandler();
           }}
         >
-          <span />
+          <img src={leftArrow} />
         </div>
         <div className="slide__content">
           <h2 className="slide__title">{title}</h2>
@@ -60,7 +61,7 @@ export const Slide = ({
             arrowRightHandler();
           }}
         >
-          <span />
+          <img src={rightArrow} />
         </div>
       </div>
     </section>

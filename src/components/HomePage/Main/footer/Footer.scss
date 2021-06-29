@@ -19,6 +19,14 @@
     margin-bottom: 8px;
     color: $mainAccentColor;
     line-height: 15px;
+    text-decoration: none;
+    transition: .2s all;
+    &:hover{
+      color: $mainGrayBright;
+    }
+    &:disabled{
+      color: $mainGrayDark;
+    }
   }
   &__copyright {
     font-size: 13px;
@@ -45,6 +53,9 @@
       order: 1;
       color: $mainBlack;
       text-decoration: none;
+      &:hover{
+        color: $mainAccentColor;
+      }
     }
     &__copyright {
       color: $mainGrayDark;

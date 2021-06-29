@@ -1,6 +1,6 @@
 import React from "react";
 import { Main } from "./Main/Main";
-import { Slider } from "./Slider/Slider";
+import Slider from "./Slider/Slider";
 import "./HomePage.scss";
 
 export const HomePage = ({isOpenNav, setIsOpenNav}) => {
