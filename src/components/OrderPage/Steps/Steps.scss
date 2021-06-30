@@ -1,49 +1,65 @@
+@import "../../../vars.scss";
+
 .steps {
-    margin-top: 25px;
-    border-top: 1px solid rgba(238, 238, 238, 1);
-    border-bottom: 1px solid rgba(238, 238, 238, 1);
-    
+  margin-top: 25px;
+  border-top: 1px solid $mainGrayBright;
+  border-bottom: 1px solid $mainGrayBright;
   &__wrapper {
-      margin: 4px 0px;
+    margin: 4px 0px;
     display: flex;
-    padding-left: 16px;
-    padding-right: 16px;
-    @media(min-width: 768px){
-      padding-left: 32px;
-      padding-right: 32px;
-    }
-    @media(min-width: 768px){
-      margin: 8px 0;
-    }
+    padding: 0 16px 0 16px;
   }
   &__item {
     position: relative;
     display: flex;
     align-items: center;
-    
     &:not(:last-child)::after {
       content: "";
       position: relative;
-      margin-right: 3px;
-      margin-left: 3px;
+      margin: 0 3px 0 3px;
       border: 3px solid transparent;
-      border-left: 4px solid rgba(153, 153, 153, 1);
+      border-left: 4px solid $mainGrayDark;
     }
     &:not(:last-child) {
-      
     }
   }
   &__link {
     margin-right: 5px;
     text-decoration: none;
-    color: rgba(153, 153, 153, 1);
+    color: $mainGrayDark;
     font-size: 10px;
     font-weight: 700;
-    &.active{
-        color: rgba(14, 194, 97, 1);
+    &.active {
+      color: $mainAccentColor;
     }
-    @media(min-width:1024px){
+  }
+}
+
+@media (min-width: 768px) {
+  .steps {
+    &__wrapper {
+      padding: 0 32px 0 32px;
+      margin: 8px 0;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .steps {
+    &__link {
       font-size: 12px;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .steps{
+    &__wrapper{
+      padding: 0 64px 0 64px;
+    }
+    &__link{
+      font-size: 14px;
+      line-height: 16px;
     }
   }
 }
