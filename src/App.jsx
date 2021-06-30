@@ -15,7 +15,7 @@ function App() {
         <Aside  />
         <Switch>
           <Route to="/home" render={() => <HomePage />} />
-          {/* <Route to='/order' component={Order}/> */}
+          <Route to='/order' render={() => <OrderPage />}/>
         </Switch>
       </div>
     </BrowserRouter>
