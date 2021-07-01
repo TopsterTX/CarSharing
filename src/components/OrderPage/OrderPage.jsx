@@ -10,7 +10,7 @@ import "./OrderPage.scss";
 export const OrderPage = () => {
   return (
     <div className="order-page">
-      <Header />
+      <Header className='header--order'/>
       <Steps/>
       <div className="order-page__content">
         <Order />

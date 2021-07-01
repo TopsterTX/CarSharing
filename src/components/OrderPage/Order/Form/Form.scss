@@ -22,6 +22,13 @@
       font-size: 12px
     }
   }
+  &__list-city{
+    position: absolute;
+    
+  }
+  &__list{
+    position: relative;
+  }
   &__point {
     width: 100%;
     font-weight: 300;

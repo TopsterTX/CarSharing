@@ -13,6 +13,7 @@ function App() {
         <Switch>
           <Route path="/home" render={() => <HomePage />} />
           <Route path="/order" render={() => <OrderPage />} />
+          <Redirect to="/home" />
         </Switch>
       </div>
     </BrowserRouter>

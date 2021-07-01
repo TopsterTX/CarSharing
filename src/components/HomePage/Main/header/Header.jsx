@@ -3,9 +3,9 @@ import BurgerMenu from "../../../Aside/BurgerMenu/BurgerMenu";
 import { Location } from "./Location/Location";
 import "./Header.scss";
 
-export const Header = () => {
+export const Header = ({className}) => {
   return (
-    <header className="header">
+    <header className={`header ${className}`} >
       <div className="header__container">
         <div className="header__block">
           <BurgerMenu

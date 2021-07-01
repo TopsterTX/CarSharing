@@ -5,9 +5,11 @@
   border-top: 1px solid $mainGrayBright;
   border-bottom: 1px solid $mainGrayBright;
   &__wrapper {
-    margin: 4px 0px;
+    
+    margin: 0 4px;
     display: flex;
-    padding: 0 16px 0 16px;
+    padding-right: 16px;
+    padding-left: 16px;
   }
   &__item {
     position: relative;
@@ -53,13 +55,18 @@
 }
 
 @media (min-width: 1440px) {
-  .steps{
-    &__wrapper{
+  .steps {
+    &__wrapper {
       padding: 0 64px 0 64px;
+      max-width: 1367px;
+      margin: 0 auto;
     }
-    &__link{
+    &__link {
       font-size: 14px;
       line-height: 16px;
+    }
+    &__item{
+      margin: 8px 0px;
     }
   }
 }

@@ -7,18 +7,19 @@ export const Form = () => {
       <div className="form__container">
         <div className="form__city">
           <span className="city">Город</span>
-          <input
-            type="text"
-            className="form__input"
-          />
+          <div className="form__list">
+            <input type="text" className="form__input" />
+          </div>
         </div>
         <div className="form__point">
           <span className="point">Пункт выдачи</span>
-          <input
-            type="text"
-            className="form__input"
-            placeholder="Начните вводить пункт ..."
-          />
+          <div className="form__list">
+            <input
+              type="text"
+              className="form__input"
+              placeholder="Начните вводить пункт ..."
+            />
+          </div>
         </div>
       </div>
     </form>
