@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "./Content.scss";
 
 export const Content = () => {
@@ -11,7 +12,7 @@ export const Content = () => {
         </h1>
         <p className="content__text">Поминутная аренда авто твоего города</p>
       </div>
-      <button className="content__button order__total-button">Забронировать</button>
+      <NavLink to='/order' className="content__button order__total-button">Забронировать</NavLink>
     </section>
   );
 };

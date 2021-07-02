@@ -1,0 +1,31 @@
+@import "../../../vars.scss";
+
+.order {
+  min-height: fit-content;
+  flex: 1 1;
+  &__container {
+    padding: 16px 16px 0 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  .order {
+    &__container {
+      padding: 32px 32px 0 32px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .order {
+    border-right: 1px solid $mainGrayBright;
+  }
+}
+
+@media(min-width: 1440px){
+  .order{
+    &__container{
+      padding: 32px 64px 0 64px;
+    }
+  }
+}

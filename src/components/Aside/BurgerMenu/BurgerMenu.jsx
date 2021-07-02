@@ -13,7 +13,7 @@ const BurgerMenu = ({ className, navigation, toggleNav, sliderHide,slider }) => 
     toggleNav(!navigation.isOpenNav);
     burgerMenu.current.classList.toggle("active");
     sliderHide(!slider.isHide);
-    console.log(!slider.isHide);
+    document.body.classList.toggle('--lock')
   };
 
   return (
