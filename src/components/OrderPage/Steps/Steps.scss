@@ -5,11 +5,8 @@
   border-top: 1px solid $mainGrayBright;
   border-bottom: 1px solid $mainGrayBright;
   &__wrapper {
-    
-    margin: 0 4px;
+    padding: 4px 16px 4px 16px;
     display: flex;
-    padding-right: 16px;
-    padding-left: 16px;
   }
   &__item {
     position: relative;
@@ -40,8 +37,7 @@
 @media (min-width: 768px) {
   .steps {
     &__wrapper {
-      padding: 0 32px 0 32px;
-      margin: 8px 0;
+      padding: 8px 32px 8px 32px;
     }
   }
 }
@@ -57,16 +53,25 @@
 @media (min-width: 1440px) {
   .steps {
     &__wrapper {
-      padding: 0 64px 0 64px;
+      padding: 8px 64px 8px 64px;
       max-width: 1367px;
       margin: 0 auto;
     }
     &__link {
       font-size: 14px;
       line-height: 16px;
+      margin-right: 16px;
     }
-    &__item{
-      margin: 8px 0px;
+    &__item {
+      
+      margin-right: 10px;
+      &:not(:last-child)::after {
+        content: "";
+        position: relative;
+        margin: 0 3px 0 3px;
+        border: 5px solid transparent;
+        border-left: 7px solid $mainGrayDark;
+      }
     }
   }
 }

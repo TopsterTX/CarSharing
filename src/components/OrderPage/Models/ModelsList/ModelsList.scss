@@ -1,0 +1,28 @@
+@import "../../../../vars.scss";
+
+.models-list {
+  height: max-content;
+}
+
+@media (min-width: 768px) {
+  .models-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+// @media (min-width: 1024px) {
+//   .models-list {
+//     max-width: 736px;
+//     height: 70%;
+//     overflow-y: scroll;
+//     overflow-x: hidden;
+//   }
+// }
+// @media screen and (min-width: 1024px), screen and (max-height: 880px) {
+//   .models-list {
+//     overflow: scroll;
+//     overflow-x: hidden;
+
+//   }
+// }

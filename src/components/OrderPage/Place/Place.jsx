@@ -3,13 +3,13 @@ import React, { useEffect, useState } from "react";
 import { Form } from "./Form/Form";
 import { Maps } from "./Map/Maps";
 import { Total } from "../Total/Total";
-import "./Order.scss";
+import "./Place.scss";
 import { connect } from "react-redux";
 
-function Order() {
+function Place() {
   return (
-    <section className="order">
-      <div className="order__container">
+    <section className="place">
+      <div className="place__container">
         <Form />
         <Maps />
       </div>
@@ -17,4 +17,4 @@ function Order() {
   );
 }
 
-export default connect()(Order);
+export default connect()(Place);

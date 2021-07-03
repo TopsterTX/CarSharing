@@ -1,0 +1,21 @@
+.models {
+  
+  &__container {
+    padding: 16px 16px 32px 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  .models {
+    &__container {
+      padding: 32px 32px 32px 32px;
+    }
+  }
+}
+@media (min-width: 1440px) {
+  .models {
+    &__container {
+      padding: 32px 64px 32px 64px;
+    }
+  }
+}
