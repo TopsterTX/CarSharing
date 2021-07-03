@@ -1,4 +1,5 @@
 import React from "react";
+import  TotalList  from "./TotalList/TotalList";
 import "./Total.scss";
 
 export const Total = () => {
@@ -6,11 +7,7 @@ export const Total = () => {
     <section className="total">
       <div className="total__wrapper">
         <div className="total__title">Ваш заказ:</div>
-        <div className="total__point">
-          <span>Пункт выдачи</span>
-          <span></span>
-          <span>Ульяновск, Нариманова 32</span>
-        </div>
+        <TotalList/>
         <div className="total__price">
           <span>Цена: </span>
           <span> от 8 000 до 12 000 ₽</span>

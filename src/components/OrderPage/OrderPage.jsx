@@ -4,7 +4,7 @@ import { Footer } from "../HomePage/Main/Footer/Footer";
 import { Header } from "../HomePage/Main/Header/Header";
 import {Steps} from '../OrderPage/Steps/Steps'
 import Order from "../OrderPage/Order/Order";
-import { Total } from "./Order/Total/Total";
+import { Total } from "./Total/Total";
 import "./OrderPage.scss";
 
 export const OrderPage = () => {
