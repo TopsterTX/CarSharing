@@ -2,17 +2,21 @@ import React, { useRef, useEffect } from "react";
 import { connect } from "react-redux";
 import { choseModel as actionChoseModel } from "../../../../redux/Reducers/Cars/cars";
 import { unchoseModel as actionUnchoseModel } from "../../../../redux/Reducers/Cars/cars";
+import { choseCar as activeChoseCar } from "../../../../redux/Reducers/TotalList/totalList";
 import "./ModelsItem.scss";
 
 const ModelsItem = ({
   price,
   model,
+  car,
   img,
   active,
   index,
   id,
   choseModel,
   unchoseModel,
+  choseCar,
+  isChoseModel,
 }) => {
   const activeItem = useRef();
   useEffect(() => {
@@ -30,14 +34,21 @@ const ModelsItem = ({
       return unchoseModel(id);
     }
   };
-
+  console.log(isChoseModel);
   return (
     <li
       className={`models-item ${active ? "active" : "disable"}`}
       onClick={() => {
-        if (activeItem.current.classList.contains("disable"))
-          return modelsItemActiveHandler();
-        else if (activeItem.current.classList.contains("active"))
+        if (
+          activeItem.current.classList.contains("disable") &&
+          isChoseModel === false
+        ) {
+          modelsItemActiveHandler();
+          choseCar(model,car);
+        } else if (
+          activeItem.current.classList.contains("active") &&
+          isChoseModel === true
+        )
           return modelsItemDisableHandler();
       }}
       ref={activeItem}
@@ -60,4 +71,5 @@ const ModelsItem = ({
 export default connect(({}) => ({}), {
   choseModel: actionChoseModel,
   unchoseModel: actionUnchoseModel,
+  choseCar: activeChoseCar,
 })(ModelsItem);

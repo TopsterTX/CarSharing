@@ -9,6 +9,7 @@ const defaultState = {
     {
       id: 0,
       active: false,
+      car: 'Hyndai',
       model: "ELANTRA",
       price: "12 000 - 25 000 ₽",
       img: elantra,
@@ -16,6 +17,7 @@ const defaultState = {
     {
       id: 1,
       active: false,
+      car: 'Hyndai',
       model: "i30 N",
       price: "10 000 - 32 000 ₽",
       img: i30n,
@@ -23,6 +25,7 @@ const defaultState = {
     {
       id: 2,
       active: false,
+      car: 'Hyndai',
       model: "CRETA",
       price: "12 000 - 25 000 ₽",
       img: creta,
@@ -30,6 +33,7 @@ const defaultState = {
     {
       id: 3,
       active: false,
+      car: 'Hyndai',
       model: "SONATA",
       price: "10 000 - 32 000 ₽",
       img: sonata,
@@ -37,6 +41,7 @@ const defaultState = {
     {
       id: 4,
       active: false,
+      car: 'Hyndai',
       model: "ELANTRA",
       price: "12 000 - 25 000 ₽",
       img: elantra,
@@ -44,6 +49,7 @@ const defaultState = {
     {
       id: 5,
       active: false,
+      car: 'Hyndai',
       model: "i30 N",
       price: "10 000 - 32 000 ₽",
       img: i30n,
@@ -51,6 +57,7 @@ const defaultState = {
     {
       id: 6,
       active: false,
+      car: 'Hyndai',
       model: "ELANTRA",
       price: "12 000 - 25 000 ₽",
       img: elantra,
@@ -58,6 +65,7 @@ const defaultState = {
     {
       id: 7,
       active: false,
+      car: 'Hyndai',
       model: "SONATA",
       price: "10 000 - 32 000 ₽",
       img: sonata,

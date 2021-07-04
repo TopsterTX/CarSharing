@@ -1,9 +1,13 @@
-import React from "react";
+import React, {useEffect} from "react";
+import  TotalButton  from "../TotalButton/TotalButton";
 import { NavLink } from "react-router-dom";
 import  TotalList  from "./TotalList/TotalList";
 import "./Total.scss";
 
 export const Total = () => {
+
+  
+
   return (
     <section className="total">
       <div className="total__wrapper">
@@ -14,7 +18,7 @@ export const Total = () => {
           <span> от 8 000 до 12 000 ₽</span>
         </div>
       </div>
-      <NavLink to='/order/models' className="total__button">Выбрать модель</NavLink>
+      <TotalButton path='/order/models' text='Дополнительно'/>
     </section>
   );
 };

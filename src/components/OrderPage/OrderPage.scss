@@ -11,6 +11,7 @@
 
 @media (min-width: 1024px) {
   .order-page {
+    max-height: 100vh;
     &__content {
       display: flex;
       flex-direction: row;

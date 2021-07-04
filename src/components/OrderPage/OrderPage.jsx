@@ -6,7 +6,7 @@ import { Steps } from "../OrderPage/Steps/Steps";
 import Place from "./Place/Place";
 import { Total } from "./Total/Total";
 import "./OrderPage.scss";
-import { Models } from "./Models/Models";
+import  Models  from "./Models/Models";
 
 export const OrderPage = () => {
   return (

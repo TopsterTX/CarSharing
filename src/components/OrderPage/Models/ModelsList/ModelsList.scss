@@ -11,18 +11,15 @@
   }
 }
 
-// @media (min-width: 1024px) {
-//   .models-list {
-//     max-width: 736px;
-//     height: 70%;
-//     overflow-y: scroll;
-//     overflow-x: hidden;
-//   }
-// }
-// @media screen and (min-width: 1024px), screen and (max-height: 880px) {
-//   .models-list {
-//     overflow: scroll;
-//     overflow-x: hidden;
 
-//   }
-// }
+@media (min-width: 1024px) {
+  .models-list {
+    height: calc(100vh - 220px);
+    overflow: scroll;
+    overflow-x: hidden;
+    
+  }
+  ::-webkit-scrollbar{
+    display: none;
+  };
+}
