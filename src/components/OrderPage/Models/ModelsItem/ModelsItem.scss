@@ -14,13 +14,13 @@
   transition: 0.2s all;
   &.disable::before {
     transform: rotate(-10deg);
-    top: -30px;
+    top: -42px;
     left: -100%;
     content: "";
     position: absolute;
     width: 95%;
     z-index: 0;
-    height: 135%;
+    height: 200%;
     transition: 0.2s all;
     background: transparent;
   }
