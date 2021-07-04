@@ -5,7 +5,7 @@ import "./Maps.scss";
 
 const mapSettings = { center: [54.2794618, 48.1051445], zoom: 10 };
 
-console.log(YMaps);
+// console.log(YMaps);
 export const Maps = () => {
   return (
     <div className="map">

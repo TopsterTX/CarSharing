@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { Form } from "./Form/Form";
-import { Maps } from "./Map/Maps";
+import { Maps } from "./Maps/Maps";
 import { Total } from "../Total/Total";
 import "./Place.scss";
 import { connect } from "react-redux";

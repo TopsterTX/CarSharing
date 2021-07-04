@@ -8,7 +8,7 @@ import { configureStore } from "./redux/configureStore";
 import { Provider } from "react-redux";
 
 const store = configureStore();
-console.log(store.getState());
+// console.log(store.getState());
 
 const state = {
   isOpenNav: false,
