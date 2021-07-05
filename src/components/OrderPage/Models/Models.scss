@@ -1,5 +1,6 @@
+@import '../../../vars.scss';
+
 .models {
-  
   &__container {
     padding: 16px 16px 32px 16px;
   }
@@ -12,6 +13,13 @@
     }
   }
 }
+
+@media (min-width: 1024px) {
+  .models {
+    border-right: 1px solid $mainGrayBright;
+  }
+}
+
 @media (min-width: 1440px) {
   .models {
     &__container {

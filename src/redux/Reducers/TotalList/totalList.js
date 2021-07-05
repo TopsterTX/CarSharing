@@ -16,19 +16,19 @@ const defaultState = {
 const reduce = "TOTAL-LIST_";
 const CHOSE_CAR = `${reduce}CHOSE_CAR`;
 const ADD_ITEM = `${reduce}ADD_ITEM`;
+const UNCHOSE_CAR = `${reduce}UNCHOSE_CAR`
 
-// export const addItem = (head) => {
-//   return {
-//     type: ADD_ITEM,
-//     payload: [
-//       {
-//         id: defaultState.listItems.length,
-//         head,
-//         result: "",
-//       },
-//     ],
-//   };
-// };
+export const addItem = (head) => {
+  return {
+    type: ADD_ITEM,
+    payload: [
+      {
+        head,
+        result: "",
+      },
+    ],
+  };
+};
 
 export const choseCar = (model, car) => {
   return {
@@ -39,6 +39,13 @@ export const choseCar = (model, car) => {
     },
   };
 };
+
+export const unchoseCar = () => {
+  return {
+    type: UNCHOSE_CAR,
+    payload: '',
+  }
+}
 
 export default (state = defaultState, { type, payload }) => {
   switch (type) {
@@ -52,6 +59,15 @@ export default (state = defaultState, { type, payload }) => {
           return el;
         }),
       };
+    case UNCHOSE_CAR:
+      return {...state,
+        listItems: state.listItems.map(el => {
+          if(el.head === 'Модель'){
+            return {...el, result: payload}
+          }
+          return el;
+        })
+      }
     case ADD_ITEM: {
       return { ...state, listItems: [...state.listItems, ...payload] };
     }

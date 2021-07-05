@@ -2,7 +2,7 @@ import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { Footer } from "../HomePage/Main/Footer/Footer";
 import { Header } from "../HomePage/Main/Header/Header";
-import { Steps } from "../OrderPage/Steps/Steps";
+import  Steps  from "../OrderPage/Steps/Steps";
 import Place from "./Place/Place";
 import { Total } from "./Total/Total";
 import "./OrderPage.scss";
