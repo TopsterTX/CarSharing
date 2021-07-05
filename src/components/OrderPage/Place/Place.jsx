@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import {changeTotalButton as actionChangeTotalButton} from '../../../redux/Reducers/TotalButton/totalButton'
-import { Form } from "./Form/Form";
+import  Form  from "./Form/Form";
 import { Maps } from "./Maps/Maps";
 
 import "./Place.scss";

@@ -3,20 +3,21 @@ const defaultState = {
     {
       id: 0,
       head: "Пункт выдачи",
-      result: "Ульяновск, Нариманова 32",
+      result: "",
     },
     {
       id: 1,
-      head: 'Модель',
-      result: '',
-    }
+      head: "Модель",
+      result: "",
+    },
   ],
 };
 
 const reduce = "TOTAL-LIST_";
 const CHOSE_CAR = `${reduce}CHOSE_CAR`;
 const ADD_ITEM = `${reduce}ADD_ITEM`;
-const UNCHOSE_CAR = `${reduce}UNCHOSE_CAR`
+const UNCHOSE_CAR = `${reduce}UNCHOSE_CAR`;
+const CHOSE_PLACE = `${reduce}CHOSE_PLACE`;
 
 export const addItem = (head) => {
   return {
@@ -30,12 +31,22 @@ export const addItem = (head) => {
   };
 };
 
+export const chosePlace = (city, point) => {
+  return {
+    type: CHOSE_PLACE,
+    payload: {
+      city,
+      point,
+    },
+  };
+};
+
 export const choseCar = (model, car) => {
   return {
     type: CHOSE_CAR,
     payload: {
       model,
-      car
+      car,
     },
   };
 };
@@ -43,9 +54,9 @@ export const choseCar = (model, car) => {
 export const unchoseCar = () => {
   return {
     type: UNCHOSE_CAR,
-    payload: '',
-  }
-}
+    payload: "",
+  };
+};
 
 export default (state = defaultState, { type, payload }) => {
   switch (type) {
@@ -54,20 +65,30 @@ export default (state = defaultState, { type, payload }) => {
         ...state,
         listItems: state.listItems.map((el) => {
           if (el.head === "Модель") {
-            return { ...el, result: payload.car + ',' + ' ' + payload.model };
+            return { ...el, result: payload.car + "," + " " + payload.model };
           }
           return el;
         }),
       };
     case UNCHOSE_CAR:
-      return {...state,
-        listItems: state.listItems.map(el => {
-          if(el.head === 'Модель'){
-            return {...el, result: payload}
+      return {
+        ...state,
+        listItems: state.listItems.map((el) => {
+          if (el.head === "Модель") {
+            return { ...el, result: payload };
           }
           return el;
-        })
-      }
+        }),
+      };
+    case CHOSE_PLACE:
+      return {
+        ...state,
+        listItems: state.listItems.map((el) => {
+          if (el.head === "Пункт выдачи") {
+            return { ...el, result: payload.city + "," + " " + payload.point };
+          }
+        }),
+      };
     case ADD_ITEM: {
       return { ...state, listItems: [...state.listItems, ...payload] };
     }

@@ -4,6 +4,7 @@ import totalList from "./Reducers/TotalList/totalList";
 import cars from "./Reducers/Cars/cars";
 import totalButton from "./Reducers/TotalButton/totalButton";
 import steps from './Reducers/Steps/steps';
+import form from './Reducers/Form/form';
 
 export default {
   navigation,
@@ -12,4 +13,5 @@ export default {
   cars,
   totalButton,
   steps,
+  form,
 };

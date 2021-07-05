@@ -21,7 +21,7 @@
       margin-right: 4px;
     }
   }
-  &__item:active {
+  &__item.active {
     color: $mainBlack;
     &::before {
       height: 12px;
