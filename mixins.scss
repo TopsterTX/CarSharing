@@ -1,0 +1,25 @@
+@mixin filterPoint($colorActivePoint, $colorActiveText, $colorDisable) {
+  display: flex;
+  font-size: 12px;
+  font-weight: 300;
+  color: $colorDisable;
+  align-items: center;
+  transition: 0.2s all;
+  margin-right: 16px;
+  &::before {
+    display: block;
+    content: "";
+    height: 12px;
+    width: 12px;
+    border: 1px solid $colorDisable;
+    border-radius: 50%;
+    margin-right: 4px;
+  }
+  &.active,
+  &:active {
+    color: $colorActiveText;
+    &::before {
+      border: 3px solid $colorActivePoint;
+    }
+  }
+}
