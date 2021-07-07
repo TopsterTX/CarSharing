@@ -1,0 +1,29 @@
+@import "../../../vars.scss";
+
+.steps {
+  margin-top: 25px;
+  border-top: 1px solid $mainGrayBright;
+  border-bottom: 1px solid $mainGrayBright;
+  &__wrapper {
+    padding: 4px 16px 4px 16px;
+    display: flex;
+  }
+}
+
+@media (min-width: 768px) {
+  .steps {
+    &__wrapper {
+      padding: 8px 32px 8px 32px;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .steps {
+    &__wrapper {
+      padding: 8px 64px 8px 64px;
+      max-width: 1367px;
+      margin: 0 auto;
+    }
+  }
+}
