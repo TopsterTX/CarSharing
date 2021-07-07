@@ -29,6 +29,7 @@
 
 @media (min-width: 768px) {
   .total {
+    min-width: 351px;
     &__wrapper {
       padding: 32px 32px 0 32px;
     }
@@ -38,12 +39,6 @@
   }
 }
 
-@media (min-width: 1024px) {
-  .total {
-    max-width: 383px;
-    width: 100%;
-  }
-}
 
 @media (min-width: 1440px) {
   .total {
