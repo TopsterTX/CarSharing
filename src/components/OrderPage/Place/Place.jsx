@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
-
 import { Form } from "./Form/Form";
 import { Maps } from "./Map/Maps";
-import { Total } from "./Total/Total";
-import "./Order.scss";
+import "./Place.scss";
 import { connect } from "react-redux";
 
 function Order() {
