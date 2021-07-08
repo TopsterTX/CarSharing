@@ -1,0 +1,28 @@
+@import '../../../../mixins.scss';
+@import "../../../../vars.scss";
+
+.options-date-rent {
+  margin-bottom: 32px;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: max-content;
+  }
+  &__heading {
+    margin-bottom: 16px;
+    @include subHeading();
+  }
+  &__form {
+    @include forms();
+  }
+  &__input {
+    @include inputs();
+    font-size: 14px;
+    font-family: Roboto;
+    font-weight: 300;
+  }
+  &__input::-webkit-calendar-picker-indicator {
+    display: none;
+  }
+}

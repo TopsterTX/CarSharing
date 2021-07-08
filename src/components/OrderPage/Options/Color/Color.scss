@@ -1,0 +1,25 @@
+@import "../../../../vars.scss";
+@import "../../../../mixins.scss";
+
+.options-color {
+  margin-bottom: 32px;
+  &__heading {
+    @include subHeading();
+    display: block;
+    margin-bottom: 16px;
+  }
+  &__list {
+    display: flex;
+  }
+  &__item {
+    @include filterPoint($mainAccentColor, $mainBlack, $mainGrayDark);
+  }
+}
+
+@media(min-width: 1024px){
+  .options-color{
+    &__item{
+      font-size: 14px;
+    }
+  }
+}

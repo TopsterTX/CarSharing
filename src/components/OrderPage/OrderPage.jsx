@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import { Header } from "../HomePage/Main/Header/Header";
 import  Steps  from "../OrderPage/Steps/Steps";
 import Place from "./Place/Place";
+import {Options} from './Options/Options';
 import { Total } from "./Total/Total";
 import "./OrderPage.scss";
 // import  Models  from "./Models/Models";
@@ -16,6 +17,7 @@ export const OrderPage = () => {
         <Switch>
           <Route path="/order/place" render={() => <Place />} />
           {/* <Route path="/order/models" render={() => <Models />} /> */}
+          <Route path="/order/option" render={() => <Options />}/>
         </Switch>
         <Total />
       </div>
