@@ -93,6 +93,12 @@
   }
 }
 
+@media (min-width: 1024px) {
+  .total {
+    min-width: 351px;
+  }
+}
+
 @media (min-width: 1440px) {
   .total {
     &__wrapper {
