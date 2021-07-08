@@ -1,0 +1,29 @@
+@import '../../../vars.scss';
+
+.total-button {
+  margin: 0 auto;
+  width: 100%;
+  height: 48px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $homeButtonStandart;
+  text-decoration: none;
+  font-size: 18px;
+  &:hover {
+    background: $homeButtonHover;
+  }
+  &:active {
+    background: $homeButtonActive;
+  }
+}
+
+@media (min-width: 768px) {
+  .total-button {
+    margin-left: 32px;
+    max-width: 287px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+  }
+}

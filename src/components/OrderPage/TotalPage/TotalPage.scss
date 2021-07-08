@@ -1,0 +1,32 @@
+@import "../../../vars.scss";
+@import "../../../mixins.scss";
+
+.total-page {
+  max-width: 864px;
+  flex: 1 1;
+  &__container {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 auto;
+    min-width: 100%;
+    @include container();
+  }
+}
+
+@media (min-width: 768px) {
+  .total-page {
+    &__container {
+      flex-direction: row;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .total-page {
+    &__container {
+      min-width: 100%;
+    }
+  }
+}

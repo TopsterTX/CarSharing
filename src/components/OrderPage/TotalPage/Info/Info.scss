@@ -1,0 +1,38 @@
+@import '../../../../vars.scss';
+
+.total-page-info{
+    &__container{
+        display: flex;
+        flex-direction: column;
+    }
+    &__model{
+        font-weight: 300;
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+    &__number{
+        margin-bottom: 8px;
+        display: inline-block;
+        width: max-content;
+        padding: 4px 8px;
+        border-radius: 4px;
+        border: 1px solid $mainGrayDark;
+        font-size: 14px;
+        font-weight: 300;
+    }
+    &__fuel{
+        font-size: 14px;
+        margin-bottom: 8px;
+        font-weight: 300;
+        span{
+            font-weight: 700;
+        }
+    }
+    &__date{
+        font-size: 14px;
+        font-weight: 300;
+        span{
+            font-weight: 700;
+        }
+    }
+}

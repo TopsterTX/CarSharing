@@ -1,4 +1,5 @@
 import React from "react";
+import TotalButton from '../TotalButton/TotalButton'
 import "./Total.scss";
 
 export const Total = () => {
@@ -16,7 +17,7 @@ export const Total = () => {
           <span> от 8 000 до 12 000 ₽</span>
         </div>
       </div>
-      <button className="total__button">Выбрать модель</button>
+      <TotalButton />
     </section>
   );
 };

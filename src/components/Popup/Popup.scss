@@ -1,0 +1,48 @@
+@import '../../vars.scss';
+
+.popup{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    opacity: .92;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__container{
+    }
+    &__heading{
+        font-size: 24px;
+        line-height: 28px;
+        text-align: center;
+        margin-bottom: 32px;
+    }
+    &__buttons{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 13px 20px;
+        color: #fff;
+        font-size: 18px;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: .2s all;
+        &:hover{
+            border-radius: 8px;
+        }
+    }
+    &__accept{
+        background: $homeButtonStandart;
+        margin-right: 16px;
+    }
+    &__back{
+        background: $buttonSlide3;
+    }
+}
