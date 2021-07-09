@@ -1,23 +1,29 @@
-import React from "react";
-import TotalButton from '../TotalButton/TotalButton'
+import React, { useEffect } from "react";
+import { Info } from "./Info/Info";
+import { Car } from "./Car/Car";
 import "./Total.scss";
+import TotalPopup from "../../TotalPopup/TotalPopup";
+import { connect } from "react-redux";
+import { changeCheckButton as actionChangeCheckButton } from "../../../redux/Reducers/CheckButton/checkButton";
+import { changePopupActive as actionChangePopupActive } from "../../../redux/Reducers/Popup/popup";
 
-export const Total = () => {
+const TotalPage = ({ changeCheckButton, changePopupActive, total }) => {
+  useEffect(() => {
+    changeCheckButton("/order/total", "Заказать", changePopupActive);
+  }, []);
+
   return (
     <section className="total">
-      <div className="total__wrapper">
-        <div className="total__title">Ваш заказ:</div>
-        <div className="total__point">
-          <span>Пункт выдачи</span>
-          <span></span>
-          <span>Ульяновск, Нариманова 32</span>
-        </div>
-        <div className="total__price">
-          <span>Цена: </span>
-          <span> от 8 000 до 12 000 ₽</span>
-        </div>
+      <div className="total__container">
+        <Info confirmOrder={total.isConfirmOrder}/>
+        <Car />
+        <TotalPopup />
       </div>
-      <TotalButton />
     </section>
   );
 };
+
+export default connect(({total}) => ({total}), {
+  changeCheckButton: actionChangeCheckButton,
+  changePopupActive: actionChangePopupActive,
+})(TotalPage);

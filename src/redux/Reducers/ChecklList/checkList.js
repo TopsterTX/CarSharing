@@ -13,7 +13,7 @@ const defaultState = {
   ],
 };
 
-const reduce = "TOTAL-LIST_";
+const reduce = "CHECK-LIST_";
 const CHOSE_CAR = `${reduce}CHOSE_CAR`;
 const ADD_ITEM = `${reduce}ADD_ITEM`;
 const UNCHOSE_CAR = `${reduce}UNCHOSE_CAR`;

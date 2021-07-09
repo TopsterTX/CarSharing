@@ -1,5 +1,5 @@
 const defaultState = {
-  totalButton: {
+  checkButton: {
     disable: true,
     path: "/order/models",
     text: "Выбрать модель",
@@ -7,10 +7,10 @@ const defaultState = {
   },
 };
 
-const reduce = "TOTAL_BUTTON--";
+const reduce = "CHECK_BUTTON--";
 const CHANGE_BUTTON = `${reduce}CHANGE_BUTTON`;
 
-export const changeTotalButton = (path, text, onClick) => {
+export const changeCheckButton = (path, text, onClick) => {
   return {
     type: CHANGE_BUTTON,
     payload: {
@@ -26,7 +26,7 @@ export default (state = defaultState, { type, payload }) => {
     case CHANGE_BUTTON:
       return {
         ...state,
-        totalButton: {
+        checkButton: {
           path: payload.path,
           text: payload.text,
           onClick: payload.onClick,

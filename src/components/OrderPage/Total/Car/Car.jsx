@@ -4,6 +4,6 @@ import './Car.scss';
 
 export const Car = () => {
     return (
-        <img src={i30n} width='256px' height='116px' className='total-page-car'/>
+        <img src={i30n} width='256px' height='116px' className='total-car'/>
     )
 }

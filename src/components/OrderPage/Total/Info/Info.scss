@@ -1,9 +1,18 @@
 @import '../../../../vars.scss';
 
-.total-page-info{
+.total-info{
     &__container{
         display: flex;
         flex-direction: column;
+    }
+    &__order{
+        display: none;
+        font-size: 24px;
+        line-height: 28px;
+        margin-bottom: 16px;
+        &.active{
+            display: block;
+        }
     }
     &__model{
         font-weight: 300;

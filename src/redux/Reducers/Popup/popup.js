@@ -1,5 +1,5 @@
 const defaultState = {
-    popupActive: false,
+    isPopupActive: false,
 }
 
 const reduce = 'POPUP_';
@@ -15,7 +15,7 @@ export const changePopupActive = (bool) => {
 export default (state = defaultState, {type, payload}) => {
     switch(type){
         case CHANGE_ACTIVE:
-            return {...state, popupActive: payload}
+            return {...state, isPopupActive: payload}
         default: 
             return state
     }

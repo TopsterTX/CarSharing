@@ -1,11 +1,11 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { Header } from "../HomePage/Main/Header/Header";
-import  Steps  from "../OrderPage/Steps/Steps";
+import Steps from "../OrderPage/Steps/Steps";
 import Place from "./Place/Place";
-import { Total } from "./Total/Total";
-import  TotalPage  from "./TotalPage/TotalPage";
+import Total from "./Total/Total";
 import "./OrderPage.scss";
+import { Check } from "./Check/Check";
 // import  Models  from "./Models/Models";
 
 export const OrderPage = () => {
@@ -17,9 +17,9 @@ export const OrderPage = () => {
         <Switch>
           <Route path="/order/place" render={() => <Place />} />
           {/* <Route path="/order/models" render={() => <Models />} /> */}
-          <Route path='/order/total' render={() => <TotalPage/>}/>
+          <Route path="/order/total" render={() => <Total />} />
         </Switch>
-        <Total />
+        <Check />
       </div>
     </div>
   );
