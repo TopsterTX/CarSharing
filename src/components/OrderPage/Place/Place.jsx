@@ -4,10 +4,10 @@ import { Maps } from "./Map/Maps";
 import "./Place.scss";
 import { connect } from "react-redux";
 
-function Order() {
+function Place() {
   return (
-    <section className="order">
-      <div className="order__container">
+    <section className="place">
+      <div className="place__container">
         <Form />
         <Maps />
       </div>
@@ -15,4 +15,4 @@ function Order() {
   );
 }
 
-export default connect()(Order);
+export default connect()(Place);

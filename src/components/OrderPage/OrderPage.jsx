@@ -6,7 +6,7 @@ import Place from "./Place/Place";
 import {Options} from './Options/Options';
 import { Total } from "./Total/Total";
 import "./OrderPage.scss";
-// import  Models  from "./Models/Models";
+import  Models  from "./Models/Models";
 
 export const OrderPage = () => {
   return (
@@ -16,7 +16,7 @@ export const OrderPage = () => {
       <div className="order-page__content">
         <Switch>
           <Route path="/order/place" render={() => <Place />} />
-          {/* <Route path="/order/models" render={() => <Models />} /> */}
+          <Route path="/order/models" render={() => <Models />} />
           <Route path="/order/option" render={() => <Options />}/>
         </Switch>
         <Total />
