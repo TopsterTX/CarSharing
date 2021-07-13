@@ -1,6 +1,5 @@
 import React from "react";
-import { connect } from "react-redux";
-import './ListItem.scss'
+import "./ListItem.scss";
 
 export const ListItem = ({ head, result }) => {
   return (

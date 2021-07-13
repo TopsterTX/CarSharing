@@ -1,11 +1,12 @@
 import React from "react";
 
-import { connect } from "react-redux";
-import ModelsItem from "../ModelsItem/ModelsItem";
+import { useSelector } from "react-redux";
+import {ModelsItem} from "../ModelsItem/ModelsItem";
 import "./ModelsList.scss";
 
-const ModelsList = ({ cars }) => {
-  console.log(cars.isChoseModel);
+export const ModelsList = () => {
+  const cars = useSelector((state) => state.cars);
+
   return (
     <ul className="models-list">
       {cars.cars.map((el, index) => {
@@ -26,5 +27,3 @@ const ModelsList = ({ cars }) => {
     </ul>
   );
 };
-
-export default connect(({ cars }) => ({ cars }))(ModelsList);

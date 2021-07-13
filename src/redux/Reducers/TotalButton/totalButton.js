@@ -7,17 +7,7 @@ const defaultState = {
 };
 
 const reduce = "TOTAL_BUTTON--";
-const CHANGE_BUTTON = `${reduce}CHANGE_BUTTON`;
-
-export const changeTotalButton = (path, text) => {
-  return {
-    type: CHANGE_BUTTON,
-    payload: {
-      path,
-      text,
-    },
-  };
-};
+export const CHANGE_BUTTON = `${reduce}CHANGE_BUTTON`;
 
 export default (state = defaultState, { type, payload }) => {
   switch (type) {

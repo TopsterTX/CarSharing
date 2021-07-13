@@ -1,10 +1,10 @@
 import React from "react";
-import { choseCar as actionChoseCar } from "../../../../redux/Reducers/TotalList/totalList";
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 import { ListItem } from "./ListItem/ListItem";
 import "./TotalList.scss";
 
-const TotalList = ({ totalList }) => {
+export const TotalList = () => {
+  const totalList = useSelector((state) => state.totalList);
   return (
     <div className="total-list">
       {totalList.listItems.map((el, index) => {
@@ -13,7 +13,3 @@ const TotalList = ({ totalList }) => {
     </div>
   );
 };
-
-export default connect(({ totalList }) => ({ totalList }), {
-  choseCar: actionChoseCar,
-})(TotalList);

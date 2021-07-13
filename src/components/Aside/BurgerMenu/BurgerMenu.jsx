@@ -1,19 +1,21 @@
-import React, { useRef, useContext } from "react";
-import { connect } from "react-redux";
-import { toggleNav as actionToggleNav } from "../../../redux/Reducers/Navigation/navigation";
-import slider, {
-  sliderHide as actionSliderHide,
-} from "../../../redux/Reducers/Slider/slider";
+import React, { useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleNav } from "../../../redux/ActionCreators/Navigation/navigation";
+import { sliderHide } from "../../../redux/ActionCreators/Slider/slider";
 import "./BurgerMenu.scss";
 
-const BurgerMenu = ({ className, navigation, toggleNav, sliderHide,slider }) => {
+export const BurgerMenu = ({ className}) => {
   const burgerMenu = useRef();
 
+  const dispatch = useDispatch();
+  const navigation = useSelector((state) => state.navigation);
+  const slider = useSelector((state) => state.slider);
+
   const menuBurgerHandler = () => {
-    toggleNav(!navigation.isOpenNav);
+    dispatch(toggleNav(!navigation.isOpenNav));
     burgerMenu.current.classList.toggle("active");
-    sliderHide(!slider.isHide);
-    document.body.classList.toggle('--lock')
+    dispatch(sliderHide(!slider.isHide));
+    document.body.classList.toggle("--lock");
   };
 
   return (
@@ -28,8 +30,3 @@ const BurgerMenu = ({ className, navigation, toggleNav, sliderHide,slider }) => 
     </button>
   );
 };
-
-export default connect(({ navigation, slider }) => ({ navigation, slider }), {
-  sliderHide: actionSliderHide,
-  toggleNav: actionToggleNav,
-})(BurgerMenu);

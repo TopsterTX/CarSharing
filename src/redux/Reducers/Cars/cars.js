@@ -74,22 +74,8 @@ const defaultState = {
 };
 
 const reduce = "CARS_";
-const CHOSE_MODEL = `${reduce}CHOSE_MODEL`;
-const UNCHOSE_MODEL = `${reduce}UNCHOSE_MODEL`;
-
-export const choseModel = (id) => {
-  return {
-    type: CHOSE_MODEL,
-    payload: id,
-  };
-};
-
-export const unchoseModel = (id) => {
-  return {
-    type: UNCHOSE_MODEL,
-    payload: id,
-  };
-};
+export const CHOSE_MODEL = `${reduce}CHOSE_MODEL`;
+export const UNCHOSE_MODEL = `${reduce}UNCHOSE_MODEL`;
 
 export default (state = defaultState, { type, payload }) => {
   switch (type) {

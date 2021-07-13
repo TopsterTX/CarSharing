@@ -1,17 +1,15 @@
-import React, {useEffect} from "react";
-import {changeTotalButton as actionChangeTotalButton} from '../../../redux/Reducers/TotalButton/totalButton';
-import {addItem as actionAddItem} from '../../../redux/Reducers/TotalList/totalList'
-import ModelsList from "./ModelsList/ModelsList";
+import React, { useEffect } from "react";
+import { changeTotalButton } from "../../../redux/ActionCreators/TotalButton/totalButton";
+import { ModelsList } from "./ModelsList/ModelsList";
 import { ModelsFilter } from "./ModelsFilter/ModelsFilter";
 import "./Models.scss";
-import { connect } from "react-redux";
+import { useDispatch } from "react-redux";
 
-const Models = ({changeTotalButton, addItem}) => {
-
+export const Models = () => {
+  const dispatch = useDispatch();
   useEffect(() => {
-    changeTotalButton('/order/place', 'Выберите местоположение')
-    
-  }, [])
+    dispatch(changeTotalButton("/order/option", "Дополнительно"));
+  }, []);
 
   return (
     <section className="models">
@@ -22,11 +20,3 @@ const Models = ({changeTotalButton, addItem}) => {
     </section>
   );
 };
-
-export default connect(
-  ({}) => ({}),
-  {
-    changeTotalButton: actionChangeTotalButton,
-    
-  }
-)(Models)

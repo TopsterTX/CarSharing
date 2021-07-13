@@ -1,15 +1,14 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import { Slide } from "./Slide/Slide";
-import { toggleSlide as actionToggleSlide } from "../../../redux/Reducers/Slider/slider";
 import "./Slider.scss";
 import { Dots } from "./Dots/Dots";
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 
-const Slider = ({toggleSlide, slider}) => {
-  
+export const Slider = () => {
+  const slider = useSelector((state) => state.slider);
 
   return (
-    <section className={`slider ${slider.isHide ? 'hide': ''}`}>
+    <section className={`slider ${slider.isHide ? "hide" : ""}`}>
       {slider.sliderData.map((el, index) => {
         return (
           <Slide
@@ -18,7 +17,6 @@ const Slider = ({toggleSlide, slider}) => {
             title={el.title}
             id={el.id}
             active={slider.slideNum === el.id ? true : false}
-            setValue={toggleSlide}
             value={slider.slideNum}
             dataLenght={slider.sliderData.length - 1}
             sliderData={slider.sliderData}
@@ -27,16 +25,7 @@ const Slider = ({toggleSlide, slider}) => {
           />
         );
       })}
-      <Dots sliderData={slider.sliderData} value={slider.slideNum} setValue={toggleSlide} />
+      <Dots sliderData={slider.sliderData} value={slider.slideNum} />
     </section>
   );
 };
-
-
-//* Переменные из redux называются иначе потому что до redux пользоватлся useState
-export default connect(
-  ({slider}) => ({slider}),
-  {
-    toggleSlide: actionToggleSlide,
-  }
-)(Slider)

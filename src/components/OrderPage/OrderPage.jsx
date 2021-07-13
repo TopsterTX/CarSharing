@@ -1,12 +1,12 @@
 import React from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import { Header } from "../HomePage/Main/Header/Header";
-import  Steps  from "../OrderPage/Steps/Steps";
-import Place from "./Place/Place";
+import  {Steps}  from "../OrderPage/Steps/Steps";
+import {Place} from "./Place/Place";
 import {Options} from './Options/Options';
 import { Total } from "./Total/Total";
 import "./OrderPage.scss";
-import  Models  from "./Models/Models";
+import  {Models}  from "./Models/Models";
 
 export const OrderPage = () => {
   return (

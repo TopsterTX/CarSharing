@@ -1,45 +1,35 @@
-import React, { useRef, useEffect } from "react";
-import { connect } from "react-redux";
-import { choseModel as actionChoseModel } from "../../../../redux/Reducers/Cars/cars";
-import { unchoseModel as actionUnchoseModel } from "../../../../redux/Reducers/Cars/cars";
+import React, { useRef } from "react";
+import { useDispatch } from "react-redux";
+import { choseModel, unchoseModel } from "../../../../redux/ActionCreators/Cars/cars";
 import {
-  choseCar as actionChoseCar,
+  choseCar,
   unchoseCar,
-} from "../../../../redux/Reducers/TotalList/totalList";
-import { unchoseCar as actionUnchoseCar } from "../../../../redux/Reducers/TotalList/totalList";
+} from "../../../../redux/ActionCreators/TotalList/totalList";
+
 import "./ModelsItem.scss";
 
-const ModelsItem = ({
+export const ModelsItem = ({
   price,
   model,
   car,
   img,
   active,
-  index,
   id,
-  choseModel,
-  unchoseModel,
-  choseCar,
   isChoseModel,
-  unchoseCar,
 }) => {
   const activeItem = useRef();
-  useEffect(() => {
-    console.log(activeItem.current);
-  }, []);
+
+  const dispatch = useDispatch();
 
   const modelsItemActiveHandler = () => {
-    if (index === id) {
-      return choseModel(id);
-    }
+    dispatch(choseModel(id));
+    dispatch(choseCar(model, car));
   };
 
   const modelsItemDisableHandler = () => {
-    if (index === id) {
-      return unchoseModel(id);
-    }
+    dispatch(unchoseModel(id));
+    dispatch(unchoseCar());
   };
-  console.log(isChoseModel);
   return (
     <li
       className={`models-item ${active ? "active" : "disable"}`}
@@ -49,13 +39,11 @@ const ModelsItem = ({
           isChoseModel === false
         ) {
           modelsItemActiveHandler();
-          choseCar(model, car);
         } else if (
           activeItem.current.classList.contains("active") &&
           isChoseModel === true
         ) {
           modelsItemDisableHandler();
-          unchoseCar();
         }
       }}
       ref={activeItem}
@@ -74,10 +62,3 @@ const ModelsItem = ({
     </li>
   );
 };
-
-export default connect(({}) => ({}), {
-  choseModel: actionChoseModel,
-  unchoseModel: actionUnchoseModel,
-  choseCar: actionChoseCar,
-  unchoseCar: actionUnchoseCar,
-})(ModelsItem);

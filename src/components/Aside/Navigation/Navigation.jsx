@@ -1,12 +1,17 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Language } from "../../Aside/Language/Language";
 import { Social } from "./Social/Social";
 import "./Navigation.scss";
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 
-const Navigation = ({navigation}) => {
+export const Navigation = () => {
+  const navigation = useSelector((state) => state.navigation);
+
   return (
-    <nav className={navigation.isOpenNav ? "navigation active" : "navigation"} id="nav">
+    <nav
+      className={navigation.isOpenNav ? "navigation active" : "navigation"}
+      id="nav"
+    >
       <div className="navigation__wrapper">
         <ul className="navigation__list">
           <li className="navigation__item">
@@ -36,8 +41,3 @@ const Navigation = ({navigation}) => {
     </nav>
   );
 };
-
-export default connect(
-  ({navigation}) => ({navigation}),
-  
-)(Navigation)
