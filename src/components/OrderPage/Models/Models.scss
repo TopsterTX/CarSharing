@@ -1,0 +1,18 @@
+@import '../../../vars.scss';
+@import '../../../mixins.scss';
+
+.models {
+  &__container {
+    @include container()
+  }
+}
+
+
+
+@media (min-width: 1024px) {
+  .models {
+    border-right: 1px solid $mainGrayBright;
+  }
+}
+
+

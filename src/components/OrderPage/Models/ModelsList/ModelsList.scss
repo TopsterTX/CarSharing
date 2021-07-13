@@ -1,0 +1,27 @@
+@import "../../../../vars.scss";
+
+.models-list {
+  height: max-content;
+
+}
+
+@media (min-width: 768px) {
+  .models-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .models-list {
+    
+    max-height: calc(100vh - 220px);
+    overflow: scroll;
+    overflow-x: hidden;
+    
+  }
+  ::-webkit-scrollbar{
+    display: none;
+  };
+}

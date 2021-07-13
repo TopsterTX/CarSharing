@@ -1,0 +1,16 @@
+@import "../../../../vars.scss";
+@import '../../../../mixins.scss';
+
+.models-filter {
+  margin-bottom: 32px;
+  display: flex;
+  &__item {
+    @include filterPoint($mainAccentColor, $mainBlack, $mainGrayDark)
+  }
+}
+
+@media(min-width:768px){
+    .models-filter{
+        margin-bottom: 48px;
+    }
+}
