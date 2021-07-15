@@ -13,13 +13,11 @@ const defaultState = {
   ],
 };
 
-const reduce = "TOTAL-LIST_";
+const reduce = "CHECK-LIST_";
 export const CHOSE_CAR = `${reduce}CHOSE_CAR`;
 export const ADD_ITEM = `${reduce}ADD_ITEM`;
 export const UNCHOSE_CAR = `${reduce}UNCHOSE_CAR`;
 export const CHOSE_PLACE = `${reduce}CHOSE_PLACE`;
-
-
 
 export default (state = defaultState, { type, payload }) => {
   switch (type) {

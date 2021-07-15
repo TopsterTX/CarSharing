@@ -3,13 +3,13 @@ import { useDispatch } from "react-redux";
 import { Form } from "./Form/Form";
 import { Maps } from "./Map/Maps";
 import "./Place.scss";
-import { changeTotalButton } from "./../../../redux/ActionCreators/TotalButton/totalButton";
+import { changeCheckButton } from "../../../redux/ActionCreators/CheckButton/checkButton";
 
 export const Place = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(changeTotalButton("/order/models", "Выберите модель"));
+    dispatch(changeCheckButton("/order/models", "Выберите модель"));
   }, []);
 
   return (

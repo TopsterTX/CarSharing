@@ -16,7 +16,7 @@ const defaultState = {
             text: 'Дополнительно',
             isFilled: false,
             isOpen: false,
-            path: '/order/option',
+            path: '/order/options',
         },
         {
             text: 'Итого',

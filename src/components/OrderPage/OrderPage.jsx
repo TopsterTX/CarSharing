@@ -1,12 +1,13 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import { Header } from "../HomePage/Main/Header/Header";
-import  {Steps}  from "../OrderPage/Steps/Steps";
-import {Place} from "./Place/Place";
-import {Options} from './Options/Options';
-import { Total } from "./Total/Total";
+import { Steps } from "../OrderPage/Steps/Steps";
+import { Place } from "./Place/Place";
+import { Options } from "./Options/Options";
+import { Check } from "./Check/Check";
 import "./OrderPage.scss";
-import  {Models}  from "./Models/Models";
+import { Models } from "./Models/Models";
+import { Total } from "./Total/Total";
 
 export const OrderPage = () => {
   return (
@@ -17,9 +18,10 @@ export const OrderPage = () => {
         <Switch>
           <Route path="/order/place" render={() => <Place />} />
           <Route path="/order/models" render={() => <Models />} />
-          <Route path="/order/option" render={() => <Options />}/>
+          <Route path="/order/options" render={() => <Options />} />
+          <Route path="/order/total" render={() => <Total />} />
         </Switch>
-        <Total />
+        <Check />
       </div>
     </div>
   );

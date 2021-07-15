@@ -1,0 +1,8 @@
+.total-car{
+    align-self: flex-end;
+}
+@media(min-width: 1024px){
+    .total-car{
+        align-self: flex-start;
+    }
+}

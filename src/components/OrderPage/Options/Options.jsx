@@ -5,14 +5,14 @@ import { Rate } from "./Rate/Rate";
 import { Addons } from "./Addons/Addons";
 import './Options.scss'
 import { useDispatch } from 'react-redux';
-import { changeTotalButton } from './../../../redux/ActionCreators/TotalButton/totalButton';
+import { changeCheckButton } from "../../../redux/ActionCreators/CheckButton/checkButton";
 
 export const Options = () => {
 
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(changeTotalButton('/order/total', 'Итого'))
+    dispatch(changeCheckButton('/order/total', 'Итого'))
   }, [])
 
   return (

@@ -1,10 +1,10 @@
 import React, { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { choseModel, unchoseModel } from "../../../../redux/ActionCreators/Cars/cars";
-import {
-  choseCar,
-  unchoseCar,
-} from "../../../../redux/ActionCreators/TotalList/totalList";
+// import {
+//   choseCar,
+//   unchoseCar,
+// } from "../../../../redux/ActionCreators/CheckList/checkList";
 
 import "./ModelsItem.scss";
 
@@ -23,12 +23,12 @@ export const ModelsItem = ({
 
   const modelsItemActiveHandler = () => {
     dispatch(choseModel(id));
-    dispatch(choseCar(model, car));
+    // dispatch(choseCar(model, car));
   };
 
   const modelsItemDisableHandler = () => {
     dispatch(unchoseModel(id));
-    dispatch(unchoseCar());
+    // dispatch(unchoseCar());
   };
   return (
     <li

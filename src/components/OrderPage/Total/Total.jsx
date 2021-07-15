@@ -1,20 +1,26 @@
-import React from "react";
-import { TotalButton } from "../TotalButton/TotalButton";
-import { TotalList } from "./TotalList/TotalList";
+import React, { useEffect } from "react";
+import { Info } from "./Info/Info";
+import { Car } from "./Car/Car";
 import "./Total.scss";
+import { TotalPopup } from "../../TotalPopup/TotalPopup";
+import { useDispatch } from "react-redux";
+import { changeCheckButton } from "../../../redux/ActionCreators/CheckButton/checkButton";
 
 export const Total = () => {
+  
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(changeCheckButton("/order/total", "Заказать"));
+  }, []);
+
   return (
     <section className="total">
-      <div className="total__wrapper">
-        <div className="total__title">Ваш заказ:</div>
-        <TotalList />
-        <div className="total__price">
-          <span>Цена: </span>
-          <span> от 8 000 до 12 000 ₽</span>
-        </div>
+      <div className="total__container">
+        <Info />
+        <Car />
+        <TotalPopup />
       </div>
-      <TotalButton path="/order/models" text="Дополнительно" />
     </section>
   );
 };
