@@ -1,30 +1,25 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { StepsItem } from "./StepsItem/StepsItem";
 import "./Steps.scss";
 
 export const Steps = () => {
+  const steps = useSelector((state) => state.steps);
+
   return (
     <ul className="steps">
       <div className="steps__wrapper">
-        <li className="steps__item">
-          <a href="" className="steps__link active">
-            Местоположение
-          </a>
-        </li>
-        <li className="steps__item">
-          <a href="" className="steps__link">
-            Модель
-          </a>
-        </li>
-        <li className="steps__item">
-          <a href="" className="steps__link">
-            Дополнительно
-          </a>
-        </li>
-        <li className="steps__item">
-          <a href="" className="steps__link">
-            Итого
-          </a>
-        </li>
+        {steps.steps.map((el, index) => {
+          return (
+            <StepsItem
+              text={el.text}
+              path={el.path}
+              key={index}
+              isOpen={el.isOpen}
+              isFilled={el.isFilled}
+            />
+          );
+        })}
       </div>
     </ul>
   );

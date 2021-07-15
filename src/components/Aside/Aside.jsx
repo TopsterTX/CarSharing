@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import BurgerMenu from "./BurgerMenu/BurgerMenu";
+import React from "react";
+import { BurgerMenu } from "./BurgerMenu/BurgerMenu";
 import { Language } from "./Language/Language";
-import Navigation from "./Navigation/Navigation";
+import { Navigation } from "./Navigation/Navigation";
 import "./Aside.scss";
 
 export const Aside = () => {

@@ -19,5 +19,7 @@
 @media (min-width: 1024px) {
   .page {
     grid-template-columns: 65px 1fr;
+    max-height: 100vh;
+    overflow: hidden;
   }
 }

@@ -1,4 +1,4 @@
-@import "../../../../vars.scss";
+@import "../../../vars.scss";
 
 .total {
   &__block {
@@ -90,6 +90,12 @@
       margin-left: 32px;
       max-width: 287px;
     }
+  }
+}
+
+@media (min-width: 1024px) {
+  .total {
+    min-width: 351px;
   }
 }
 

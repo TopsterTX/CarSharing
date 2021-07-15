@@ -1,0 +1,8 @@
+@import '../../../mixins.scss';
+@import '../../../vars.scss';
+
+.options{
+    &__container{
+        @include container()
+    }
+}
