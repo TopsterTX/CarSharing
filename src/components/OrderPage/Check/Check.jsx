@@ -1,5 +1,5 @@
 import React from "react";
-import CheckButton from '../CheckButton/CheckButton'
+import {CheckButton} from '../CheckButton/CheckButton'
 import "./Check.scss";
 
 export const Check = () => {

@@ -3,7 +3,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import { Header } from "../HomePage/Main/Header/Header";
 import Steps from "../OrderPage/Steps/Steps";
 import Place from "./Place/Place";
-import Total from "./Total/Total";
+import {Total} from "./Total/Total";
 import "./OrderPage.scss";
 import { Check } from "./Check/Check";
 // import  Models  from "./Models/Models";

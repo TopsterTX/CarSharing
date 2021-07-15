@@ -14,49 +14,10 @@ const defaultState = {
 };
 
 const reduce = "CHECK-LIST_";
-const CHOSE_CAR = `${reduce}CHOSE_CAR`;
-const ADD_ITEM = `${reduce}ADD_ITEM`;
-const UNCHOSE_CAR = `${reduce}UNCHOSE_CAR`;
-const CHOSE_PLACE = `${reduce}CHOSE_PLACE`;
-
-export const addItem = (head) => {
-  return {
-    type: ADD_ITEM,
-    payload: [
-      {
-        head,
-        result: "",
-      },
-    ],
-  };
-};
-
-export const chosePlace = (city, point) => {
-  return {
-    type: CHOSE_PLACE,
-    payload: {
-      city,
-      point,
-    },
-  };
-};
-
-export const choseCar = (model, car) => {
-  return {
-    type: CHOSE_CAR,
-    payload: {
-      model,
-      car,
-    },
-  };
-};
-
-export const unchoseCar = () => {
-  return {
-    type: UNCHOSE_CAR,
-    payload: "",
-  };
-};
+export const CHOSE_CAR = `${reduce}CHOSE_CAR`;
+export const ADD_ITEM = `${reduce}ADD_ITEM`;
+export const UNCHOSE_CAR = `${reduce}UNCHOSE_CAR`;
+export const CHOSE_PLACE = `${reduce}CHOSE_PLACE`;
 
 export default (state = defaultState, { type, payload }) => {
   switch (type) {

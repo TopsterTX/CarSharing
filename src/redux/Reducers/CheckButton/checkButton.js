@@ -3,23 +3,11 @@ const defaultState = {
     disable: true,
     path: "/order/models",
     text: "Выбрать модель",
-    onClick: null
   },
 };
 
 const reduce = "CHECK_BUTTON--";
-const CHANGE_BUTTON = `${reduce}CHANGE_BUTTON`;
-
-export const changeCheckButton = (path, text, onClick) => {
-  return {
-    type: CHANGE_BUTTON,
-    payload: {
-      path,
-      text,
-      onClick,
-    },
-  };
-};
+export const CHANGE_BUTTON = `${reduce}CHANGE_BUTTON`;
 
 export default (state = defaultState, { type, payload }) => {
   switch (type) {
@@ -29,7 +17,6 @@ export default (state = defaultState, { type, payload }) => {
         checkButton: {
           path: payload.path,
           text: payload.text,
-          onClick: payload.onClick,
         },
       };
     default:
