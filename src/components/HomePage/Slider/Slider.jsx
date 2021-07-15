@@ -9,7 +9,7 @@ export const Slider = () => {
 
   return (
     <section className={`slider ${slider.isHide ? "hide" : ""}`}>
-      {slider.sliderData.map((el, index) => {
+      {slider.sliderData.map(el => {
         return (
           <Slide
             img={el.img}
@@ -20,7 +20,7 @@ export const Slider = () => {
             value={slider.slideNum}
             dataLenght={slider.sliderData.length - 1}
             sliderData={slider.sliderData}
-            key={index}
+            key={el.id}
             bgButton={el.bgButton}
           />
         );

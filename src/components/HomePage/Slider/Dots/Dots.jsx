@@ -6,19 +6,19 @@ import { useDispatch } from "react-redux";
 export const Dots = ({ sliderData, value }) => {
   const dispatch = useDispatch();
 
-  const dotsHandler = (index) => {
-    return dispatch(toggleSlide(index));
+  const dotsHandler = (id) => {
+    return dispatch(toggleSlide(id));
   };
 
   return (
     <div className="dots">
-      {sliderData.map((el, index) => {
+      {sliderData.map(el => {
         return (
           <span
             id={`dot-${el.id}`}
-            key={index}
-            className={value === index ? "active" : ""}
-            onClick={() => dotsHandler(index)}
+            key={el.id}
+            className={value === el.id ? "active" : ""}
+            onClick={() => dotsHandler(el.id)}
           />
         );
       })}

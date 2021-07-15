@@ -9,7 +9,7 @@ export const ModelsList = () => {
 
   return (
     <ul className="models-list">
-      {cars.cars.map((el, index) => {
+      {cars.cars.map(el => {
         return (
           <ModelsItem
             price={el.price}
@@ -17,10 +17,9 @@ export const ModelsList = () => {
             img={el.img}
             active={el.active}
             id={el.id}
-            index={index}
             car={el.car}
             isChoseModel={cars.isChoseModel}
-            key={index}
+            key={el.id}
           />
         );
       })}

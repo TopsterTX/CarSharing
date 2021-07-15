@@ -4,10 +4,10 @@ import { useSelector } from "react-redux";
 import "./TotalButton.scss";
 
 export const TotalButton = () => {
-  const totalButton = useSelector((state) => state.totalButton);
+  const {path, text} = useSelector((state) => (state.totalButton.totalButton));
   return (
-    <NavLink to={totalButton.totalButton.path} className="total-button">
-      {totalButton.totalButton.text}
+    <NavLink to={path} className="total-button">
+      {text}
     </NavLink>
   );
 };
