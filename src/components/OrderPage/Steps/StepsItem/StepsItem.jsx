@@ -1,11 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import './StepsItem.scss'
+import "./StepsItem.scss";
 
-export const StepsItem = ({text, isFilled, isOpen, path}) => {
+export const StepsItem = ({ text, disable, path }) => {
   return (
-    <li className="steps-item">
-      <NavLink to={path} className={`steps-item__link ${isOpen ? 'active' : ''} ${isFilled ? 'fill' : ''}`}>
+    <li className={`steps-item ${disable ? "disable" : ""}`}>
+      <NavLink to={path} className={`steps-item__link`}>
         {text}
       </NavLink>
     </li>

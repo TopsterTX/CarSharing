@@ -1,22 +1,30 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { StepsItem } from "./StepsItem/StepsItem";
 import "./Steps.scss";
+import { changeDisable } from "./../../../redux/ActionCreators/Steps/steps";
 
 export const Steps = () => {
-  const steps = useSelector((state) => state.steps);
+  const dispatch = useDispatch();
+  const steps = useSelector((state) => state.steps.steps);
+  const { isChoseAddress } = useSelector((state) => state.form);
+
+  useEffect(() => {
+    dispatch(changeDisable(1, !isChoseAddress));
+  }, [isChoseAddress]);
+
+
 
   return (
     <ul className="steps">
       <div className="steps__wrapper">
-        {steps.steps.map((el, index) => {
+        {steps.map((el) => {
           return (
             <StepsItem
               text={el.text}
               path={el.path}
-              key={index}
-              isOpen={el.isOpen}
-              isFilled={el.isFilled}
+              key={el.id}
+              disable={el.disable}
             />
           );
         })}

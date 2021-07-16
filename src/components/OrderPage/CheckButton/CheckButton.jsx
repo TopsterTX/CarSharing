@@ -5,7 +5,9 @@ import { changePopupActive } from "../../../redux/ActionCreators/Popup/popup";
 import "./CheckButton.scss";
 
 export const CheckButton = () => {
-  const { text, path } = useSelector((state) => state.checkButton.checkButton);
+  const { text, path, disable } = useSelector(
+    (state) => state.checkButton.checkButton
+  );
   const { isConfirmOrder } = useSelector((state) => state.total);
   const dispatch = useDispatch();
 
@@ -16,10 +18,14 @@ export const CheckButton = () => {
     return null;
   };
 
+  console.log(disable);
+
   return (
     <NavLink
       to={path}
-      className={`check-button ${isConfirmOrder ? "cancel" : ""}`}
+      className={`check-button ${isConfirmOrder ? "cancel" : ""} ${
+        disable ? "disable" : ""
+      }`}
       onClick={() => onClickHandler()}
     >
       {text}

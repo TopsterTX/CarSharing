@@ -11,6 +11,17 @@
     border: 3px solid transparent;
     border-left: 4px solid $mainGrayDark;
   }
+  &.disable {
+    &:not(:last-child)::after {
+      border: 3px solid transparent;
+      border-left: 4px solid $mainGrayBright;
+    }
+
+    pointer-events: none;
+    & .steps-item__link {
+      color: $mainGrayBright;
+    }
+  }
   &__link {
     margin-right: 5px;
     text-decoration: none;

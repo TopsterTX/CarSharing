@@ -1,4 +1,4 @@
-@import '../../../vars.scss';
+@import "../../../vars.scss";
 
 .check-button {
   margin: 0 auto;
@@ -19,10 +19,15 @@
   }
 }
 
-.check-button.cancel{
+.check-button.cancel {
   background: $buttonSlide3;
 }
 
+.check-button.disable {
+  background: $mainGrayBright;
+  pointer-events: none;
+
+}
 @media (min-width: 768px) {
   .check-button {
     margin-left: 32px;
