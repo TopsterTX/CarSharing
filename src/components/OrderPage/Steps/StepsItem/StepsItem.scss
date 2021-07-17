@@ -14,9 +14,8 @@
   &.disable {
     &:not(:last-child)::after {
       border: 3px solid transparent;
-      border-left: 4px solid $mainGrayBright;
+      border-left: 4px solid $mainGrayDark;
     }
-
     pointer-events: none;
     & .steps-item__link {
       color: $mainGrayBright;
@@ -51,6 +50,21 @@
       margin: 0 3px 0 3px;
       border: 5px solid transparent;
       border-left: 7px solid $mainGrayDark;
+    }
+    &.disable {
+      &:not(:last-child)::after {
+        border: 5px solid transparent;
+        border-left: 7px solid $mainGrayDark;
+      }
+      pointer-events: none;
+      & .steps-item__link {
+        color: $mainGrayDark;
+      }
+    }
+    &.fill{
+      & .steps-item__link{
+        color: $mainBlack;
+      }
     }
     &__link {
       font-size: 14px;

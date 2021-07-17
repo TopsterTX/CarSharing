@@ -9,9 +9,7 @@ export const Steps = () => {
   const steps = useSelector((state) => state.steps.steps);
   const { isChoseAddress } = useSelector((state) => state.form);
 
-  useEffect(() => {
-    dispatch(changeDisable(1, !isChoseAddress));
-  }, [isChoseAddress]);
+  
 
 
 
