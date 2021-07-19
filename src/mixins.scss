@@ -17,8 +17,7 @@
     border-radius: 50%;
     margin-right: 4px;
   }
-  &.active,
-  &:active {
+  &.active {
     color: $colorActiveText;
     &::before {
       border: 3px solid $colorActivePoint;

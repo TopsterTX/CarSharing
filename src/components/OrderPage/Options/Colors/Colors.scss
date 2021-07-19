@@ -1,7 +1,7 @@
 @import "../../../../vars.scss";
 @import "../../../../mixins.scss";
 
-.options-color {
+.options-colors {
   margin-bottom: 32px;
   &__heading {
     @include subHeading();
@@ -17,7 +17,7 @@
 }
 
 @media(min-width: 1024px){
-  .options-color{
+  .options-colors{
     &__item{
       font-size: 14px;
     }

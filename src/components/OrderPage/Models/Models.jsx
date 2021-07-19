@@ -1,5 +1,8 @@
 import React, { useEffect } from "react";
-import { changeCheckButton } from "../../../redux/ActionCreators/CheckButton/checkButton";
+import {
+  changeCheckButton,
+  toggleCheckButtonDisable,
+} from "../../../redux/ActionCreators/CheckButton/checkButton";
 import { ModelsList } from "./ModelsList/ModelsList";
 import { ModelsFilter } from "./ModelsFilter/ModelsFilter";
 import "./Models.scss";

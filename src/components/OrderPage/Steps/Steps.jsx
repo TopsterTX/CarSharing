@@ -9,10 +9,6 @@ export const Steps = () => {
   const steps = useSelector((state) => state.steps.steps);
   const { isChoseAddress } = useSelector((state) => state.form);
 
-  
-
-
-
   return (
     <ul className="steps">
       <div className="steps__wrapper">
@@ -22,7 +18,8 @@ export const Steps = () => {
               text={el.text}
               path={el.path}
               key={el.id}
-              disable={el.disable}
+              active={el.active}
+              fill={el.fill}
             />
           );
         })}

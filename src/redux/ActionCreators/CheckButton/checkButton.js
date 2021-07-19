@@ -1,5 +1,5 @@
 import { CHANGE_BUTTON } from './../../Reducers/CheckButton/checkButton';
-import { TOGGLE_BUTTON } from './../../Reducers/CheckButton/checkButton';
+import { TOGGLE_BUTTON_DISABLE } from './../../Reducers/CheckButton/checkButton';
 
 export const changeCheckButton = (path, text) => {
   return {
@@ -11,9 +11,9 @@ export const changeCheckButton = (path, text) => {
   };
 };
 
-export const toggleCheckButton = (bool) => {
+export const toggleCheckButtonDisable = (bool) => {
   return {
-    type: TOGGLE_BUTTON,
+    type: TOGGLE_BUTTON_DISABLE,
     payload: bool
   }
 }

@@ -8,7 +8,7 @@ const defaultState = {
 
 const reduce = "CHECK_BUTTON--";
 export const CHANGE_BUTTON = `${reduce}CHANGE_BUTTON`;
-export const TOGGLE_BUTTON = `${reduce}TOGGLE_BUTTON`;
+export const TOGGLE_BUTTON_DISABLE = `${reduce}TOGGLE_BUTTON_DISABLE`;
 
 export default (state = defaultState, { type, payload }) => {
   switch (type) {
@@ -22,12 +22,12 @@ export default (state = defaultState, { type, payload }) => {
         },
       };
 
-    case TOGGLE_BUTTON:
+    case TOGGLE_BUTTON_DISABLE:
       return {
         ...state,
         checkButton: {
-          disable: payload,
           ...state.checkButton,
+          disable: payload,
         },
       };
     default:

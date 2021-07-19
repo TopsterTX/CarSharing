@@ -18,8 +18,6 @@ export const CheckButton = () => {
     return null;
   };
 
-  console.log(disable);
-
   return (
     <NavLink
       to={path}

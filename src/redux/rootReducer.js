@@ -7,6 +7,7 @@ import steps from "./Reducers/Steps/steps";
 import form from "./Reducers/Form/form";
 import popup from "./Reducers/Popup/popup";
 import total from "./Reducers/Total/total";
+import options from './Reducers/Options/options'
 
 export default {
   navigation,
@@ -18,4 +19,5 @@ export default {
   form,
   popup,
   total,
+  options
 };
