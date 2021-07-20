@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./DateRent.scss";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -11,20 +11,31 @@ export const DateRent = () => {
   const { dateFrom, dateTo, isChoseDateRent } = useSelector(
     (state) => state.options
   );
+
   const dispatch = useDispatch();
+
+  //*-------------------------------------------------------------
+  //* Проверка и имзенение состояний
+  useEffect(() => {
+    if (dateFrom.length && dateTo.length > 1) {
+      dispatch(choseDateRentOptions(true));
+    } else if (isChoseDateRent) {
+      dispatch(choseDateRentOptions(false));
+    }
+  }, [dateTo, dateFrom]);
+
+  //*-------------------------------------------------------------
+
+  //*-------------------------------------------------------------
+  //* Handler's
   const changeDateFromHandler = (e) => {
     dispatch(changeDateFromOptions(e.target.value));
   };
 
   const changeDateToHandler = (e) => {
     dispatch(changeDateToOptions(e.target.value));
-
-    if (dateFrom.length && dateTo.length !== "") {
-      dispatch(choseDateRentOptions(true));
-    } else {
-      dispatch(choseDateRentOptions(false));
-    }
   };
+  //*-------------------------------------------------------------
 
   return (
     <section className="options-date-rent">

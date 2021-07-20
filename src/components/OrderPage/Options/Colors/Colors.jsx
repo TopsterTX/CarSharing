@@ -8,18 +8,22 @@ export const Colors = () => {
   const dispatch = useDispatch();
   const { colors, isChoseColor } = useSelector((state) => state.options);
 
-  const clickHandler = (id, active) => {
+  //*--------------------------------------------------------
+  //* Handler's
+
+  const clickHandler = (el) => {
     if (isChoseColor) {
-      if (active) {
+      if (el.active) {
         dispatch(choseColorOptions(!isChoseColor));
-        dispatch(changeColorOptions(id, !active));
+        dispatch(changeColorOptions(el.id, !el.active));
       }
     } else {
-      dispatch(changeColorOptions(id, !active));
+      dispatch(changeColorOptions(el.id, !el.active));
       dispatch(choseColorOptions(!isChoseColor));
     }
   };
 
+  //*--------------------------------------------------------
   return (
     <section className="options-colors">
       <div className="options-colors__container">
@@ -30,7 +34,7 @@ export const Colors = () => {
               <li
                 className={`options-colors__item ${el.active ? "active" : ""}`}
                 key={el.id}
-                onClick={() => clickHandler(el.id, el.active)}
+                onClick={() => clickHandler(el)}
               >
                 {el.color}
               </li>

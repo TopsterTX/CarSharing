@@ -20,37 +20,44 @@ export const Options = () => {
   const { isChoseRate, isChoseColor, isChoseDateRent, isChoseOptions } =
     useSelector((state) => state.options);
 
-  const optionsHandlerActive = () => {
-    if (isChoseOptions === false) {
+  //*-------------------------------------------------------------
+  //* Проверка и изменение состояний
+
+  useEffect(() => {
+    if (isChoseRate && isChoseColor && isChoseDateRent === true) {
       dispatch(choseOptions(true));
+    } else if (isChoseOptions === true) {
+      dispatch(choseOptions(false));
     }
-  };
+  }, [isChoseRate, isChoseColor, isChoseDateRent]);
 
-  const optionsHandlerDisable = () => {
-    if(isChoseOptions === true){
-      dispatch(choseOptions(false))
+  useEffect(() => {
+    if (isChoseOptions === false) {
+      dispatch(toggleCheckButtonDisable(true));
+      dispatch(changeActiveStep(3, false));
+      dispatch(changeFillStep(2, false));
+    } else if (isChoseOptions) {
+      dispatch(toggleCheckButtonDisable(false));
+      dispatch(changeActiveStep(3, true));
+      dispatch(changeFillStep(2, true));
     }
-  }
-
-  if (isChoseRate && isChoseColor && isChoseDateRent === true) {
-    optionsHandlerActive();
-  } else {
-    optionsHandlerDisable()
-  }
-
-  if (isChoseOptions === false) {
-    dispatch(toggleCheckButtonDisable(true));
-    dispatch(changeActiveStep(3, false));
-    dispatch(changeFillStep(2, false));
-  } else {
-    dispatch(toggleCheckButtonDisable(false));
-    dispatch(changeActiveStep(3, true));
-    dispatch(changeFillStep(2, true));
-  }
+  }, [isChoseOptions]);
 
   useEffect(() => {
     dispatch(changeCheckButton("/order/total", "Итого"));
   }, []);
+
+  //*-------------------------------------------------------------
+
+  //*-------------------------------------------------------------
+  //* Handler's
+
+  const optionsHandlerActive = () => {};
+
+  const optionsHandlerDisable = () => {};
+
+  //*-------------------------------------------------------------
+
   return (
     <section className="options">
       <div className="options__container">

@@ -1,19 +1,41 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Form } from "./Form/Form";
 import { Maps } from "./Map/Maps";
 import "./Place.scss";
-import { changeCheckButton } from "../../../redux/ActionCreators/CheckButton/checkButton";
-import { changeActiveStep } from './../../../redux/ActionCreators/Steps/steps';
+import {
+  changeCheckButton,
+  toggleCheckButtonDisable,
+} from "../../../redux/ActionCreators/CheckButton/checkButton";
+import {
+  changeActiveStep,
+  changeFillStep,
+} from "./../../../redux/ActionCreators/Steps/steps";
 
 export const Place = () => {
   const dispatch = useDispatch();
+  const { isChoseAddress } = useSelector((state) => state.form);
+
+  //*-----------------------------------------------------------------
+  //* Проверка и изменения состояний
 
   useEffect(() => {
     dispatch(changeCheckButton("/order/models", "Выберите модель"));
     dispatch(changeActiveStep(0, true));
   }, []);
 
+  useEffect(() => {
+    if (isChoseAddress) {
+      dispatch(toggleCheckButtonDisable(false));
+      dispatch(changeActiveStep(1, true));
+      dispatch(changeFillStep(0, true));
+    } else {
+      dispatch(toggleCheckButtonDisable(true));
+      dispatch(changeActiveStep(1, false));
+      dispatch(changeFillStep(0, false));
+    }
+  }, [isChoseAddress]);
+  //*-----------------------------------------------------------------
   return (
     <section className="place">
       <div className="place__container">

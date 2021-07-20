@@ -1,39 +1,44 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Form.scss";
 import { useSelector, useDispatch } from "react-redux";
-import { changePoint } from "../../../../redux/ActionCreators/Form/form";
-import { changeCity } from "./../../../../redux/ActionCreators/Form/form";
-import { choseAddress } from "../../../../redux/ActionCreators/Form/form";
 import {
-  changeDisable,
-  changeFill,
+  changePoint,
+  changeCity,
+  choseAddress,
+} from "../../../../redux/ActionCreators/Form/form";
+import {
   changeFillStep,
+  changeActiveStep,
 } from "./../../../../redux/ActionCreators/Steps/steps";
 import { toggleCheckButtonDisable } from "../../../../redux/ActionCreators/CheckButton/checkButton";
-import { changeActiveStep } from "./../../../../redux/ActionCreators/Steps/steps";
 
 export const Form = () => {
   const { city, point, isChoseAddress } = useSelector((state) => state.form);
   const dispatch = useDispatch();
 
-  if (isChoseAddress) {
-    dispatch(toggleCheckButtonDisable(false));
-    dispatch(changeActiveStep(1, true));
-    dispatch(changeFillStep(0, true));
-  } else {
-    dispatch(toggleCheckButtonDisable(true));
-    dispatch(changeActiveStep(1, false));
-    dispatch(changeFillStep(0, false));
-  }
+  //* ------------------------------------------------------
+  //* Проверки и изменения состояний
 
-  const changeHandler = (e) => {
-    dispatch(changeCity(e.target.value));
-    if (e.target.value.length > 1) {
+  useEffect(() => {
+    if (city.length > 1) {
       dispatch(choseAddress(true));
-    } else {
+    } else if (isChoseAddress) {
       dispatch(choseAddress(false));
     }
+  }, [city]);
+  //*--------------------------------------------------------
+
+  //*--------------------------------------------------------
+  //* Handler's
+  const changeHandlerCity = (e) => {
+    dispatch(changeCity(e.target.value));
   };
+
+  const changeHandlerPoint = (e) => {
+    dispatch(changePoint(e.target.value));
+  };
+  //*--------------------------------------------------------
+
   return (
     <form action="" className="form">
       <div className="form__container">
@@ -43,8 +48,9 @@ export const Form = () => {
             <input
               type="text"
               className="form__input"
+              placeholder="Начните вводить город ..."
               value={city}
-              onChange={(e) => changeHandler(e)}
+              onChange={(e) => changeHandlerCity(e)}
             />
           </div>
         </div>
@@ -56,7 +62,7 @@ export const Form = () => {
               className="form__input"
               placeholder="Начните вводить пункт ..."
               value={point}
-              onChange={(e) => dispatch(changePoint(e.target.value))}
+              onChange={(e) => changeHandlerPoint(e)}
             />
           </div>
         </div>

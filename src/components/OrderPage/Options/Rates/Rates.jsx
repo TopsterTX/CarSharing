@@ -9,7 +9,9 @@ import "./Rates.scss";
 export const Rates = () => {
   const { isChoseRate, rates } = useSelector((state) => state.options);
   const dispatch = useDispatch();
-  console.log(isChoseRate, rates);
+
+  //*-----------------------------------------------------
+  //* Handler's
 
   const clickHandler = (el) => {
     if (isChoseRate) {
@@ -23,6 +25,7 @@ export const Rates = () => {
     }
   };
 
+  //*-------------------------------------------------------
   return (
     <section className="options-rates">
       <div className="options-rates__container">
