@@ -22,12 +22,10 @@ export const Form = () => {
   );
   const dispatch = useDispatch();
 
-  console.log(city);
-
+  console.log(points);
   useEffect(() => {
     dispatch(getCities());
     dispatch(getPoints());
-    console.log(points);
   }, []);
 
   if (isChoseAddress) {
@@ -57,6 +55,7 @@ export const Form = () => {
             type="text"
             className="form__input"
             value={city}
+            placeholder="Начните вводить город ..."
             onChange={(e) => changeHandler(e)}
             list="city"
           />
@@ -76,7 +75,15 @@ export const Form = () => {
             onChange={(e) => dispatch(changePoint(e.target.value))}
             list="point"
           />
-          <datalist id="point">{/* {points.} */}</datalist>
+          <datalist id="point">
+            {points.map((el) => {
+              if (el.cityId.name === city) {
+                return <Point point={el.name} key={el.id} />;
+              } else {
+                return;
+              }
+            })}
+          </datalist>
         </div>
       </div>
     </form>

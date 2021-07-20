@@ -46,7 +46,7 @@ export const getCities = () => async (dispatch) => {
 
 export const getPoints = () => async(dispatch) => {
   try{
-    await fetch(`${BASE_URL}db/point`, {
+    await fetch(`${BASE_URL}db/point?limit=13`, {
       headers: {
         'X-Api-Factory-Application-Id': '5e25c641099b810b946c5d5b',
       }
