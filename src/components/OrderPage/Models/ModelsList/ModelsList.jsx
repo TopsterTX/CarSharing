@@ -12,10 +12,9 @@ export const ModelsList = () => {
       {cars.cars.map(el => {
         return (
           <ModelsItem
-            price={el.price}
-            model={el.model}
-            img={el.img}
-            active={el.active}
+            price={`${el.priceMin} - ${el.priceMax}`}
+            model={el.name}
+            img={el.thumbnail.path}
             id={el.id}
             car={el.car}
             isChoseModel={cars.isChoseModel}

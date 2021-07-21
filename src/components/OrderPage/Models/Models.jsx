@@ -9,16 +9,18 @@ import {
   changeActiveStep,
   changeFillStep,
 } from "../../../redux/ActionCreators/Steps/steps";
+import { getCars } from "../../../redux/ActionCreators/Cars/cars";
 
 export const Models = () => {
   const dispatch = useDispatch();
-  const { isChoseModel } = useSelector((state) => state.cars);
+  const { isChoseModel, cars } = useSelector((state) => state.cars);
 
   //*-------------------------------------------------
   //* Проверка и изменения состояний
 
   useEffect(() => {
     dispatch(changeCheckButton("/order/options", "Дополнительно"));
+    dispatch(getCars());
   }, []);
 
   useEffect(() => {
