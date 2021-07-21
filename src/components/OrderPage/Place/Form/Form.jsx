@@ -11,10 +11,16 @@ import {
 } from "./../../../../redux/ActionCreators/Steps/steps";
 import { toggleCheckButtonDisable } from "../../../../redux/ActionCreators/CheckButton/checkButton";
 import { changeActiveStep } from "./../../../../redux/ActionCreators/Steps/steps";
-import { getCities } from "../../../../redux/ActionCreators/Place/place";
+import {
+  getCities,
+  getPoints,
+} from "../../../../redux/ActionCreators/Place/place";
 import { City } from "./City/City";
 import { Point } from "./Point/Point";
-import { getPoints } from "./../../../../redux/ActionCreators/Place/place";
+import {
+  choseCity,
+  chosePoint,
+} from "./../../../../redux/ActionCreators/Geocode/geocode";
 
 export const Form = () => {
   const { city, point, isChoseAddress, cities, points } = useSelector(
@@ -59,7 +65,7 @@ export const Form = () => {
             onChange={(e) => changeHandler(e)}
             list="city"
           />
-          <datalist id="city">
+          <datalist id="city" onClick={() => console.log('HI')}>
             {cities.map((el) => {
               return <City city={el.name} key={el.id} />;
             })}
@@ -75,7 +81,7 @@ export const Form = () => {
             onChange={(e) => dispatch(changePoint(e.target.value))}
             list="point"
           />
-          <datalist id="point">
+          <datalist id="point" onClick={() => dispatch(chosePoint(point))}>
             {points.map((el) => {
               if (el.cityId.name === city) {
                 return <Point point={el.name} key={el.id} />;

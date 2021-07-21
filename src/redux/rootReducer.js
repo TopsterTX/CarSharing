@@ -8,6 +8,7 @@ import form from "./Reducers/Place/place";
 import popup from "./Reducers/Popup/popup";
 import total from "./Reducers/Total/total";
 import options from './Reducers/Options/options'
+import geocode from "./Reducers/Geocode/geocode";
 
 export default {
   navigation,
@@ -19,5 +20,6 @@ export default {
   form,
   popup,
   total,
-  options
+  options,
+  geocode,
 };
