@@ -65,7 +65,7 @@ export const Form = () => {
             onChange={(e) => changeHandler(e)}
             list="city"
           />
-          <datalist id="city" onClick={() => console.log('HI')}>
+          <datalist id="city">
             {cities.map((el) => {
               return <City city={el.name} key={el.id} />;
             })}
@@ -81,10 +81,10 @@ export const Form = () => {
             onChange={(e) => dispatch(changePoint(e.target.value))}
             list="point"
           />
-          <datalist id="point" onClick={() => dispatch(chosePoint(point))}>
+          <datalist id="point" >
             {points.map((el) => {
               if (el.cityId.name === city) {
-                return <Point point={el.name} key={el.id} />;
+                return <Point point={el.address} key={el.id} />;
               } else {
                 return;
               }

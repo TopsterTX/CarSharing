@@ -1,23 +1,19 @@
 const defaultState = {
-  cityGeocode: "",
-  pointGeocode: "",
+  placemarks: [],
 };
 
 const reduce = "GEOCODE_";
-export const CHOSE_CITY = `${reduce}CHOSE_CITY`;
-export const CHOSE_POINT = `${reduce}CHOSE_POINT`;
+export const CREATE_PLACEMARK = `${reduce}CREATE_PLACEMARK`;
 
 export default (state = defaultState, { type, payload }) => {
   switch (type) {
-    case CHOSE_CITY:
+    case CREATE_PLACEMARK:
       return {
         ...state,
-        cityGeocode: payload,
-      };
-    case CHOSE_POINT:
-      return {
-        ...state,
-        pointGeocode: payload,
+        placemarks: state.placemarks.concat({
+          address: payload.address,
+          bounds: payload.bounds,
+        }),
       };
     default:
       return state;

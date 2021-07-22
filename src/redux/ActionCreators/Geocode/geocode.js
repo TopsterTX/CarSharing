@@ -1,15 +1,12 @@
-import { CHOSE_CITY, CHOSE_POINT } from "../../Reducers/Geocode/geocode";
+import { CREATE_PLACEMARK } from "../../Reducers/Geocode/geocode";
 
-export const choseCity = (city) => {
+export const createPlacemark = (address, bounds) => {
     return {
-        type: CHOSE_CITY,
-        payload: city,
+        type: CREATE_PLACEMARK,
+        payload: {
+            address,
+            bounds
+        },
     }
 }
 
-export const chosePoint = (point) => {
-    return {
-        type: CHOSE_POINT,
-        payload: point,
-    }
-}
