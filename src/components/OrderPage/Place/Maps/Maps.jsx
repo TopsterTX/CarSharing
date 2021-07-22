@@ -13,11 +13,12 @@ export const Maps = () => {
     [54.16386, 45.147574],
     [54.164914, 45.150512],
   ]);
-  console.log(bound);
+
   let map;
 
+  //*-------------------------------------------------------------------
+  //* Проверка и изменение состояний
   useEffect(() => {
-    console.log(`${city.replace(/\s+/g, "")},${point.replace(/\s+/g, "")}`);
     placemarks.map((el) => {
       if (
         `${city.replace(/\s+/g, "")},${point.replace(/\s+/g, "")}` ===
@@ -27,6 +28,8 @@ export const Maps = () => {
       }
     });
   }, [city, point]);
+
+  //*--------------------------------------------------------------------
 
   const myGeoCode = (ymaps, map, address) => {
     ymaps
@@ -46,15 +49,15 @@ export const Maps = () => {
           }
         );
         placemark.events.add("click", () => {
-          setBound(bounds)
-          // map.setBounds(bounds, {
-          //   checkZoomRange: true,
-          // });
+          setBound(bounds);
         });
         dispacth(createPlacemark(address, bounds));
         map.geoObjects.add(placemark);
       });
   };
+  
+  //*----------------------------------------------------------
+
   const init = (ymaps, map) => {
     points.map((el) => {
       myGeoCode(
@@ -67,6 +70,8 @@ export const Maps = () => {
       );
     });
   };
+
+  //*----------------------------------------------------------
 
   return (
     <div className="map">
