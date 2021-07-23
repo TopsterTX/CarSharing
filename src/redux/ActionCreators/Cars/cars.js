@@ -17,7 +17,7 @@ export const unchoseModel = (id) => {
 
 export const getCars = () => async (dispatch) => {
   try {
-    await fetch(`https://api-factory.simbirsoft1.com/api/db/car?offset=2`, {
+    await fetch(`https://api-factory.simbirsoft1.com/api/db/car?limit=10`, {
       headers: {
         "X-Api-Factory-Application-Id": "5e25c641099b810b946c5d5b",
       },

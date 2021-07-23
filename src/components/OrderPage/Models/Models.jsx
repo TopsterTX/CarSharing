@@ -10,19 +10,25 @@ import {
   changeFillStep,
 } from "../../../redux/ActionCreators/Steps/steps";
 import { getCars } from "../../../redux/ActionCreators/Cars/cars";
+import { Loader } from "./../../Loader/Loader";
 
 export const Models = () => {
   const dispatch = useDispatch();
   const { isChoseModel, cars } = useSelector((state) => state.cars);
-
   //*-------------------------------------------------
   //* Проверка и изменения состояний
 
   useEffect(() => {
     dispatch(changeCheckButton("/order/options", "Дополнительно"));
-    dispatch(getCars());
   }, []);
 
+  useEffect(() => {
+    if (cars === "") {
+      dispatch(getCars());
+    } else {
+      return;
+    }
+  }, [cars]);
   useEffect(() => {
     if (isChoseModel === false) {
       dispatch(toggleCheckButtonDisable(true));
@@ -41,7 +47,7 @@ export const Models = () => {
     <section className="models">
       <div className="models__container">
         <ModelsFilter />
-        <ModelsList />
+        {cars ? <ModelsList /> : <Loader />}
       </div>
     </section>
   );

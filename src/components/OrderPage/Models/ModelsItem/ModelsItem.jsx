@@ -10,24 +10,35 @@ import "./ModelsItem.scss";
 export const ModelsItem = ({
   price,
   model,
-  car,
-  img,
-  active,
   id,
+  imgPath,
   isChoseModel,
+  imgMime,
+  imgName,
 }) => {
-  const activeItem = useRef();
-
+  const item = useRef();
   const dispatch = useDispatch();
-
+  let src;
   //*-------------------------------------------------
   //* Handler's
 
+  (function imageHandler() {
+    if (imgPath.indexOf("/files") !== -1) {
+      src = `https://api-factory.simbirsoft1.com${imgPath}`;
+    } else {
+      src = imgPath;
+    }
+  })();
+
   const modelsItemActiveHandler = () => {
+    item.current.classList.remove("disable");
+    item.current.classList.add("active");
     dispatch(choseModel(id));
   };
 
   const modelsItemDisableHandler = () => {
+    item.current.classList.remove("active");
+    item.current.classList.add("disable");
     dispatch(unchoseModel(id));
   };
 
@@ -35,29 +46,31 @@ export const ModelsItem = ({
 
   return (
     <li
-      className={`models-item ${active ? "active" : "disable"}`}
+      className={`models-item disable`}
       onClick={() => {
         if (
-          activeItem.current.classList.contains("disable") &&
+          item.current.classList.contains("disable") &&
           isChoseModel === false
         ) {
           modelsItemActiveHandler();
         } else if (
-          activeItem.current.classList.contains("active") &&
+          item.current.classList.contains("active") &&
           isChoseModel === true
         ) {
           modelsItemDisableHandler();
         }
       }}
-      ref={activeItem}
+      ref={item}
     >
       <span className="models-item__model">{model}</span>
       <span className="models-item__price">{price}</span>
       <div className="models-item__image-block">
         <img
-          src={img}
-          alt=""
+          src={src}
+          alt="car"
           className="models-item__image"
+          crossOrigin="anonymous"
+          referrerPolicy="origin"
           width="256px"
           height="116px"
         />

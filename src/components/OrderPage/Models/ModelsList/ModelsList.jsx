@@ -1,7 +1,6 @@
 import React from "react";
-
 import { useSelector } from "react-redux";
-import {ModelsItem} from "../ModelsItem/ModelsItem";
+import { ModelsItem } from "../ModelsItem/ModelsItem";
 import "./ModelsList.scss";
 
 export const ModelsList = () => {
@@ -9,18 +8,25 @@ export const ModelsList = () => {
 
   return (
     <ul className="models-list">
-      {cars.cars.map(el => {
-        return (
-          <ModelsItem
-            price={`${el.priceMin} - ${el.priceMax}`}
-            model={el.name}
-            img={el.thumbnail.path}
-            id={el.id}
-            car={el.car}
-            isChoseModel={cars.isChoseModel}
-            key={el.id}
-          />
-        );
+      {cars.cars.map((el) => {
+        console.log(el.thumbnail.mimetype);
+        if (el.thumbnail.mimetype == "image/png") {
+          return (
+            <ModelsItem
+              price={`${el.priceMin} - ${el.priceMax}`}
+              model={el.name}
+              imgPath={el.thumbnail.path}
+              id={el.id}
+              car={el.car}
+              isChoseModel={cars.isChoseModel}
+              key={el.id}
+              imgMime={el.thumbnail.mimetype ? el.thumbnail.mimetype : null}
+              imgName={el.thumbnail.originalname}
+            />
+          );
+        } else {
+          return;
+        }
       })}
     </ul>
   );

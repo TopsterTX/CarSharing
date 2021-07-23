@@ -1,9 +1,7 @@
 
 const defaultState = {
   isChoseModel: false,
-  cars: [
-  
-  ],
+  cars: '',
 };
 
 const reduce = "CARS_";
