@@ -4,12 +4,11 @@ import { ModelsItem } from "../ModelsItem/ModelsItem";
 import "./ModelsList.scss";
 
 export const ModelsList = () => {
-  const cars = useSelector((state) => state.cars);
+  const { cars } = useSelector((state) => state.cars);
 
   return (
     <ul className="models-list">
-      {cars.cars.map((el) => {
-        console.log(el.thumbnail.mimetype);
+      {cars.map((el) => {
         if (el.thumbnail.mimetype == "image/png") {
           return (
             <ModelsItem

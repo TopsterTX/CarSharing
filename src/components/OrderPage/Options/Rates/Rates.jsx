@@ -35,8 +35,11 @@ export const Rates = () => {
             return (
               <li
                 className={`options-rates__item ${el.active ? "active" : ""}`}
+                key={el.id}
                 onClick={() => clickHandler(el)}
-              >{`${el.rate}, ${el.ratePrice}${el.postfix} `}</li>
+              >
+                {`${el.rate}, ${el.ratePrice}${el.postfix} `}
+              </li>
             );
           })}
         </ul>
