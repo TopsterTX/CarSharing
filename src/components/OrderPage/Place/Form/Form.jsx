@@ -6,11 +6,6 @@ import {
   changeCity,
   choseAddress,
 } from "../../../../redux/ActionCreators/Form/form";
-import {
-  changeFillStep,
-  changeActiveStep,
-} from "./../../../../redux/ActionCreators/Steps/steps";
-import { toggleCheckButtonDisable } from "../../../../redux/ActionCreators/CheckButton/checkButton";
 
 export const Form = () => {
   const { city, point, isChoseAddress } = useSelector((state) => state.form);
@@ -25,7 +20,7 @@ export const Form = () => {
     } else if (isChoseAddress) {
       dispatch(choseAddress(false));
     }
-  }, [city]);
+  }, [city, isChoseAddress]);
   //*--------------------------------------------------------
 
   //*--------------------------------------------------------
