@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { YMaps, Map, Placemark } from "react-yandex-maps";
+import { YMaps, Map } from "react-yandex-maps";
 import "./Maps.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { createPlacemark } from "../../../../redux/ActionCreators/Geocode/geocode";
 
 export const Maps = () => {
-  const { city, point, cities, points } = useSelector((state) => state.form);
+  const { city, point, points } = useSelector((state) => state.form);
   const { placemarks } = useSelector((state) => state.geocode);
   const dispacth = useDispatch();
 
@@ -27,7 +27,7 @@ export const Maps = () => {
         setBound(el.bounds);
       }
     });
-  }, [city, point]);
+  }, [city, point, placemarks]);
 
   //*--------------------------------------------------------------------
 
@@ -55,7 +55,7 @@ export const Maps = () => {
         map.geoObjects.add(placemark);
       });
   };
-  
+
   //*----------------------------------------------------------
 
   const init = (ymaps, map) => {

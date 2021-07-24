@@ -4,11 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { changePoint } from "../../../../redux/ActionCreators/Place/place";
 import { changeCity } from "../../../../redux/ActionCreators/Place/place";
 import { choseAddress } from "../../../../redux/ActionCreators/Place/place";
-import {
-  changeDisable,
-  changeFill,
-  changeFillStep,
-} from "./../../../../redux/ActionCreators/Steps/steps";
+import { changeFillStep } from "./../../../../redux/ActionCreators/Steps/steps";
 import { toggleCheckButtonDisable } from "../../../../redux/ActionCreators/CheckButton/checkButton";
 import { changeActiveStep } from "./../../../../redux/ActionCreators/Steps/steps";
 import {
@@ -17,10 +13,6 @@ import {
 } from "../../../../redux/ActionCreators/Place/place";
 import { City } from "./City/City";
 import { Point } from "./Point/Point";
-import {
-  choseCity,
-  chosePoint,
-} from "./../../../../redux/ActionCreators/Geocode/geocode";
 
 export const Form = () => {
   const { city, point, isChoseAddress, cities, points } = useSelector(
@@ -28,7 +20,6 @@ export const Form = () => {
   );
   const dispatch = useDispatch();
 
-  console.log(points);
   useEffect(() => {
     dispatch(getCities());
     dispatch(getPoints());
@@ -81,7 +72,7 @@ export const Form = () => {
             onChange={(e) => dispatch(changePoint(e.target.value))}
             list="point"
           />
-          <datalist id="point" >
+          <datalist id="point">
             {points.map((el) => {
               if (el.cityId.name === city) {
                 return <Point point={el.address} key={el.id} />;
