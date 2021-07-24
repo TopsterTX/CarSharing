@@ -3,12 +3,23 @@ import { useDispatch, useSelector } from "react-redux";
 import { changePopupActive } from "../../redux/ActionCreators/Popup/popup";
 import { changeConfirmOrder } from "../../redux/ActionCreators/Total/total";
 import "./TotalPopup.scss";
-import { changeCheckButton } from './../../redux/ActionCreators/CheckButton/checkButton';
+import { changeCheckButton } from "./../../redux/ActionCreators/CheckButton/checkButton";
 
 export const TotalPopup = () => {
   const { isPopupActive } = useSelector((state) => state.popup);
   const { isConfirmOrder } = useSelector((state) => state.total);
   const dispatch = useDispatch();
+
+  //*------------------------------------------------------------
+  //* Handler's
+
+  const clickHandler = () => {
+    dispatch(changeConfirmOrder(true));
+    dispatch(changeCheckButton("/order/total", "Отменить"));
+    dispatch(changePopupActive(false));
+  };
+
+  //*------------------------------------------------------------
 
   return (
     <div
@@ -21,11 +32,7 @@ export const TotalPopup = () => {
         <div className="total-popup__buttons">
           <button
             className="total-popup__accept total-popup__button"
-            onClick={() => {
-              dispatch(changeConfirmOrder(true));
-              dispatch(changeCheckButton('/order/total', 'Отменить'))
-              dispatch(changePopupActive(false));
-            }}
+            onClick={() => clickHandler()}
           >
             Подтвердить
           </button>

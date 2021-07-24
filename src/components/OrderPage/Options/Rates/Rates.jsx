@@ -14,12 +14,10 @@ export const Rates = () => {
   //* Handler's
 
   const clickHandler = (el) => {
-    if (isChoseRate) {
-      if (el.active) {
-        dispatch(choseRateOptions(!isChoseRate));
-        dispatch(changeRateOptions(el.id, !el.active));
-      }
-    } else {
+    if (isChoseRate && el.active) {
+      dispatch(choseRateOptions(!isChoseRate));
+      dispatch(changeRateOptions(el.id, !el.active));
+    } else if(isChoseRate === false) {
       dispatch(changeRateOptions(el.id, !el.active));
       dispatch(choseRateOptions(!isChoseRate));
     }

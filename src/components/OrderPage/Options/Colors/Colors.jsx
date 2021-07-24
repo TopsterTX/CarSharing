@@ -12,12 +12,10 @@ export const Colors = () => {
   //* Handler's
 
   const clickHandler = (el) => {
-    if (isChoseColor) {
-      if (el.active) {
-        dispatch(choseColorOptions(!isChoseColor));
-        dispatch(changeColorOptions(el.id, !el.active));
-      }
-    } else {
+    if (isChoseColor && el.active) {
+      dispatch(choseColorOptions(!isChoseColor));
+      dispatch(changeColorOptions(el.id, !el.active));
+    } else if (isChoseColor === false) {
       dispatch(changeColorOptions(el.id, !el.active));
       dispatch(choseColorOptions(!isChoseColor));
     }

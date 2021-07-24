@@ -24,9 +24,9 @@ export const Options = () => {
   //* Проверка и изменение состояний
 
   useEffect(() => {
-    if (isChoseRate && isChoseColor && isChoseDateRent === true) {
+    if (isChoseRate && isChoseColor && isChoseDateRent) {
       dispatch(choseOptions(true));
-    } else if (isChoseOptions === true) {
+    } else if (isChoseOptions) {
       dispatch(choseOptions(false));
     }
   }, [isChoseRate, isChoseColor, isChoseDateRent]);
@@ -48,13 +48,6 @@ export const Options = () => {
   }, []);
 
   //*-------------------------------------------------------------
-
-  //*-------------------------------------------------------------
-  //* Handler's
-
-  const optionsHandlerActive = () => {};
-
-  const optionsHandlerDisable = () => {};
 
   //*-------------------------------------------------------------
 
