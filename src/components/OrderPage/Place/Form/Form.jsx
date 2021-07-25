@@ -8,12 +8,6 @@ import {
   getCities,
   getPoints,
 } from "../../../../redux/ActionCreators/Place/place";
-import {
-  changeFillStep,
-  changeActiveStep,
-} from "./../../../../redux/ActionCreators/Steps/steps";
-import { toggleCheckButtonDisable } from "../../../../redux/ActionCreators/CheckButton/checkButton";
-
 import { City } from "./City/City";
 import { Point } from "./Point/Point";
 
@@ -31,17 +25,6 @@ export const Form = () => {
     dispatch(getPoints());
   }, []);
 
-  useEffect(() => {
-    if (isChoseAddress) {
-      dispatch(toggleCheckButtonDisable(false));
-      dispatch(changeActiveStep(1, true));
-      dispatch(changeFillStep(0, true));
-    } else {
-      dispatch(toggleCheckButtonDisable(true));
-      dispatch(changeActiveStep(1, false));
-      dispatch(changeFillStep(0, false));
-    }
-  }, [isChoseAddress]);
 
   useEffect(() => {
     if (city.length > 1) {

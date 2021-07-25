@@ -3,19 +3,12 @@ import { useDispatch } from "react-redux";
 import {
   choseModel,
   unchoseModel,
+  choseCar,
 } from "../../../../redux/ActionCreators/Cars/cars";
 
 import "./ModelsItem.scss";
 
-export const ModelsItem = ({
-  price,
-  model,
-  id,
-  imgPath,
-  isChoseModel,
-  imgMime,
-  imgName,
-}) => {
+export const ModelsItem = ({ car, isChoseModel }) => {
   const item = useRef();
   const dispatch = useDispatch();
   let src;
@@ -23,23 +16,24 @@ export const ModelsItem = ({
   //* Handler's
 
   (function imageHandler() {
-    if (imgPath.indexOf("/files") !== -1) {
-      src = `https://api-factory.simbirsoft1.com${imgPath}`;
+    if (car.thumbnail.path.indexOf("/files") !== -1) {
+      src = `https://api-factory.simbirsoft1.com${car.thumbnail.path}`;
     } else {
-      src = imgPath;
+      src = car.thumbnail.path;
     }
   })();
 
   const modelsItemActiveHandler = () => {
     item.current.classList.remove("disable");
     item.current.classList.add("active");
-    dispatch(choseModel(id));
+    dispatch(choseModel(car.id));
+    dispatch(choseCar(car));
   };
 
   const modelsItemDisableHandler = () => {
     item.current.classList.remove("active");
     item.current.classList.add("disable");
-    dispatch(unchoseModel(id));
+    dispatch(unchoseModel(car.id));
   };
 
   //*--------------------------------------------------
@@ -62,8 +56,8 @@ export const ModelsItem = ({
       }}
       ref={item}
     >
-      <span className="models-item__model">{model}</span>
-      <span className="models-item__price">{price}</span>
+      <span className="models-item__model">{car.model}</span>
+      <span className="models-item__price">{`${car.priceMin} - ${car.priceMax}`}</span>
       <div className="models-item__image-block">
         <img
           src={src}

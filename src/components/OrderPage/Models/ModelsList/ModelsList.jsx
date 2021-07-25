@@ -8,19 +8,13 @@ export const ModelsList = () => {
 
   return (
     <ul className="models-list">
-      {cars.map((el) => {
-        if (el.thumbnail.mimetype == "image/png") {
+      {cars.map((car) => {
+        if (car.thumbnail.mimetype == "image/png") {
           return (
             <ModelsItem
-              price={`${el.priceMin} - ${el.priceMax}`}
-              model={el.name}
-              imgPath={el.thumbnail.path}
-              id={el.id}
-              car={el.car}
+              car={car}
               isChoseModel={cars.isChoseModel}
-              key={el.id}
-              imgMime={el.thumbnail.mimetype ? el.thumbnail.mimetype : null}
-              imgName={el.thumbnail.originalname}
+              key={car.id}
             />
           );
         } else {

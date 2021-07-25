@@ -1,5 +1,16 @@
-import { CHOSE_MODEL, UNCHOSE_MODEL, GET_CARS } from "../../Reducers/Cars/cars";
-import { BASE_URL } from "../../../constants";
+import {
+  CHOSE_MODEL,
+  UNCHOSE_MODEL,
+  GET_CARS,
+  CHOSE_CAR,
+} from "../../Reducers/Cars/cars";
+
+export const choseCar = (car) => {
+  return {
+    type: CHOSE_CAR,
+    payload: car,
+  };
+};
 
 export const choseModel = (id) => {
   return {
