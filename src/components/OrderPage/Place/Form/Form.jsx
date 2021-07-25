@@ -1,23 +1,44 @@
 import React, { useEffect } from "react";
 import "./Form.scss";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  changePoint,
-  changeCity,
-  choseAddress,
-} from "../../../../redux/ActionCreators/Form/form";
-import {
-  changeFillStep,
-  changeActiveStep,
-} from "./../../../../redux/ActionCreators/Steps/steps";
+import { changePoint } from "../../../../redux/ActionCreators/Place/place";
+import { changeCity } from "../../../../redux/ActionCreators/Place/place";
+import { choseAddress } from "../../../../redux/ActionCreators/Place/place";
+import { changeFillStep } from "./../../../../redux/ActionCreators/Steps/steps";
 import { toggleCheckButtonDisable } from "../../../../redux/ActionCreators/CheckButton/checkButton";
+import { changeActiveStep } from "./../../../../redux/ActionCreators/Steps/steps";
+import {
+  getCities,
+  getPoints,
+} from "../../../../redux/ActionCreators/Place/place";
+import { City } from "./City/City";
+import { Point } from "./Point/Point";
 
 export const Form = () => {
-  const { city, point, isChoseAddress } = useSelector((state) => state.form);
+  const { city, point, isChoseAddress, cities, points } = useSelector(
+    (state) => state.form
+  );
   const dispatch = useDispatch();
 
-  //* ------------------------------------------------------
-  //* Проверки и изменения состояний
+  //*--------------------------------------------------------
+  //* Проверка и изменение состояний
+
+  useEffect(() => {
+    dispatch(getCities());
+    dispatch(getPoints());
+  }, []);
+
+  useEffect(() => {
+    if (isChoseAddress) {
+      dispatch(toggleCheckButtonDisable(false));
+      dispatch(changeActiveStep(1, true));
+      dispatch(changeFillStep(0, true));
+    } else {
+      dispatch(toggleCheckButtonDisable(true));
+      dispatch(changeActiveStep(1, false));
+      dispatch(changeFillStep(0, false));
+    }
+  }, [isChoseAddress]);
 
   useEffect(() => {
     if (city.length > 1) {
@@ -30,13 +51,16 @@ export const Form = () => {
 
   //*--------------------------------------------------------
   //* Handler's
-  const changeHandlerCity = (e) => {
+
+  const changeHandler = (e) => {
     dispatch(changeCity(e.target.value));
+    if (e.target.value.length > 1) {
+      dispatch(choseAddress(true));
+    } else {
+      dispatch(choseAddress(false));
+    }
   };
 
-  const changeHandlerPoint = (e) => {
-    dispatch(changePoint(e.target.value));
-  };
   //*--------------------------------------------------------
 
   return (
@@ -44,27 +68,39 @@ export const Form = () => {
       <div className="form__container">
         <div className="form__city">
           <span className="city">Город</span>
-          <div className="form__list">
-            <input
-              type="text"
-              className="form__input"
-              placeholder="Начните вводить город ..."
-              value={city}
-              onChange={(e) => changeHandlerCity(e)}
-            />
-          </div>
+          <input
+            type="text"
+            className="form__input"
+            value={city}
+            placeholder="Начните вводить город ..."
+            onChange={(e) => changeHandler(e)}
+            list="city"
+          />
+          <datalist id="city">
+            {cities.map((el) => {
+              return <City city={el.name} key={el.id} />;
+            })}
+          </datalist>
         </div>
         <div className="form__point">
           <span className="point">Пункт выдачи</span>
-          <div className="form__list">
-            <input
-              type="text"
-              className="form__input"
-              placeholder="Начните вводить пункт ..."
-              value={point}
-              onChange={(e) => changeHandlerPoint(e)}
-            />
-          </div>
+          <input
+            type="text"
+            className="form__input"
+            placeholder="Начните вводить пункт ..."
+            value={point}
+            onChange={(e) => dispatch(changePoint(e.target.value))}
+            list="point"
+          />
+          <datalist id="point">
+            {points.map((el) => {
+              if (el.cityId.name === city) {
+                return <Point point={el.address} key={el.id} />;
+              } else {
+                return;
+              }
+            })}
+          </datalist>
         </div>
       </div>
     </form>

@@ -4,10 +4,11 @@ import checkList from "./Reducers/ChecklList/checkList";
 import cars from "./Reducers/Cars/cars";
 import checkButton from "./Reducers/CheckButton/checkButton";
 import steps from "./Reducers/Steps/steps";
-import form from "./Reducers/Form/form";
+import form from "./Reducers/Place/place";
 import popup from "./Reducers/Popup/popup";
 import total from "./Reducers/Total/total";
 import options from './Reducers/Options/options'
+import geocode from "./Reducers/Geocode/geocode";
 
 export default {
   navigation,
@@ -19,5 +20,6 @@ export default {
   form,
   popup,
   total,
-  options
+  options,
+  geocode,
 };

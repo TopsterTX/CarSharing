@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Form } from "./Form/Form";
-import { Maps } from "./Map/Maps";
+import { Maps } from "./Maps/Maps";
 import "./Place.scss";
 import {
   changeCheckButton,

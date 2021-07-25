@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 import { StepsItem } from "./StepsItem/StepsItem";
 import "./Steps.scss";
 
 export const Steps = () => {
-  const steps = useSelector((state) => state.steps.steps);
+  const { steps } = useSelector((state) => state.steps);
 
   return (
     <ul className="steps">
