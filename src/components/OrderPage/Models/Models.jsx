@@ -29,6 +29,7 @@ export const Models = () => {
       return;
     }
   }, [cars]);
+
   useEffect(() => {
     if (isChoseModel === false) {
       dispatch(toggleCheckButtonDisable(true));

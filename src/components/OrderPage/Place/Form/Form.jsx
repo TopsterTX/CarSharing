@@ -1,16 +1,19 @@
 import React, { useEffect } from "react";
 import "./Form.scss";
 import { useSelector, useDispatch } from "react-redux";
-import { changePoint } from "../../../../redux/ActionCreators/Place/place";
-import { changeCity } from "../../../../redux/ActionCreators/Place/place";
-import { choseAddress } from "../../../../redux/ActionCreators/Place/place";
-import { changeFillStep } from "./../../../../redux/ActionCreators/Steps/steps";
-import { toggleCheckButtonDisable } from "../../../../redux/ActionCreators/CheckButton/checkButton";
-import { changeActiveStep } from "./../../../../redux/ActionCreators/Steps/steps";
 import {
+  changePoint,
+  changeCity,
+  choseAddress,
   getCities,
   getPoints,
 } from "../../../../redux/ActionCreators/Place/place";
+import {
+  changeFillStep,
+  changeActiveStep,
+} from "./../../../../redux/ActionCreators/Steps/steps";
+import { toggleCheckButtonDisable } from "../../../../redux/ActionCreators/CheckButton/checkButton";
+
 import { City } from "./City/City";
 import { Point } from "./Point/Point";
 
@@ -46,7 +49,7 @@ export const Form = () => {
     } else if (isChoseAddress) {
       dispatch(choseAddress(false));
     }
-  }, [city, isChoseAddress]);
+  }, [city]);
   //*--------------------------------------------------------
 
   //*--------------------------------------------------------
