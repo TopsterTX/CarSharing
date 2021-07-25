@@ -46,7 +46,7 @@ export const Form = () => {
     } else if (isChoseAddress) {
       dispatch(choseAddress(false));
     }
-  }, [city]);
+  }, [city, isChoseAddress]);
   //*--------------------------------------------------------
 
   //*--------------------------------------------------------
