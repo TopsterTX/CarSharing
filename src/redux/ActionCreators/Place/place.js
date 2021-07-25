@@ -31,7 +31,7 @@ export const choseAddress = (bool) => {
 
 export const getCities = () => async (dispatch) => {
   try {
-    await fetch(`${BASE_URL}db/city`, {
+    await fetch(`https://api-factory.simbirsoft1.com/api/db/city`, {
       headers: {
         'X-Api-Factory-Application-Id' : '5e25c641099b810b946c5d5b',
       }
@@ -46,7 +46,7 @@ export const getCities = () => async (dispatch) => {
 
 export const getPoints = () => async(dispatch) => {
   try{
-    await fetch(`${BASE_URL}db/point?limit=13`, {
+    await fetch(`https://api-factory.simbirsoft1.com/api/db/point?limit=13`, {
       headers: {
         'X-Api-Factory-Application-Id': '5e25c641099b810b946c5d5b',
       }

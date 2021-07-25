@@ -11,6 +11,10 @@ import {
   changeActiveStep,
   changeFillStep,
 } from "./../../../redux/ActionCreators/Steps/steps";
+import {
+  getCities,
+  getPoints,
+} from "../../../redux/ActionCreators/Place/place";
 
 export const Place = () => {
   const dispatch = useDispatch();
@@ -22,6 +26,8 @@ export const Place = () => {
   useEffect(() => {
     dispatch(changeCheckButton("/order/models", "Выберите модель"));
     dispatch(changeActiveStep(0, true));
+    dispatch(getCities());
+    dispatch(getPoints());
   }, []);
 
   useEffect(() => {

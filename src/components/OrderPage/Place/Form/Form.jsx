@@ -27,21 +27,9 @@ export const Form = () => {
   //* Проверка и изменение состояний
 
   useEffect(() => {
-    dispatch(getCities());
-    dispatch(getPoints());
+    console.log("hi");
+    
   }, []);
-
-  useEffect(() => {
-    if (isChoseAddress) {
-      dispatch(toggleCheckButtonDisable(false));
-      dispatch(changeActiveStep(1, true));
-      dispatch(changeFillStep(0, true));
-    } else {
-      dispatch(toggleCheckButtonDisable(true));
-      dispatch(changeActiveStep(1, false));
-      dispatch(changeFillStep(0, false));
-    }
-  }, [isChoseAddress]);
 
   useEffect(() => {
     if (city.length > 1) {
