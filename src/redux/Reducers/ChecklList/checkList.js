@@ -2,57 +2,37 @@ const defaultState = {
   listItems: [
     {
       id: 0,
-      head: "Пункт выдачи",
-      result: "",
-    },
-    {
-      id: 1,
-      head: "Модель",
+      name: "Пункт выдачи",
       result: "",
     },
   ],
+  price: 1000 + " ₽",
 };
 
 const reduce = "CHECK-LIST_";
-export const CHOSE_CAR = `${reduce}CHOSE_CAR`;
-export const ADD_ITEM = `${reduce}ADD_ITEM`;
-export const UNCHOSE_CAR = `${reduce}UNCHOSE_CAR`;
-export const CHOSE_PLACE = `${reduce}CHOSE_PLACE`;
+export const ADD_CHECK_ITEM = `${reduce}ADD_CHECK_ITEM`;
+export const ADD_CHECK_RESULT = `${reduce}ADD_CHECK_RESULT`;
 
 export default (state = defaultState, { type, payload }) => {
   switch (type) {
-    case CHOSE_CAR:
+    case ADD_CHECK_ITEM:
+      return {
+        ...state,
+        listItems: state.listItems.concat(payload),
+      };
+    case ADD_CHECK_RESULT:
       return {
         ...state,
         listItems: state.listItems.map((el) => {
-          if (el.head === "Модель") {
-            return { ...el, result: payload.car + "," + " " + payload.model };
+          if (payload.id === el.id) {
+            return {
+              ...el,
+              result: payload.result,
+            };
           }
           return el;
         }),
       };
-    case UNCHOSE_CAR:
-      return {
-        ...state,
-        listItems: state.listItems.map((el) => {
-          if (el.head === "Модель") {
-            return { ...el, result: payload };
-          }
-          return el;
-        }),
-      };
-    case CHOSE_PLACE:
-      return {
-        ...state,
-        listItems: state.listItems.map((el) => {
-          if (el.head === "Пункт выдачи") {
-            return { ...el, result: payload.city + "," + " " + payload.point };
-          }
-        }),
-      };
-    case ADD_ITEM: {
-      return { ...state, listItems: [...state.listItems, ...payload] };
-    }
     default:
       return state;
   }

@@ -11,10 +11,15 @@ import {
   changeActiveStep,
   changeFillStep,
 } from "./../../../redux/ActionCreators/Steps/steps";
+import {
+  addCheckItem,
+  addCheckResult,
+} from "./../../../redux/ActionCreators/ChecklList/checkList";
 
 export const Place = () => {
   const dispatch = useDispatch();
   const { isChoseAddress } = useSelector((state) => state.form);
+  const { address } = useSelector((state) => state.form);
 
   //*-----------------------------------------------------------------
   //* Проверка и изменения состояний
@@ -33,9 +38,15 @@ export const Place = () => {
       dispatch(toggleCheckButtonDisable(true));
       dispatch(changeActiveStep(1, false));
       dispatch(changeFillStep(0, false));
+      dispatch(addCheckResult(0, ""));
     }
   }, [isChoseAddress]);
+
+  useEffect(() => {
+    dispatch(addCheckResult(0, address));
+  }, [address]);
   //*-----------------------------------------------------------------
+
   return (
     <section className="place">
       <div className="place__container">

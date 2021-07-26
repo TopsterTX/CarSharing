@@ -2,14 +2,10 @@
 @import "../../../../mixins.scss";
 
 .options-addons {
-  &__container {
-  }
   &__heading {
     display: block;
     margin-bottom: 16px;
     @include subHeading();
-  }
-  &__list {
   }
   &__item {
     display: flex;

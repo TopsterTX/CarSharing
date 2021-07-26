@@ -3,6 +3,7 @@ import { YMaps, Map } from "react-yandex-maps";
 import "./Maps.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { createPlacemark } from "../../../../redux/ActionCreators/Geocode/geocode";
+import { addAddress } from "../../../../redux/ActionCreators/Place/place";
 
 export const Maps = () => {
   const { city, point, points } = useSelector((state) => state.form);
@@ -25,6 +26,7 @@ export const Maps = () => {
         el.address
       ) {
         setBound(el.bounds);
+        dispacth(addAddress(`${city}, ${point}`));
       }
     });
   }, [city, point, placemarks]);

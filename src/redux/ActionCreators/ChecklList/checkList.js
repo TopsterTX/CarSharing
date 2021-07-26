@@ -1,43 +1,25 @@
-import { CHOSE_PLACE } from "../../Reducers/ChecklList/checkList";
-import { UNCHOSE_CAR } from "../../Reducers/CheckList/checkList";
-import { CHOSE_CAR } from "../../Reducers/CheckList/checkList";
-import { ADD_ITEM } from "../../Reducers/CheckList/checkList";
+import {
+  ADD_CHECK_RESULT,
+  ADD_CHECK_ITEM,
+} from "../../Reducers/ChecklList/checkList";
 
-export const addItem = (head) => {
+export const addCheckItem = (id, name) => {
   return {
-    type: ADD_ITEM,
-    payload: [
-      {
-        head,
-        result: "",
-      },
-    ],
-  };
-};
-
-export const chosePlace = (city, point) => {
-  return {
-    type: CHOSE_PLACE,
+    type: ADD_CHECK_ITEM,
     payload: {
-      city,
-      point,
+      id,
+      name,
+      result: "",
     },
   };
 };
 
-export const choseCar = (model, car) => {
+export const addCheckResult = (id, result) => {
   return {
-    type: CHOSE_CAR,
+    type: ADD_CHECK_RESULT,
     payload: {
-      model,
-      car,
+      id,
+      result,
     },
-  };
-};
-
-export const unchoseCar = () => {
-  return {
-    type: UNCHOSE_CAR,
-    payload: "",
   };
 };

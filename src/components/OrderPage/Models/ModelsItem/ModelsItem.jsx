@@ -4,11 +4,13 @@ import {
   choseModel,
   unchoseModel,
   choseCar,
+  changeActiveCars,
 } from "../../../../redux/ActionCreators/Cars/cars";
 
 import "./ModelsItem.scss";
 
-export const ModelsItem = ({ car, isChoseModel }) => {
+export const ModelsItem = ({ car, isChoseModel, active, id }) => {
+  // console.log(car);
   const item = useRef();
   const dispatch = useDispatch();
   let src;
@@ -22,41 +24,41 @@ export const ModelsItem = ({ car, isChoseModel }) => {
       src = car.thumbnail.path;
     }
   })();
+  const clickHandler = () => {
+    if (item.current.classList.contains("disable") && isChoseModel === false) {
+      modelsItemActiveHandler();
+    } else {
+      modelsItemDisableHandler();
+    }
+  };
 
   const modelsItemActiveHandler = () => {
-    item.current.classList.remove("disable");
-    item.current.classList.add("active");
-    dispatch(choseModel(car.id));
+    dispatch(changeActiveCars(id, !active));
+    dispatch(choseModel());
     dispatch(choseCar(car));
   };
 
   const modelsItemDisableHandler = () => {
-    item.current.classList.remove("active");
-    item.current.classList.add("disable");
-    dispatch(unchoseModel(car.id));
+    dispatch(changeActiveCars(id, !active));
+    dispatch(unchoseModel());
+    dispatch(choseCar(""));
   };
 
   //*--------------------------------------------------
-
+  console.log(isChoseModel);
   return (
     <li
-      className={`models-item disable`}
+      className={`models-item ${active ? "active" : "disable"}`}
       onClick={() => {
-        if (
-          item.current.classList.contains("disable") &&
-          isChoseModel === false
-        ) {
+        if (active === false && isChoseModel === false) {
           modelsItemActiveHandler();
-        } else if (
-          item.current.classList.contains("active") &&
-          isChoseModel === true
-        ) {
+        } else if (active && isChoseModel) {
           modelsItemDisableHandler();
         }
       }}
       ref={item}
     >
-      <span className="models-item__model">{car.model}</span>
+      <span className="models-item__model">{car.name}</span>
       <span className="models-item__price">{`${car.priceMin} - ${car.priceMax}`}</span>
       <div className="models-item__image-block">
         <img

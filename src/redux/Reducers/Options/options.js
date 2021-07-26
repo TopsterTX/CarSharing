@@ -3,23 +3,8 @@ const defaultState = {
   isChoseColor: false,
   isChoseRate: false,
   isChoseDateRent: false,
-  colors: [
-    {
-      id: 0,
-      color: "Любой",
-      active: false,
-    },
-    {
-      id: 1,
-      color: "Красный",
-      active: false,
-    },
-    {
-      id: 2,
-      color: "Голубой",
-      active: false,
-    },
-  ],
+  isChoseAddons: false,
+  optionColors: [],
   dateFrom: "",
   dateTo: "",
   rates: [
@@ -27,14 +12,14 @@ const defaultState = {
       id: 0,
       rate: "Поминутно",
       ratePrice: 7,
-      postfix: '₽/мин',
+      postfix: "₽/мин",
       active: false,
     },
     {
       id: 1,
       rate: "На сутки",
       ratePrice: 1999,
-      postfix: '₽/сутки',
+      postfix: "₽/сутки",
       active: false,
     },
   ],
@@ -61,6 +46,8 @@ const defaultState = {
 };
 
 const reduce = "OPTIONS_";
+export const ADD_COLOR = `${reduce}ADD_COLOR`;
+export const DELETE_COLORS = `${reduce}DELETE_COLORS`;
 export const CHOSE_OPTIONS = `${reduce}CHOSE_OPTIONS`;
 export const CHOSE_COLOR = `${reduce}CHOSE_COLOR`;
 export const CHOSE_DATE_RENT = `${reduce}CHOSE_DATE_RENT`;
@@ -73,6 +60,16 @@ export const CHANGE_ADDON = `${reduce}CHANGE_ADDON`;
 
 export default (state = defaultState, { type, payload }) => {
   switch (type) {
+    case DELETE_COLORS:
+      return {
+        ...state,
+        optionColors: [],
+      };
+    case ADD_COLOR:
+      return {
+        ...state,
+        optionColors: state.optionColors.concat(payload),
+      };
     case CHOSE_OPTIONS:
       return {
         ...state,
@@ -96,7 +93,7 @@ export default (state = defaultState, { type, payload }) => {
     case CHANGE_COLOR:
       return {
         ...state,
-        colors: state.colors.map((el) => {
+        optionColors: state.optionColors.map((el) => {
           if (el.id === payload.id) {
             return { ...el, active: payload.bool };
           }
@@ -113,16 +110,31 @@ export default (state = defaultState, { type, payload }) => {
         ...state,
         dateFrom: payload,
       };
-    case CHANGE_RATE: 
+    case CHANGE_RATE:
       return {
         ...state,
-        rates: state.rates.map(el => {
-          if(el.id === payload.id) {
-            return {...el, active: payload.bool};
+        rates: state.rates.map((el) => {
+          if (el.id === payload.id) {
+            return { ...el, active: payload.bool };
           }
           return el;
-        })
-      }
+        }),
+      };
+    case CHANGE_ADDON:
+      return {
+        ...state,
+        addons: state.addons.map((el) => {
+          if (el.id === payload.id) {
+            return {
+              ...el,
+              active: payload.bool,
+            };
+          } else {
+            return el;
+          }
+          return el;
+        }),
+      };
     default:
       return state;
   }

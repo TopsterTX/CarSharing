@@ -1,51 +1,42 @@
 import React from "react";
 import "./Addons.scss";
+import { useSelector, useDispatch } from "react-redux";
+import { changeAddonOptions } from "../../../../redux/ActionCreators/Options/options";
 
 export const Addons = () => {
+  const { addons, isChoseAddons } = useSelector((state) => state.options);
+  const dispatch = useDispatch();
+
+  const clickHandler = (item) => {
+    if (item.active && isChoseAddons) {
+      dispatch(changeAddonOptions(item.id, !item.active));
+    } else if (isChoseAddons === false) {
+      dispatch(changeAddonOptions(item.id, !item.active));
+    }
+  };
+
   return (
     <section className="options-addons">
       <div className="options-addons__container">
         <span className="options-addons__heading">Доп. услуги</span>
         <ul className="options-addons__list">
-          <li className="options-addons__item">
-            <input
-              type="checkbox"
-              className="options-addons__input"
-              id="addons-input-1"
-            />
-            <label
-              htmlFor="addons-input-1"
-              onClick={(e) => e.target.classList.toggle("active")}
-            >
-              Полный бак, 500₽
-            </label>
-          </li>
-          <li className="options-addons__item">
-            <input
-              type="checkbox"
-              className="options-addons__input"
-              id="addons-input-2"
-            />
-            <label
-              htmlFor="addons-input-2"
-              onClick={(e) => e.target.classList.toggle("active")}
-            >
-              Детское кресло, 200₽
-            </label>
-          </li>
-          <li className="options-addons__item">
-            <input
-              type="checkbox"
-              className="options-addons__input"
-              id="addons-input-3"
-            />
-            <label
-              htmlFor="addons-input-3"
-              onClick={(e) => e.target.classList.toggle("active")}
-            >
-              Правый руль, 1600₽
-            </label>
-          </li>
+          {addons.map((el) => {
+            return (
+              <li
+                className={`options-addons__item ${el.active ? "active" : ""}`}
+                onClick={() => {
+                  clickHandler(el);
+                }}
+              >
+                <input
+                  type="checkbox"
+                  className="options-addons__input"
+                  id={`addon-${el.id}`}
+                />
+                <label htmlFor={`addon-${el.id}`}>{el.addon}</label>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </section>
