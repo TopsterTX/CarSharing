@@ -10,8 +10,10 @@
   }
   &__list {
     display: flex;
+    flex-wrap: wrap;
   }
   &__item {
+    margin-bottom: 8px;
     @include filterPoint($mainAccentColor, $mainBlack, $mainGrayDark);
   }
 }
