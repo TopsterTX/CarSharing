@@ -8,10 +8,24 @@
     @include subHeading();
   }
   &__item {
+    min-width: -moz-fit-content;
     display: flex;
     align-items: center;
     &:not(:last-child) {
       margin-bottom: 8px;
+    }
+  }
+  &__item.active{
+    label {
+      color: $mainBlack;
+    }
+    label::before {
+      border: 1px solid $mainAccentColor;
+    }
+    label::after {
+      opacity: 1;
+      border-left: 3px solid $mainBlack;
+      border-bottom: 3px solid $mainBlack;
     }
   }
   &__input:checked,
@@ -41,12 +55,8 @@
     border: 1px solid $mainGrayDark;
     background-color: transparent;
   }
-  label.active {
-    color: $mainBlack;
-  }
-  label.active::before {
-    border: 1px solid $mainAccentColor;
-  }
+  
+  
   label::after {
     content: "";
     position: absolute;
@@ -60,11 +70,7 @@
     border-bottom: 0px solid $mainGrayDark;
     transform: rotate(-45deg);
   }
-  label.active::after {
-    opacity: 1;
-    border-left: 3px solid $mainBlack;
-    border-bottom: 3px solid $mainBlack;
-  }
+  
 }
 
 @media (min-width: 768px) {

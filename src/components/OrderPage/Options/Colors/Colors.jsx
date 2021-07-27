@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { v4 as uuidv4 } from "uuid";
+
 import "./Colors.scss";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -18,8 +18,8 @@ export const Colors = () => {
   const { colors } = useSelector((state) => state.cars.choseCar);
   const { optionColors } = useSelector((state) => state.options);
   const { listItems } = useSelector((state) => state.checkList);
-  console.log(colors ? true : false);
-  let str;
+
+  let str = "Выбор цвета у этого автомобиля недоступен";
 
   useEffect(() => {
     if (colors != undefined && optionColors) {
@@ -32,8 +32,8 @@ export const Colors = () => {
           })
         );
       });
-    } else {
-      return;
+    } else if(colors == undefined){
+      return dispatch(choseColorOptions(!isChoseColor));
     }
   }, []);
 

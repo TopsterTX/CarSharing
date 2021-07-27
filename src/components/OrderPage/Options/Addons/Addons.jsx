@@ -1,17 +1,40 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./Addons.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { changeAddonOptions } from "../../../../redux/ActionCreators/Options/options";
+import {addCheckItem, addCheckResult, deleteCheckItem} from "../../../../redux/ActionCreators/ChecklList/checkList"
 
 export const Addons = () => {
   const { addons, isChoseAddons } = useSelector((state) => state.options);
+  const {listItems} = useSelector(state => state.checkList)
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    checkHandler()
+  }, [])
+
+  const checkHandler = () => {
+    if(listItems.some(el => {
+      if(el.id === 5 || el.id === 6 || el.id === 7){
+        return false;
+      } else {
+        return true
+      }
+    })){
+      addons.map(el => {
+        dispatch(addCheckItem(el.id + 5, el.addon))
+        dispatch(addCheckResult(el.id + 5, 'Нет'))
+      })
+    }
+  }
   const clickHandler = (item) => {
-    if (item.active && isChoseAddons) {
+    let id = item.id + 5
+    if (item.active ) {
       dispatch(changeAddonOptions(item.id, !item.active));
-    } else if (isChoseAddons === false) {
+      dispatch(addCheckResult(id, 'Нет'))
+    } else if (item.active === false){
       dispatch(changeAddonOptions(item.id, !item.active));
+      dispatch(addCheckResult(id, 'Да'))
     }
   };
 
@@ -24,7 +47,9 @@ export const Addons = () => {
             return (
               <li
                 className={`options-addons__item ${el.active ? "active" : ""}`}
-                onClick={() => {
+                onClick={(e) => {
+                  e.preventDefault()
+                  e.stopPropagation()
                   clickHandler(el);
                 }}
               >
