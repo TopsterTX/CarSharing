@@ -12,7 +12,7 @@ export const Check = () => {
       <div className="check__wrapper">
         <div className="check__title">Ваш заказ:</div>
         {listItems.map((el) => {
-          return <CheckItem el={el} />;
+          return <CheckItem el={el} key={el.id}/>;
         })}
         <div className="check__price">
           <span>Цена: </span>

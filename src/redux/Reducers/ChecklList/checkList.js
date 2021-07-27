@@ -12,7 +12,6 @@ const defaultState = {
 const reduce = "CHECK-LIST_";
 export const ADD_CHECK_ITEM = `${reduce}ADD_CHECK_ITEM`;
 export const ADD_CHECK_RESULT = `${reduce}ADD_CHECK_RESULT`;
-export const DELETE_CHECK_ITEM =`${reduce}DELETE_CHECK_ITEM`
 
 export default (state = defaultState, { type, payload }) => {
   switch (type) {
@@ -21,11 +20,6 @@ export default (state = defaultState, { type, payload }) => {
         ...state,
         listItems: state.listItems.concat(payload),
       };
-    case DELETE_CHECK_ITEM:
-      return {
-        ...state,
-        listItems: state.listItems.filter((v, i) => i >= 0 && i < payload - 1)
-      }
     case ADD_CHECK_RESULT:
       return {
         ...state,

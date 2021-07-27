@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { ModelsItem } from "../ModelsItem/ModelsItem";
+import {Loader} from '../../../Loader/Loader'
 import "./ModelsList.scss";
 
 export const ModelsList = () => {
@@ -8,7 +9,7 @@ export const ModelsList = () => {
 
   return (
     <ul className="models-list">
-      {cars.map(({ car, active, id }) => {
+      {!!cars.length ? cars.map(({ car, active, id }) => {
         if (car.thumbnail.mimetype == "image/png") {
           return (
             <ModelsItem
@@ -21,8 +22,9 @@ export const ModelsList = () => {
           );
         } else {
           return;
-        }
-      })}
+        } 
+      })
+      : <Loader/>}
     </ul>
   );
 };

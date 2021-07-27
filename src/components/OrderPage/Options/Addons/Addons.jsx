@@ -14,19 +14,14 @@ export const Addons = () => {
   }, [])
 
   const checkHandler = () => {
-    if(listItems.some(el => {
-      if(el.id === 5 || el.id === 6 || el.id === 7){
-        return false;
-      } else {
-        return true
-      }
-    })){
+    if(listItems.some(el => (el.id === 5 || el.id === 6 || el.id === 7))){
+      return
+    }else {
       addons.map(el => {
         dispatch(addCheckItem(el.id + 5, el.addon))
         dispatch(addCheckResult(el.id + 5, 'Нет'))
       })
-    }
-  }
+  }}
   const clickHandler = (item) => {
     let id = item.id + 5
     if (item.active ) {
@@ -52,6 +47,7 @@ export const Addons = () => {
                   e.stopPropagation()
                   clickHandler(el);
                 }}
+                key={el.id}
               >
                 <input
                   type="checkbox"

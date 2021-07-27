@@ -1,7 +1,6 @@
 import {
   ADD_CHECK_RESULT,
   ADD_CHECK_ITEM,
-  DELETE_CHECK_ITEM
 } from "../../Reducers/ChecklList/checkList";
 
 export const addCheckItem = (id, name) => {
@@ -25,9 +24,3 @@ export const addCheckResult = (id, result) => {
   };
 };
 
-export const deleteCheckItem = (id) => {
-  return {
-    type: DELETE_CHECK_ITEM,
-    payload: id
-  }
-}
