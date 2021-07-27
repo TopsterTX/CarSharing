@@ -1,4 +1,5 @@
 const defaultState = {
+  price: '',
   choseCar: "",
   isChoseModel: false,
   cars: [],
