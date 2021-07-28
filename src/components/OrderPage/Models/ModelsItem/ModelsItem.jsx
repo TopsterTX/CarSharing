@@ -5,11 +5,12 @@ import {
   unchoseModel,
   choseCar,
   changeActiveCars,
+  addPrice,
 } from "../../../../redux/ActionCreators/Cars/cars";
 
 import "./ModelsItem.scss";
 
-export const ModelsItem = ({ car, isChoseModel, active, id }) => {
+export const ModelsItem = ({ car, isChoseModel, active, id, chosenCar }) => {
   // console.log(car);
   const item = useRef();
   const dispatch = useDispatch();
@@ -36,12 +37,14 @@ export const ModelsItem = ({ car, isChoseModel, active, id }) => {
     dispatch(changeActiveCars(id, !active));
     dispatch(choseModel());
     dispatch(choseCar(car));
+    dispatch(addPrice(car.priceMax));
   };
 
   const modelsItemDisableHandler = () => {
     dispatch(changeActiveCars(id, !active));
     dispatch(unchoseModel());
     dispatch(choseCar(""));
+    dispatch(addPrice(""));
   };
 
   //*--------------------------------------------------

@@ -5,7 +5,7 @@ import {Loader} from '../../../Loader/Loader'
 import "./ModelsList.scss";
 
 export const ModelsList = () => {
-  const { cars, isChoseModel } = useSelector((state) => state.cars);
+  const { cars, isChoseModel, choseCar } = useSelector((state) => state.cars);
 
   return (
     <ul className="models-list">
@@ -18,6 +18,7 @@ export const ModelsList = () => {
               key={car.id}
               active={active}
               id={id}
+              // chosenCar={choseCar ? choseCar : ''}
             />
           );
         } else {

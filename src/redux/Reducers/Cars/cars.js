@@ -1,5 +1,5 @@
 const defaultState = {
-  price: '',
+  price: "",
   choseCar: "",
   isChoseModel: false,
   cars: [],
@@ -11,6 +11,7 @@ export const CHOSE_MODEL = `${reduce}CHOSE_MODEL`;
 export const UNCHOSE_MODEL = `${reduce}UNCHOSE_MODEL`;
 export const GET_CARS = `${reduce}GET_CARS`;
 export const CHANGE_ACTIVE_CARS = `${reduce}CHANGE_ACTIVE_CARS`;
+export const ADD_PRICE = `${reduce}ADD_PRICE`
 
 export default (state = defaultState, { type, payload }) => {
   switch (type) {
@@ -52,6 +53,11 @@ export default (state = defaultState, { type, payload }) => {
         }),
       };
 
+    case ADD_PRICE:
+      return {
+        ...state,
+        price: payload,
+      };
     default:
       return state;
   }
