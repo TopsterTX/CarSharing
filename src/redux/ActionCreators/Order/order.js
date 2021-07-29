@@ -11,7 +11,7 @@ import { CHANGE_CONFIRM_ORDER } from "../../Reducers/Total/total";
 export const getOrder = (id) => async (dispatch) => {
   try {
     await fetch(
-      `https://api-factory.simbirsoft1.com/api/db/order&data_id=${id}`,
+      `https://api-factory.simbirsoft1.com/api/db/order/${id}`,
       {
         headers: {
           "X-Api-Factory-Application-Id": "5e25c641099b810b946c5d5b",

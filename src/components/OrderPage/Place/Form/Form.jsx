@@ -21,7 +21,9 @@ export const Form = () => {
   //* Проверка и изменение состояний
 
   useEffect(() => {
-    if (cities.length < 0 && points.length < 0) {
+    console.log(cities.length === 0 && points.length === 0);
+    console.log(cities.length, points.length);
+    if (cities.length === 0 && points.length === 0) {
       dispatch(getCities());
       dispatch(getPoints());
     } else {
