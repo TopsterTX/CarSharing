@@ -21,10 +21,13 @@ export const Form = () => {
   //* Проверка и изменение состояний
 
   useEffect(() => {
-    dispatch(getCities());
-    dispatch(getPoints());
+    if (cities.length < 0 && points.length < 0) {
+      dispatch(getCities());
+      dispatch(getPoints());
+    } else {
+      return;
+    }
   }, []);
-
 
   useEffect(() => {
     if (city.length > 1) {

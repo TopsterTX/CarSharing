@@ -1,5 +1,7 @@
 const defaultState = {
   isLoading: false,
+  statusOrderId: "",
+  isGetOrder: false,
   orderId: "",
 };
 
@@ -7,7 +9,9 @@ export const reduce = "ORDER_";
 export const GET_ORDER = `${reduce}GET_ORDER`;
 export const POST_ORDER = `${reduce}POST_ORDER`;
 export const CREATE_ORDER_ID = `${reduce}CREATE_ORDER_ID`;
-export const CHANGE_IS_LOADING = `${reduce}CHANGE_IS_LOADING`
+export const CHANGE_IS_LOADING = `${reduce}CHANGE_IS_LOADING`;
+export const CHANGE_IS_GET_ORDER = `${reduce}CHANGE_IS_GET_ORDER`;
+export const GET_ORDER_ID = `${reduce}GET_ORDER_ID`
 
 export default (state = defaultState, { type, payload }) => {
   switch (type) {
@@ -16,17 +20,27 @@ export default (state = defaultState, { type, payload }) => {
         ...state,
       };
     case POST_ORDER:
-      return {};
+      return state;
     case CREATE_ORDER_ID:
       return {
         ...state,
-        orderId: payload,
+        statusOrderId: payload,
       };
-    case CHANGE_IS_LOADING:
-      return{
+    case GET_ORDER_ID: 
+      return {
         ...state,
-        isLoading: payload
+        orderId: payload
       }
+    case CHANGE_IS_LOADING:
+      return {
+        ...state,
+        isLoading: payload,
+      };
+    case CHANGE_IS_GET_ORDER:
+      return {
+        ...state,
+        isGetOrder: payload,
+      };
     default:
       return state;
   }

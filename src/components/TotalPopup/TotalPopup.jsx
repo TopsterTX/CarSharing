@@ -12,6 +12,7 @@ import "./TotalPopup.scss";
 import { changeCheckButton } from "./../../redux/ActionCreators/CheckButton/checkButton";
 import { v4 as uuidv4 } from "uuid";
 import { Loader } from "./../Loader/Loader";
+import { Redirect } from "react-router-dom";
 
 export const TotalPopup = () => {
   const { isPopupActive } = useSelector((state) => state.popup);
@@ -20,14 +21,13 @@ export const TotalPopup = () => {
   const { dateTo, dateFrom } = useSelector((state) => state.options);
   const { choseCar, price } = useSelector((state) => state.cars);
   const { listItems } = useSelector((state) => state.checkList);
-  const { orderId, isLoading } = useSelector((state) => state.order);
+  const { statusOrderId, isLoading, orderId } = useSelector(
+    (state) => state.order
+  );
   const dispatch = useDispatch();
 
-  let id;
   let order;
-
   useEffect(() => {
-    id = uuidv4();
     dispatch(createOrderId(createIdOrderHandler()));
     orderHelper();
   }, []);
@@ -87,7 +87,7 @@ export const TotalPopup = () => {
 
   const orderHelper = () => {
     order = {
-      orderStatusId: { id: orderId },
+      orderStatusId: { id: statusOrderId },
       cityId: { id: idCityHepler(cities, city) },
       pointId: { id: idPointHelper(points, point) },
       carId: { id: choseCar.id },
@@ -108,8 +108,8 @@ export const TotalPopup = () => {
   const clickHandler = () => {
     dispatch(changeIsLoading(true));
     dispatch(postOrder(orderHelper()));
-    dispatch(changeConfirmOrder(true));
-    dispatch(changeCheckButton("/order/total", "Отменить"));
+    // dispatch(changeConfirmOrder(true));
+    dispatch(changeCheckButton("/order/total", "Oтменить"));
     dispatch(changePopupActive(false));
   };
 
@@ -117,6 +117,8 @@ export const TotalPopup = () => {
 
   return isLoading ? (
     <Loader />
+  ) : isConfirmOrder ? (
+    <Redirect to={`/order/total&id=${orderId}`} />
   ) : (
     <div
       className={`total-popup ${
@@ -132,6 +134,7 @@ export const TotalPopup = () => {
           >
             Подтвердить
           </button>
+
           <button
             className="total-popup__back total-popup__button"
             onClick={() => dispatch(changePopupActive(false))}

@@ -8,8 +8,11 @@ import { Check } from "./Check/Check";
 import "./OrderPage.scss";
 import { Models } from "./Models/Models";
 import { Total } from "./Total/Total";
+import { useSelector } from "react-redux";
 
 export const OrderPage = () => {
+  const { orderId } = useSelector((state) => state.order);
+
   return (
     <div className="order-page">
       <Header className="header--order" />
@@ -19,7 +22,12 @@ export const OrderPage = () => {
           <Route path="/order/place" render={() => <Place />} />
           <Route path="/order/models" render={() => <Models />} />
           <Route path="/order/options" render={() => <Options />} />
-          <Route path="/order/total" render={() => <Total />} />
+          <Route path="/order/total" exact render={() => <Total />} />
+          <Route
+            path={`/order/total&id=${orderId}`}
+            exact
+            render={() => <Total />}
+          ></Route>
         </Switch>
         <Check />
       </div>
