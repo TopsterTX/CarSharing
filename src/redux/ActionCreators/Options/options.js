@@ -66,13 +66,13 @@ export const changeColorOptions = (id, bool) => {
 
 export const changeAddonOptions = (id, bool) => {
   return {
-    type: CHANGE_ADDON, 
+    type: CHANGE_ADDON,
     payload: {
-      id, 
-      bool
-    }
-  }
-}
+      id,
+      bool,
+    },
+  };
+};
 export const changeDateFromOptions = (value) => {
   return {
     type: CHANGE_DATE_FROM,

@@ -1,9 +1,17 @@
-import React from 'react'
-import i30n from '../../../../images/i30n.png'
-import './Car.scss';
+import React from "react";
+import { useSelector } from "react-redux";
+import "./Car.scss";
 
 export const Car = () => {
-    return (
-        <img src={i30n} width='256px' height='116px' className='total-car'/>
-    )
-}
+  const { choseCar } = useSelector((state) => state.cars);
+  let src;
+  (function imageHandler() {
+    if (choseCar.thumbnail.path.indexOf("/files") !== -1) {
+      src = `https://api-factory.simbirsoft1.com${choseCar.thumbnail.path}`;
+    } else {
+      src = choseCar.thumbnail.path;
+    }
+  })();
+
+  return <img src={src} width="256px" height="116px" className="total-car" />;
+};

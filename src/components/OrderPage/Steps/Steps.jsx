@@ -5,11 +5,12 @@ import "./Steps.scss";
 
 export const Steps = () => {
   const { steps } = useSelector((state) => state.steps);
+  const {isConfirmOrder} = useSelector(state => state.total)
 
-  return (
+  return ( 
     <ul className="steps">
       <div className="steps__wrapper">
-        {steps.map((el) => {
+        {isConfirmOrder ? <span>Заказ номер: </span> : steps.map((el) => {
           return (
             <StepsItem
               text={el.text}

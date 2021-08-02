@@ -21,7 +21,12 @@ export const Form = () => {
   //* Проверка и изменение состояний
 
   useEffect(() => {
-    console.log("hi");
+    if (!cities && !points) {
+      dispatch(getCities());
+      dispatch(getPoints());
+    } else {
+      return;
+    }
   }, []);
 
   useEffect(() => {

@@ -7,8 +7,9 @@ import steps from "./Reducers/Steps/steps";
 import form from "./Reducers/Place/place";
 import popup from "./Reducers/Popup/popup";
 import total from "./Reducers/Total/total";
-import options from './Reducers/Options/options'
+import options from "./Reducers/Options/options";
 import geocode from "./Reducers/Geocode/geocode";
+import order from "./Reducers/Order/order";
 
 export default {
   navigation,
@@ -22,4 +23,5 @@ export default {
   total,
   options,
   geocode,
+  order,
 };

@@ -32,7 +32,7 @@ export const Colors = () => {
           })
         );
       });
-    } else if(colors == undefined){
+    } else if (colors == undefined) {
       return dispatch(choseColorOptions(!isChoseColor));
     }
   }, []);
@@ -40,21 +40,19 @@ export const Colors = () => {
   useEffect(() => {
     checkHandler();
 
-    dispatch(
-      addCheckResult(
-        2,
-        optionColors.map((el) => {
-          if (el.active === true) {
-            return el.name;
-          } else {
-            return "";
-          }
-        })
-      )
-    );
+    dispatch(addCheckResult(2, colorHandler()));
   }, [isChoseColor]);
   //*--------------------------------------------------------
   //* Handler's
+  const colorHandler = () => {
+    let res;
+    optionColors.map((el) => {
+      if (el.active) {
+        return (res = el.name);
+      }
+    });
+    return res;
+  };
 
   const clickHandler = (el) => {
     if (isChoseColor && el.active) {

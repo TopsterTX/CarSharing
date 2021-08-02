@@ -4,6 +4,7 @@ import {
   GET_CARS,
   CHOSE_CAR,
   CHANGE_ACTIVE_CARS,
+  ADD_PRICE,
 } from "../../Reducers/Cars/cars";
 
 export const changeActiveCars = (id, bool) => {
@@ -13,6 +14,13 @@ export const changeActiveCars = (id, bool) => {
       id,
       bool,
     },
+  };
+};
+
+export const addPrice = (price) => {
+  return {
+    type: ADD_PRICE,
+    payload: price,
   };
 };
 

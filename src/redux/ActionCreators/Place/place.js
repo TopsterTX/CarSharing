@@ -1,5 +1,4 @@
 
-
 import {
   CHANGE_CITY,
   CHANGE_POINT,
