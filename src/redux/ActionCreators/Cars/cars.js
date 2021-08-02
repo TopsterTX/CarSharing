@@ -1,5 +1,27 @@
-import { CHOSE_MODEL, UNCHOSE_MODEL, GET_CARS } from "../../Reducers/Cars/cars";
-import { BASE_URL } from "../../../constants";
+import {
+  CHOSE_MODEL,
+  UNCHOSE_MODEL,
+  GET_CARS,
+  CHOSE_CAR,
+  CHANGE_ACTIVE_CARS,
+} from "../../Reducers/Cars/cars";
+
+export const changeActiveCars = (id, bool) => {
+  return {
+    type: CHANGE_ACTIVE_CARS,
+    payload: {
+      id,
+      bool,
+    },
+  };
+};
+
+export const choseCar = (car) => {
+  return {
+    type: CHOSE_CAR,
+    payload: car,
+  };
+};
 
 export const choseModel = (id) => {
   return {
@@ -23,7 +45,18 @@ export const getCars = () => async (dispatch) => {
       },
     })
       .then((res) => res.json())
-      .then((res) => dispatch({ type: GET_CARS, payload: res.data }));
+      .then((res) => {
+        res.data.map((el, i) => {
+          dispatch({
+            type: GET_CARS,
+            payload: {
+              id: i,
+              car: el,
+              active: false,
+            },
+          });
+        });
+      });
   } catch (e) {
     console.error(e);
   }

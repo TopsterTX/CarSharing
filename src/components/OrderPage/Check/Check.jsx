@@ -1,20 +1,22 @@
 import React from "react";
-import {CheckButton} from '../CheckButton/CheckButton'
+import { CheckButton } from "../CheckButton/CheckButton";
+import { useSelector } from "react-redux";
 import "./Check.scss";
+import { CheckItem } from "./CheckItem/CheckItem";
 
 export const Check = () => {
+  const { listItems, price } = useSelector((state) => state.checkList);
+
   return (
     <section className="check">
       <div className="check__wrapper">
         <div className="check__title">Ваш заказ:</div>
-        <div className="check__point">
-          <span>Пункт выдачи</span>
-          <span></span>
-          <span>Ульяновск, Нариманова 32</span>
-        </div>
+        {listItems.map((el) => {
+          return <CheckItem el={el} key={el.id}/>;
+        })}
         <div className="check__price">
           <span>Цена: </span>
-          <span> от 8 000 до 12 000 ₽</span>
+          <span>{price}</span>
         </div>
       </div>
       <CheckButton />

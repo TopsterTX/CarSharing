@@ -3,19 +3,14 @@ import { useDispatch } from "react-redux";
 import {
   choseModel,
   unchoseModel,
+  choseCar,
+  changeActiveCars,
 } from "../../../../redux/ActionCreators/Cars/cars";
 
 import "./ModelsItem.scss";
 
-export const ModelsItem = ({
-  price,
-  model,
-  id,
-  imgPath,
-  isChoseModel,
-  imgMime,
-  imgName,
-}) => {
+export const ModelsItem = ({ car, isChoseModel, active, id }) => {
+  // console.log(car);
   const item = useRef();
   const dispatch = useDispatch();
   let src;
@@ -23,47 +18,42 @@ export const ModelsItem = ({
   //* Handler's
 
   (function imageHandler() {
-    if (imgPath.indexOf("/files") !== -1) {
-      src = `https://api-factory.simbirsoft1.com${imgPath}`;
+    if (car.thumbnail.path.indexOf("/files") !== -1) {
+      src = `https://api-factory.simbirsoft1.com${car.thumbnail.path}`;
     } else {
-      src = imgPath;
+      src = car.thumbnail.path;
     }
   })();
+  const clickHandler = () => {
+    if (active === false && isChoseModel === false) {
+      modelsItemActiveHandler();
+    } else if (active && isChoseModel) {
+      modelsItemDisableHandler();
+    }
+  };
 
   const modelsItemActiveHandler = () => {
-    item.current.classList.remove("disable");
-    item.current.classList.add("active");
-    dispatch(choseModel(id));
+    dispatch(changeActiveCars(id, !active));
+    dispatch(choseModel());
+    dispatch(choseCar(car));
   };
 
   const modelsItemDisableHandler = () => {
-    item.current.classList.remove("active");
-    item.current.classList.add("disable");
-    dispatch(unchoseModel(id));
+    dispatch(changeActiveCars(id, !active));
+    dispatch(unchoseModel());
+    dispatch(choseCar(""));
   };
 
   //*--------------------------------------------------
 
   return (
     <li
-      className={`models-item disable`}
-      onClick={() => {
-        if (
-          item.current.classList.contains("disable") &&
-          isChoseModel === false
-        ) {
-          modelsItemActiveHandler();
-        } else if (
-          item.current.classList.contains("active") &&
-          isChoseModel === true
-        ) {
-          modelsItemDisableHandler();
-        }
-      }}
+      className={`models-item ${active ? "active" : "disable"}`}
+      onClick={() => clickHandler()}
       ref={item}
     >
-      <span className="models-item__model">{model}</span>
-      <span className="models-item__price">{price}</span>
+      <span className="models-item__model">{car.name}</span>
+      <span className="models-item__price">{`${car.priceMin} - ${car.priceMax}`}</span>
       <div className="models-item__image-block">
         <img
           src={src}

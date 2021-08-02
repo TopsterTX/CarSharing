@@ -2,6 +2,7 @@ const defaultState = {
   isChoseAddress: false,
   city: "",
   point: "",
+  address: "",
   cities: [],
   points: [],
 };
@@ -12,6 +13,7 @@ export const CHANGE_POINT = `${reduce}CHANGE_POINT`;
 export const CHOSE_ADDRESS = `${reduce}CHOSE_ADDRESS`;
 export const GET_CITIES = `${reduce}GET_CITIES`;
 export const GET_POINTS = `${reduce}GET_POINTS`;
+export const ADD_ADDRESS = `${reduce}ADD_ADDRESS`;
 
 export default (state = defaultState, { type, payload }) => {
   switch (type) {
@@ -25,6 +27,9 @@ export default (state = defaultState, { type, payload }) => {
       return { ...state, cities: payload };
     case GET_POINTS:
       return { ...state, points: payload };
+    case ADD_ADDRESS: {
+      return { ...state, address: payload };
+    }
     default:
       return state;
   }

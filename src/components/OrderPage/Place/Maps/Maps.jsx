@@ -3,6 +3,7 @@ import { YMaps, Map } from "react-yandex-maps";
 import "./Maps.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { createPlacemark } from "../../../../redux/ActionCreators/Geocode/geocode";
+import { addAddress } from "../../../../redux/ActionCreators/Place/place";
 
 export const Maps = () => {
   const { city, point, points } = useSelector((state) => state.form);
@@ -25,6 +26,7 @@ export const Maps = () => {
         el.address
       ) {
         setBound(el.bounds);
+        dispacth(addAddress(`${city}, ${point}`));
       }
     });
   }, [city, point, placemarks]);
@@ -49,7 +51,7 @@ export const Maps = () => {
           }
         );
         placemark.events.add("click", () => {
-          setBound(bounds);
+          setBound((bound) => bounds);
         });
         dispacth(createPlacemark(address, bounds));
         map.geoObjects.add(placemark);
@@ -63,10 +65,12 @@ export const Maps = () => {
       myGeoCode(
         ymaps,
         map,
-        `${el.cityId.name.replace(/\s+/g, "")},${el.address.replace(
-          /\s+/g,
-          ""
-        )}`
+        el.cityId === null
+          ? ""
+          : `${el.cityId.name.replace(/\s+/g, "")},${el.address.replace(
+              /\s+/g,
+              ""
+            )}`
       );
     });
   };

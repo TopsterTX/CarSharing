@@ -8,7 +8,23 @@ import {
   CHOSE_DATE_RENT,
   CHANGE_RATE,
   CHOSE_RATE,
+  ADD_COLOR,
+  DELETE_COLORS,
 } from "../../Reducers/Options/options";
+
+export const deleteColors = () => {
+  return {
+    type: DELETE_COLORS,
+    payload: null,
+  };
+};
+
+export const addColor = (color) => {
+  return {
+    type: ADD_COLOR,
+    payload: color,
+  };
+};
 
 export const choseOptions = (bool) => {
   return {
@@ -48,6 +64,15 @@ export const changeColorOptions = (id, bool) => {
   };
 };
 
+export const changeAddonOptions = (id, bool) => {
+  return {
+    type: CHANGE_ADDON, 
+    payload: {
+      id, 
+      bool
+    }
+  }
+}
 export const changeDateFromOptions = (value) => {
   return {
     type: CHANGE_DATE_FROM,

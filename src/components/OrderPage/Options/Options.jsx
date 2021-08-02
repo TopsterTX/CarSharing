@@ -32,11 +32,11 @@ export const Options = () => {
   }, [isChoseRate, isChoseColor, isChoseDateRent]);
 
   useEffect(() => {
-    if (isChoseOptions === false) {
+    if (!isChoseOptions) {
       dispatch(toggleCheckButtonDisable(true));
       dispatch(changeActiveStep(3, false));
       dispatch(changeFillStep(2, false));
-    } else if (isChoseOptions) {
+    } else {
       dispatch(toggleCheckButtonDisable(false));
       dispatch(changeActiveStep(3, true));
       dispatch(changeFillStep(2, true));

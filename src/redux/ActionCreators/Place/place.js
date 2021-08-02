@@ -1,4 +1,4 @@
-import { BASE_URL } from "./../../../constants";
+
 
 import {
   CHANGE_CITY,
@@ -6,6 +6,7 @@ import {
   GET_CITIES,
   GET_POINTS,
   CHOSE_ADDRESS,
+  ADD_ADDRESS,
 } from "../../Reducers/Place/place";
 
 export const changeCity = (value) => {
@@ -29,15 +30,22 @@ export const choseAddress = (bool) => {
   };
 };
 
+export const addAddress = (address) => {
+  return {
+    type: ADD_ADDRESS,
+    payload: address,
+  };
+};
+
 export const getCities = () => async (dispatch) => {
   try {
     await fetch(`https://api-factory.simbirsoft1.com/api/db/city`, {
       headers: {
-        'X-Api-Factory-Application-Id' : '5e25c641099b810b946c5d5b',
-      }
+        "X-Api-Factory-Application-Id": "5e25c641099b810b946c5d5b",
+      },
     })
-      .then(res => res.json())
-      .then(res => dispatch({type: GET_CITIES, payload: res.data}))
+      .then((res) => res.json())
+      .then((res) => dispatch({ type: GET_CITIES, payload: res.data }));
   } catch (e) {
     console.error(e);
   }
@@ -48,12 +56,12 @@ export const getPoints = () => async(dispatch) => {
   try{
     await fetch(`https://api-factory.simbirsoft1.com/api/db/point?limit=13`, {
       headers: {
-        'X-Api-Factory-Application-Id': '5e25c641099b810b946c5d5b',
-      }
+        "X-Api-Factory-Application-Id": "5e25c641099b810b946c5d5b",
+      },
     })
-      .then(res => res.json())
-      .then(res => dispatch({type: GET_POINTS, payload: res.data}))
-  } catch(e){
+      .then((res) => res.json())
+      .then((res) => dispatch({ type: GET_POINTS, payload: res.data }));
+  } catch (e) {
     console.error(e);
   }
-}
+};
