@@ -25,9 +25,9 @@ export const ModelsItem = ({ car, isChoseModel, active, id }) => {
     }
   })();
   const clickHandler = () => {
-    if (item.current.classList.contains("disable") && isChoseModel === false) {
+    if (active === false && isChoseModel === false) {
       modelsItemActiveHandler();
-    } else {
+    } else if (active && isChoseModel) {
       modelsItemDisableHandler();
     }
   };
@@ -45,17 +45,11 @@ export const ModelsItem = ({ car, isChoseModel, active, id }) => {
   };
 
   //*--------------------------------------------------
-  console.log(isChoseModel);
+
   return (
     <li
       className={`models-item ${active ? "active" : "disable"}`}
-      onClick={() => {
-        if (active === false && isChoseModel === false) {
-          modelsItemActiveHandler();
-        } else if (active && isChoseModel) {
-          modelsItemDisableHandler();
-        }
-      }}
+      onClick={() => clickHandler()}
       ref={item}
     >
       <span className="models-item__model">{car.name}</span>

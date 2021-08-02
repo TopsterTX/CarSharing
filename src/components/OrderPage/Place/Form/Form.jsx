@@ -27,7 +27,7 @@ export const Form = () => {
 
 
   useEffect(() => {
-    if (city.length > 1) {
+    if (city > 1) {
       dispatch(choseAddress(true));
     } else if (isChoseAddress) {
       dispatch(choseAddress(false));
@@ -40,7 +40,7 @@ export const Form = () => {
 
   const changeHandler = (e) => {
     dispatch(changeCity(e.target.value));
-    if (e.target.value.length > 1) {
+    if (e.target.value > 1) {
       dispatch(choseAddress(true));
     } else {
       dispatch(choseAddress(false));
@@ -80,10 +80,10 @@ export const Form = () => {
           />
           <datalist id="point">
             {points.map((el) => {
-              if (el.cityId.name === city) {
-                return <Point point={el.address} key={el.id} />;
-              } else {
+              if (el.cityId === null) {
                 return;
+              } else if (el.cityId.name === city) {
+                return <Point point={el.address} key={el.id} />;
               }
             })}
           </datalist>
