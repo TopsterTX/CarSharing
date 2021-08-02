@@ -10,7 +10,7 @@ import {
 } from "../../redux/ActionCreators/Order/order";
 import "./TotalPopup.scss";
 import { changeCheckButton } from "./../../redux/ActionCreators/CheckButton/checkButton";
-import { v4 as uuidv4 } from "uuid";
+
 import { Loader } from "./../Loader/Loader";
 import { Redirect } from "react-router-dom";
 

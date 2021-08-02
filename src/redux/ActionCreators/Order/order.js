@@ -5,19 +5,32 @@ import {
   CHANGE_IS_LOADING,
   CHANGE_IS_GET_ORDER,
   GET_ORDER_ID,
+  GET_ORDER_STATUS_ID,
 } from "../../Reducers/Order/order";
 import { CHANGE_CONFIRM_ORDER } from "../../Reducers/Total/total";
 
-export const getOrder = (id) => async (dispatch) => {
+export const getOrderStatusId = () => async (dispatch) => {
   try {
     await fetch(
-      `https://api-factory.simbirsoft1.com/api/db/order/${id}`,
+      `https://api-factory.simbirsoft1.com/api/db/orderStatus/5e26a191099b810b946c5d89`,
       {
         headers: {
-          "X-Api-Factory-Application-Id": "5e25c641099b810b946c5d5b",
+          "X-Api-Factory-Aplication-Id": "5e25c641099b810b946c5d5b",
         },
       }
     )
+      .then((res) => res.json())
+      .then((res) => console.log(res));
+  } catch (e) {}
+};
+
+export const getOrder = (id) => async (dispatch) => {
+  try {
+    await fetch(`https://api-factory.simbirsoft1.com/api/db/order/${id}`, {
+      headers: {
+        "X-Api-Factory-Application-Id": "5e25c641099b810b946c5d5b",
+      },
+    })
       .then((res) => res.json())
       .then((res) => {
         console.log(res);
@@ -41,7 +54,6 @@ export const postOrder = (order) => async (dispatch) => {
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log(res.data);
         dispatch({ type: CHANGE_IS_LOADING, payload: false });
         dispatch({ type: GET_ORDER_ID, payload: res.data.id });
         dispatch({ type: CHANGE_CONFIRM_ORDER, payload: true });

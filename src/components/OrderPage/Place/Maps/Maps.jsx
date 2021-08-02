@@ -51,7 +51,7 @@ export const Maps = () => {
           }
         );
         placemark.events.add("click", () => {
-          setBound(bounds);
+          setBound((bound) => bounds);
         });
         dispacth(createPlacemark(address, bounds));
         map.geoObjects.add(placemark);
@@ -65,10 +65,12 @@ export const Maps = () => {
       myGeoCode(
         ymaps,
         map,
-        `${el.cityId.name.replace(/\s+/g, "")},${el.address.replace(
-          /\s+/g,
-          ""
-        )}`
+        el.cityId === null
+          ? ""
+          : `${el.cityId.name.replace(/\s+/g, "")},${el.address.replace(
+              /\s+/g,
+              ""
+            )}`
       );
     });
   };

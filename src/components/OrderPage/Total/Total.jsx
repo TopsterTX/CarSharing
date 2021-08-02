@@ -5,7 +5,10 @@ import "./Total.scss";
 import { TotalPopup } from "../../TotalPopup/TotalPopup";
 import { useDispatch, useSelector } from "react-redux";
 import { changeCheckButton } from "../../../redux/ActionCreators/CheckButton/checkButton";
-import { getOrder } from "./../../../redux/ActionCreators/Order/order";
+import {
+  getOrder,
+  getOrderStatusId,
+} from "./../../../redux/ActionCreators/Order/order";
 
 export const Total = () => {
   const { isConfirmOrder } = useSelector((state) => state.total);
@@ -20,6 +23,10 @@ export const Total = () => {
       return;
     }
   }, [path]);
+
+  useEffect(() => {
+    dispatch(getOrderStatusId());
+  }, []);
 
   useEffect(() => {
     if (!isGetOrder && isConfirmOrder) {
