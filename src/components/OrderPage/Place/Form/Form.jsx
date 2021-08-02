@@ -22,7 +22,6 @@ export const Form = () => {
 
   useEffect(() => {
     console.log("hi");
-    
   }, []);
 
   useEffect(() => {
@@ -39,7 +38,7 @@ export const Form = () => {
 
   const changeHandler = (e) => {
     dispatch(changeCity(e.target.value));
-    if (e.target.value > 1) {
+    if (e.target.value) {
       dispatch(choseAddress(true));
     } else {
       dispatch(choseAddress(false));
