@@ -25,9 +25,8 @@ export const Form = () => {
     dispatch(getPoints());
   }, []);
 
-
   useEffect(() => {
-    if (city > 1) {
+    if (city) {
       dispatch(choseAddress(true));
     } else if (isChoseAddress) {
       dispatch(choseAddress(false));
